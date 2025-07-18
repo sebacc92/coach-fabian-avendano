@@ -6,12 +6,13 @@ import { Popover, buttonVariants } from './ui';
 export default component$(() => {
     const currentLocale = getLocale();
     const menuItems = [
-        { label: _`Programas`, href: '/programas' },
+        { label: _`Programas`, href: '#programa', anchor: true },
         { label: _`Testimonios`, href: '/testimonios' },
         { label: _`Acerca de`, href: '/acerca-de' },
         { label: _`Contacto`, href: '/contacto' },
     ];
 
+    // Para evitar hydration issues, solo usar scroll en el browser
     return (
         <header class="flex items-center justify-between px-6 py-4 bg-white shadow">
             {/* Logo */}
@@ -24,9 +25,27 @@ export default component$(() => {
                 <ul class="flex space-x-6">
                     {menuItems.map((item) => (
                         <li key={item.href}>
-                            <a href={item.href} class="text-gray-700 hover:text-blue-600">
-                                {item.label}
-                            </a>
+                            {item.anchor ? (
+                                <a
+                                    href={item.href}
+                                    class="text-gray-700 hover:text-blue-600 cursor-pointer"
+                                    preventdefault:click
+                                    onClick$={() => {
+                                        const el = document.getElementById('programa');
+                                        if (el) {
+                                            el.scrollIntoView({ behavior: 'smooth' });
+                                        } else {
+                                            window.location.href = item.href;
+                                        }
+                                    }}
+                                >
+                                    {item.label}
+                                </a>
+                            ) : (
+                                <a href={item.href} class="text-gray-700 hover:text-blue-600">
+                                    {item.label}
+                                </a>
+                            )}
                         </li>
                     ))}
                 </ul>

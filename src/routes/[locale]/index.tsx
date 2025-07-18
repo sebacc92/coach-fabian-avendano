@@ -3,12 +3,14 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 import { _ } from "compiled-i18n";
 import { Hero } from "../../components/hero";
 import { MethodologySection } from "../../components/methodology";
+import { ProgramsSection } from "../../components/programs-section";
 
 export default component$(() => {
   return (
     <>
       <Hero />
       <MethodologySection />
+      <ProgramsSection />
     </>
   );
 });
