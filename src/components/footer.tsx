@@ -3,7 +3,6 @@ import { _ } from 'compiled-i18n';
 import { LuInstagram } from '@qwikest/icons/lucide';
 
 export default component$(() => {
-  const year = new Date().getFullYear();
   const navItems = [
     { label: _`programa`, href: '#programa' },
     { label: _`testimonios`, href: '#testimonios' },

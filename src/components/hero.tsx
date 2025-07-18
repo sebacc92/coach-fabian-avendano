@@ -24,9 +24,16 @@ export const Hero = component$(() => {
         <p class="text-base md:text-xl lg:text-2xl mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed px-4">
           {_`hero_subtitle`}
         </p>
-        <Button class="bg-white hover:bg-gray-100 text-[#6A0DAD] px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold rounded-lg transition-all transform hover:scale-105">
-          {_`hero_cta`}
-        </Button>
+        <a
+          href="https://mpago.la/1rjmWz3"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block"
+        >
+          <Button class="bg-white hover:bg-gray-100 text-[#6A0DAD] px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold rounded-lg transition-all transform hover:scale-105">
+            {_`hero_cta`}
+          </Button>
+        </a>
       </div>
     </section>
   );
