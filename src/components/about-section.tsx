@@ -8,12 +8,14 @@ export const AboutSection = component$(() => {
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           {/* Imagen */}
           <div class="order-2 lg:order-1">
-            <div class="relative h-96 md:h-[500px] rounded-lg overflow-hidden">
+            <div class="relative h-96 md:h-[500px] rounded-lg overflow-hidden group">
               <img
                 src="/images/playa.jpeg"
                 alt={_`aboutImgAlt`}
-                class="object-cover w-full h-full"
+                class="object-cover w-full h-full rounded-lg shadow-2xl border border-[#e5e7eb] transition-transform duration-500 group-hover:scale-105"
               />
+              {/* Overlay decorativo opcional */}
+              <div class="absolute inset-0 pointer-events-none rounded-lg group-hover:bg-white/5 transition duration-500"></div>
             </div>
           </div>
           {/* Contenido */}
