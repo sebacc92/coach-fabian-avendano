@@ -8,7 +8,7 @@ export default component$(() => {
     const menuItems = [
         { label: _`Programas`, href: '#programa', anchor: true },
         { label: _`Testimonios`, href: '#testimonios', anchor: true },
-        { label: _`Acerca de`, href: '/acerca-de' },
+        { label: _`Acerca de`, href: '#acerca', anchor: true },
         { label: _`Contacto`, href: '/contacto' },
     ];
 
