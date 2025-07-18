@@ -4,6 +4,7 @@ import {guessLocale, locales} from 'compiled-i18n'
 import Header from '~/components/header';
 import Footer from '~/components/footer';
 import { ScrollToTop } from '~/components/scroll-to-top';
+import { WhatsappFloat } from '~/components/whatsapp-float';
 
 const replaceLocale = (pathname: string, oldLocale: string, locale: string) => {
 	const idx = pathname.indexOf(oldLocale)
@@ -45,6 +46,7 @@ export default component$(() => {
       <Header />
       <Slot />
       <ScrollToTop />
+      <WhatsappFloat />
       <Footer />
     </>
   );
