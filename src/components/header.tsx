@@ -6,8 +6,9 @@ import { Popover, buttonVariants } from './ui';
 export default component$(() => {
     const currentLocale = getLocale();
     const menuItems = [
-        { label: _`Inicio`, href: '/' },
-        { label: _`Servicios`, href: '/servicios' },
+        { label: _`Programas`, href: '/programas' },
+        { label: _`Testimonios`, href: '/testimonios' },
+        { label: _`Acerca de`, href: '/acerca-de' },
         { label: _`Contacto`, href: '/contacto' },
     ];
 
