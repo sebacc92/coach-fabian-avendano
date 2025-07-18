@@ -7,7 +7,7 @@ export default component$(() => {
     const currentLocale = getLocale();
     const menuItems = [
         { label: _`Programas`, href: '#programa', anchor: true },
-        { label: _`Testimonios`, href: '/testimonios' },
+        { label: _`Testimonios`, href: '#testimonios', anchor: true },
         { label: _`Acerca de`, href: '/acerca-de' },
         { label: _`Contacto`, href: '/contacto' },
     ];
@@ -31,7 +31,7 @@ export default component$(() => {
                                     class="text-gray-700 hover:text-blue-600 cursor-pointer"
                                     preventdefault:click
                                     onClick$={() => {
-                                        const el = document.getElementById('programa');
+                                        const el = document.getElementById(item.href.replace('#', ''));
                                         if (el) {
                                             el.scrollIntoView({ behavior: 'smooth' });
                                         } else {
