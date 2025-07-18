@@ -1,0 +1,10 @@
+{
+  "locale": "en",
+  "name": "en",
+  "translations": {
+    "Inicio": "Home",
+    "Servicios": "Services",
+    "Contacto": "Contact",
+    "Welcome to Qwik": "Welcome to Qwik"
+  }
+}

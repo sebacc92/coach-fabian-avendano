@@ -1,11 +1,14 @@
-import { component$, useSignal } from '@builder.io/qwik';
+import { component$ } from '@builder.io/qwik';
+import { LuLanguages } from "@qwikest/icons/lucide";
+import { _, getLocale, locales } from "compiled-i18n";
+import { Popover, buttonVariants } from './ui';
 
 export default component$(() => {
-    const lang = useSignal<'ES' | 'EN'>('ES');
+    const currentLocale = getLocale();
     const menuItems = [
-        { label: lang.value === 'ES' ? 'Inicio' : 'Home', href: '/' },
-        { label: lang.value === 'ES' ? 'Servicios' : 'Services', href: '/servicios' },
-        { label: lang.value === 'ES' ? 'Contacto' : 'Contact', href: '/contacto' },
+        { label: _`Inicio`, href: '/' },
+        { label: _`Servicios`, href: '/servicios' },
+        { label: _`Contacto`, href: '/contacto' },
     ];
 
     return (
@@ -27,14 +30,27 @@ export default component$(() => {
                     ))}
                 </ul>
             </nav>
+
             {/* Language Toggle */}
-            <button
-                class="ml-6 px-3 py-1 border rounded text-sm"
-                onClick$={() => (lang.value = lang.value === 'ES' ? 'EN' : 'ES')}
-                aria-label="Toggle language"
-            >
-                {lang.value}
-            </button>
+            <Popover.Root flip={false} gutter={8}>
+                <Popover.Trigger class={buttonVariants({ look: 'outline' })}>
+                    <LuLanguages />
+                </Popover.Trigger>
+                <Popover.Panel>
+                    {locales.map((locale) => (
+                        <a
+                            key={locale}
+                            class={buttonVariants({ look: 'ghost' })}
+                            href={`/${locale}`}
+                        >
+                            {locale === currentLocale && (
+                                <span class="ml-2">✓</span>
+                            )}
+                            {locale === 'es' ? 'Español' : 'English'}
+                        </a>
+                    ))}
+                </Popover.Panel>
+            </Popover.Root>
         </header>
     );
 });
