@@ -1,5 +1,5 @@
 import { component$ } from '@builder.io/qwik';
-import { LuLanguages } from "@qwikest/icons/lucide";
+import { LuLanguages, LuDumbbell } from "@qwikest/icons/lucide";
 import { _, getLocale, locales } from "compiled-i18n";
 import { Popover, buttonVariants } from './ui';
 
@@ -17,7 +17,7 @@ export default component$(() => {
         <header class="flex items-center justify-between px-6 py-4 bg-white shadow">
             {/* Logo */}
             <div class="flex items-center">
-                <img src="/logo.png" alt="Logo" class="h-10 w-auto mr-3" />
+                <LuDumbbell class="h-10 w-10 text-[#6A0DAD] mr-3" />
                 <span class="font-bold text-xl">Coach Fabian Avendaño</span>
             </div>
             {/* Navigation */}
