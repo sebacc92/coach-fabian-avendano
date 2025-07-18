@@ -3,6 +3,7 @@ import type {RequestHandler} from '@builder.io/qwik-city'
 import {guessLocale, locales} from 'compiled-i18n'
 import Header from '~/components/header';
 import Footer from '~/components/footer';
+import { ScrollToTop } from '~/components/scroll-to-top';
 
 const replaceLocale = (pathname: string, oldLocale: string, locale: string) => {
 	const idx = pathname.indexOf(oldLocale)
@@ -43,6 +44,7 @@ export default component$(() => {
     <>
       <Header />
       <Slot />
+      <ScrollToTop />
       <Footer />
     </>
   );
