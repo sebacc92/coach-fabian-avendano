@@ -58,15 +58,15 @@ export default component$(() => {
                     <Popover.Trigger class={buttonVariants({ look: 'outline' })}>
                         <LuLanguages />
                     </Popover.Trigger>
-                    <Popover.Panel>
+                    <Popover.Panel style={{ marginRight: '12px' }}>
                         {locales.map((locale) => (
                             <a
                                 key={locale}
-                                class={buttonVariants({ look: 'ghost' })}
+                                class={`flex items-center px-4 py-2 rounded-lg text-base hover:bg-gray-100 transition-colors ${locale === currentLocale ? 'font-semibold text-[#6A0DAD] bg-gray-50' : 'text-gray-900'}`}
                                 href={`/${locale}`}
                             >
                                 {locale === currentLocale && (
-                                    <span class="ml-2">✓</span>
+                                    <span class="mr-2 text-lg">✓</span>
                                 )}
                                 {locale === 'es' ? 'Español' : 'English'}
                             </a>
@@ -135,15 +135,15 @@ export default component$(() => {
                                 <Popover.Trigger class={buttonVariants({ look: 'outline' })}>
                                     <LuLanguages />
                                 </Popover.Trigger>
-                                <Popover.Panel>
+                                <Popover.Panel style={{ marginRight: '12px' }}>
                                     {locales.map((locale) => (
                                         <a
                                             key={locale}
-                                            class={buttonVariants({ look: 'ghost' })}
+                                            class={`flex items-center px-4 py-2 rounded-lg text-base hover:bg-gray-100 transition-colors ${locale === currentLocale ? 'font-semibold text-[#6A0DAD] bg-gray-50' : 'text-gray-900'}`}
                                             href={`/${locale}`}
                                         >
                                             {locale === currentLocale && (
-                                                <span class="ml-2">✓</span>
+                                                <span class="mr-2 text-lg">✓</span>
                                             )}
                                             {locale === 'es' ? 'Español' : 'English'}
                                         </a>
