@@ -5,6 +5,7 @@ import { Hero } from "../../components/hero";
 import { MethodologySection } from "../../components/methodology";
 import { ProgramsSection } from "../../components/programs-section";
 import { TestimonialsSection } from "../../components/testimonials-section";
+import { FAQSection } from "../../components/faq-section";
 import { AboutSection } from "../../components/about-section";
 
 export default component$(() => {
@@ -14,6 +15,7 @@ export default component$(() => {
       <MethodologySection />
       <ProgramsSection />
       <TestimonialsSection />
+      <FAQSection />
       <AboutSection />
     </>
   );
