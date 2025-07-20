@@ -32,7 +32,7 @@ export const ProgramsSection = component$(() => {
         subtitleColor: "text-[#6A0DAD]",
         buttonColor: "bg-[#8A2BE2]",
         buttonHover: "hover:bg-[#7B1FA2]",
-        level: "NIVEL AVANZADO",
+        level: "NIVEL BASICO/INTERMEDIO",
         levelColor: "bg-[#8A2BE2]",
         title: _`program2Title`,
         subtitle: _`program2Subtitle`,
@@ -99,7 +99,7 @@ export const ProgramsSection = component$(() => {
         link: "https://mpago.la/1FoSTny",
       },
       {
-        img: "/images/fabian-kettlebell.jpg",
+        img: "/images/hip-thrust.jpeg",
         alt: _`program6ImgAlt`,
         price: _`program6Price`,
         priceColor: "bg-[#E91E63]",
@@ -129,7 +129,7 @@ export const ProgramsSection = component$(() => {
           {programs.map((p, i) => (
             <div key={i} class={`border-2 ${p.borderColor} shadow-2xl rounded-lg flex flex-col bg-white`}>
               <div class="relative h-64 md:h-80 rounded-t-lg overflow-hidden">
-                <img src={p.img} alt={p.alt} class="object-cover w-full h-full rounded-t-lg" />
+                <img src={p.img} alt={p.alt} class="object-top w-full h-full rounded-t-lg" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-t-lg"></div>
                 <div class="absolute top-4 right-4">
                   <span class={`${p.priceColor} text-white px-3 py-1 rounded-full text-lg font-bold`}>{p.price}</span>
