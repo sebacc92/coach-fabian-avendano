@@ -24,13 +24,13 @@ export const AboutSection = component$(() => {
               {_`aboutTitle`}
             </h2>
             <h3 class="text-xl md:text-2xl font-semibold mb-6 text-[#1e3a8a]">{_`aboutSubtitle`}</h3>
+            <div class="mb-8">
+              <span class="inline-block text-lg font-bold text-[#1e3a8a] tracking-wide uppercase">Functional Training Coach</span>
+            </div>
             <div class="space-y-4 text-[#4B4B4B] leading-relaxed">
               <p>{_`aboutP1`}</p>
               <p>{_`aboutP2`}</p>
               <p class="font-semibold text-[#1e3a8a]">{_`aboutP3`}</p>
-            </div>
-            <div class="mt-8">
-              <span class="inline-block text-lg font-bold text-[#1e3a8a] tracking-wide uppercase">Functional Training Coach</span>
             </div>
           </div>
         </div>
