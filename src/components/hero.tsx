@@ -14,7 +14,7 @@ export const Hero = component$(() => {
           class="object-cover w-full h-full absolute inset-0"
           style="z-index:0;"
         />
-        <div class="absolute inset-0 bg-gradient-to-br from-[#4A0E4E]/75 to-[#2D1B69]/75"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-[#1e3a8a]/60 to-[#2563eb]/60"></div>
       </div>
       {/* Content */}
       <div class="relative z-10 text-center text-white max-w-4xl mx-auto">
@@ -30,7 +30,7 @@ export const Hero = component$(() => {
           rel="noopener noreferrer"
           class="inline-block"
         >
-          <Button class="bg-white hover:bg-gray-100 text-[#6A0DAD] px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold rounded-lg transition-all transform hover:scale-105">
+          <Button class="bg-white hover:bg-gray-100 text-[#2563eb] hover:text-[#1e3a8a] px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold rounded-lg transition-all transform hover:scale-105">
             {_`hero_cta`}
           </Button>
         </a>

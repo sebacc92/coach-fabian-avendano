@@ -5,7 +5,7 @@ import { Button } from "./ui/button/button";
 export const ProgramsSection = component$(() => {
     const programs = [
       {
-        img: "/images/fabian-gym-program.jpg",
+        img: "/images/fabian-gym-training.jpg",
         alt: _`program1ImgAlt`,
         price: _`program1Price`,
         priceColor: "bg-[#6A0DAD]",
@@ -61,7 +61,7 @@ export const ProgramsSection = component$(() => {
         link: "https://mpago.la/17rjJve",
       },
       {
-        img: "/images/fabian-gym-training.jpg",
+        img: "/images/fabian-gym-program.jpg",
         alt: _`program4ImgAlt`,
         price: _`program4Price`,
         priceColor: "bg-[#9C27B0]",
@@ -81,7 +81,7 @@ export const ProgramsSection = component$(() => {
         link: "https://mpago.la/1LjB1z5",
       },
       {
-        img: "/images/fabian-beach-about.jpg",
+        img: "/images/playa-zoom.jpeg",
         alt: _`program5ImgAlt`,
         price: _`program5Price`,
         priceColor: "bg-[#00C896]",
