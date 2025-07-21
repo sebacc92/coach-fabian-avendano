@@ -93,6 +93,16 @@ export default component$(() => {
         <div class="border-t border-gray-700 mt-8 pt-8 text-center">
           <p class="text-gray-400 text-sm">{_`copyright`}</p>
         </div>
+        <div class="mt-4 text-center">
+          <a
+            href="https://sebastiancardoso.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-xs text-gray-400 hover:text-[#2563eb] transition-colors underline"
+          >
+            Desarrollado por sebastiancardoso
+          </a>
+        </div>
       </div>
     </footer>
   );
