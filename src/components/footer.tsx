@@ -1,6 +1,6 @@
 import { component$ } from '@builder.io/qwik';
 import { _ } from 'compiled-i18n';
-import { LuInstagram } from '@qwikest/icons/lucide';
+import { LuInstagram, LuYoutube } from '@qwikest/icons/lucide';
 
 export default component$(() => {
   const navItems = [
@@ -45,7 +45,7 @@ export default component$(() => {
           {/* Social Media */}
           <div>
             <h3 class="font-bold mb-4 text-[#8A2BE2]">{_`followMe`}</h3>
-            <div class="flex space-x-4">
+            <div class="flex space-x-4 mb-2">
               <a
                 href="https://www.instagram.com/fabian.avendano1/"
                 target="_blank"
@@ -65,6 +65,27 @@ export default component$(() => {
                 <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
                 </svg>
+              </a>
+              <a
+                href="https://www.youtube.com/@fabianentrenamiento"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-300 hover:text-[#8A2BE2] transition-colors"
+                aria-label="YouTube"
+              >
+                <LuYoutube class="h-6 w-6" />
+              </a>
+            </div>
+            <div class="flex space-x-2 items-center mt-2">
+              <a
+                href="https://www.instagram.com/urbanstylemiramar/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-300 hover:text-[#8A2BE2] transition-colors flex items-center"
+                aria-label="Instagram Indumentaria Urbana"
+              >
+                <LuInstagram class="h-5 w-5 mr-1" />
+                <span class="text-xs">Indumentaria urbana</span>
               </a>
             </div>
           </div>
