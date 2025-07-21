@@ -39,7 +39,7 @@ export const FAQSection = component$(() => {
         <Accordion.Root behavior="single" collapsible class="w-full">
           {faqs.map((faq, i) => (
             <Accordion.Item id={`faq-${i}`} key={i}>
-              <Accordion.Trigger header="h3" class="text-left text-lg font-semibold hover:text-[#6A0DAD]">
+              <Accordion.Trigger header="h3" class="text-left text-lg font-semibold hover:text-[#1e3a8a]">
                 {faq.q}
               </Accordion.Trigger>
               <Accordion.Content>

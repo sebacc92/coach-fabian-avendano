@@ -15,12 +15,12 @@ export default component$(() => {
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo y descripción */}
           <div>
-            <div class="text-2xl font-bold font-['Poppins'] text-[#8A2BE2] mb-4">Fabián Avendaño</div>
+            <div class="text-2xl font-bold font-['Poppins'] text-[#2563eb] mb-4">Fabián Avendaño</div>
             <p class="text-gray-300 text-sm">{_`footerDesc`}</p>
           </div>
           {/* Navegación */}
           <div>
-            <h3 class="font-bold mb-4 text-[#8A2BE2]">{_`navigation`}</h3>
+            <h3 class="font-bold mb-4 text-[#2563eb]">{_`navigation`}</h3>
             <div class="space-y-2">
               {navItems.map((item) => (
                 <a
@@ -44,13 +44,13 @@ export default component$(() => {
           </div>
           {/* Social Media */}
           <div>
-            <h3 class="font-bold mb-4 text-[#8A2BE2]">{_`followMe`}</h3>
+            <h3 class="font-bold mb-4 text-[#2563eb]">{_`followMe`}</h3>
             <div class="flex space-x-4 mb-2">
               <a
                 href="https://www.instagram.com/fabian.avendano1/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-gray-300 hover:text-[#8A2BE2] transition-colors"
+                class="text-gray-300 hover:text-[#2563eb] transition-colors"
                 aria-label="Instagram"
               >
                 <LuInstagram class="h-6 w-6" />
@@ -59,7 +59,7 @@ export default component$(() => {
                 href="https://www.tiktok.com/@fabianavendanogym"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-gray-300 hover:text-[#8A2BE2] transition-colors"
+                class="text-gray-300 hover:text-[#2563eb] transition-colors"
                 aria-label="TikTok"
               >
                 <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -70,7 +70,7 @@ export default component$(() => {
                 href="https://www.youtube.com/@fabianentrenamiento"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-gray-300 hover:text-[#8A2BE2] transition-colors"
+                class="text-gray-300 hover:text-[#2563eb] transition-colors"
                 aria-label="YouTube"
               >
                 <LuYoutube class="h-6 w-6" />
@@ -81,7 +81,7 @@ export default component$(() => {
                 href="https://www.instagram.com/urbanstylemiramar/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-gray-300 hover:text-[#8A2BE2] transition-colors flex items-center"
+                class="text-gray-300 hover:text-[#2563eb] transition-colors flex items-center"
                 aria-label="Instagram Indumentaria Urbana"
               >
                 <LuInstagram class="h-5 w-5 mr-1" />

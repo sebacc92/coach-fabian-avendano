@@ -9,8 +9,8 @@ export const TestimonialsSection = component$(() => {
       alt: "Ana Gómez",
       name: "Ana Gómez",
       subtitle: _`testimonial1Subtitle`,
-      subtitleColor: "text-[#8A2BE2]",
-      nameColor: "text-[#6A0DAD]",
+      subtitleColor: "text-[#2563eb]",
+      nameColor: "text-[#1e3a8a]",
       text: _`testimonial1`,
     },
     {
@@ -18,8 +18,8 @@ export const TestimonialsSection = component$(() => {
       alt: "Sebastian Cardoso",
       name: "Sebastian Cardoso",
       subtitle: _`testimonial2Subtitle`,
-      subtitleColor: "text-[#8A2BE2]",
-      nameColor: "text-[#6A0DAD]",
+      subtitleColor: "text-[#2563eb]",
+      nameColor: "text-[#1e3a8a]",
       text: _`testimonial2`,
     },
     {
@@ -27,8 +27,8 @@ export const TestimonialsSection = component$(() => {
       alt: "María López",
       name: "María López",
       subtitle: _`testimonial3Subtitle`,
-      subtitleColor: "text-[#8A2BE2]",
-      nameColor: "text-[#6A0DAD]",
+      subtitleColor: "text-[#2563eb]",
+      nameColor: "text-[#1e3a8a]",
       text: _`testimonial3`,
     },
   ];
@@ -41,7 +41,7 @@ export const TestimonialsSection = component$(() => {
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {testimonials.map((t, i) => (
             <div key={i} class="bg-white shadow-lg rounded-xl p-6 text-center border border-gray-200 hover:shadow-2xl transition-shadow">
-              <div class="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden border-2 border-[#6A0DAD]">
+              <div class="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden border-2 border-[#1e3a8a]">
                 <img src={t.img} alt={t.alt} width={80} height={80} class="object-cover w-full h-full" />
               </div>
               <h3 class={`font-bold text-lg mb-2 ${t.nameColor}`}>{t.name}</h3>

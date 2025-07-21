@@ -8,37 +8,37 @@ export const MethodologySection = component$(() => {
       icon: LuDumbbell,
       title: _`monday`,
       desc: _`mondayDesc`,
-      color: "bg-[#6A0DAD]",
+      color: "bg-[#1e3a8a]",
     },
     {
       icon: LuHeart,
       title: _`tuesday`,
       desc: _`tuesdayDesc`,
-      color: "bg-[#6A0DAD]",
+      color: "bg-[#1e3a8a]",
     },
     {
       icon: LuDumbbell,
       title: _`wednesday`,
       desc: _`wednesdayDesc`,
-      color: "bg-[#6A0DAD]",
+      color: "bg-[#1e3a8a]",
     },
     {
       icon: LuFlower2,
       title: _`thursday`,
       desc: _`thursdayDesc`,
-      color: "bg-[#6A0DAD]",
+      color: "bg-[#1e3a8a]",
     },
     {
       icon: LuActivity,
       title: _`friday`,
       desc: _`fridayDesc`,
-      color: "bg-[#6A0DAD]",
+      color: "bg-[#1e3a8a]",
     },
     {
       icon: LuUsers,
       title: _`saturday`,
       desc: _`saturdayDesc`,
-      color: "bg-[#6A0DAD]",
+      color: "bg-[#1e3a8a]",
     },
   ];
   return (
@@ -52,10 +52,10 @@ export const MethodologySection = component$(() => {
             const Icon = day.icon;
             return (
               <div class="text-center" key={idx}>
-                <div class="w-16 h-16 mx-auto mb-4 bg-[#6A0DAD] rounded-full flex items-center justify-center">
+                <div class="w-16 h-16 mx-auto mb-4 bg-[#1e3a8a] rounded-full flex items-center justify-center">
                   <Icon class="h-8 w-8 text-white" />
                 </div>
-                <h3 class="text-lg font-bold font-['Poppins'] mb-2 text-[#6A0DAD]">{day.title}</h3>
+                <h3 class="text-lg font-bold font-['Poppins'] mb-2 text-[#1e3a8a]">{day.title}</h3>
                 <p class="text-[#4B4B4B] text-sm">{day.desc}</p>
               </div>
             );

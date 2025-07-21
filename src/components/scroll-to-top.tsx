@@ -17,7 +17,7 @@ export const ScrollToTop = component$(() => {
       type="button"
       aria-label="Scroll to top"
       onClick$={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      class={`fixed z-50 bottom-6 right-6 bg-[#8A2BE2] text-white rounded-full shadow-lg p-3 transition-opacity duration-300 hover:bg-[#6A0DAD] focus:outline-none focus:ring-2 focus:ring-[#6A0DAD] ${show.value ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+      class={`fixed z-50 bottom-6 right-6 bg-[#1e3a8a] text-white rounded-full shadow-lg p-3 transition-opacity duration-300 hover:bg-[#2563eb] focus:outline-none focus:ring-2 focus:ring-[#1e3a8a] ${show.value ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
     >
       <LuChevronUp class="h-6 w-6" />
     </button>
