@@ -10,7 +10,7 @@ export const AboutSection = component$(() => {
           <div class="order-2 lg:order-1">
             <div class="relative h-96 md:h-[500px] rounded-lg overflow-hidden group">
               <img
-                src="/images/playa.jpeg"
+                src="/images/10.jpeg"
                 alt={_`aboutImgAlt`}
                 class="object-cover w-full h-full rounded-lg shadow-2xl border border-[#e5e7eb] transition-transform duration-500 group-hover:scale-105"
               />
@@ -20,14 +20,14 @@ export const AboutSection = component$(() => {
           </div>
           {/* Contenido */}
           <div class="order-1 lg:order-2">
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold font-['Poppins'] mb-4 text-[#6A0DAD]">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold font-['Poppins'] mb-4 text-[#2563eb]">
               {_`aboutTitle`}
             </h2>
-            <h3 class="text-xl md:text-2xl font-semibold mb-6 text-[#8A2BE2]">{_`aboutSubtitle`}</h3>
+            <h3 class="text-xl md:text-2xl font-semibold mb-6 text-[#3b82f6]">{_`aboutSubtitle`}</h3>
             <div class="space-y-4 text-[#4B4B4B] leading-relaxed">
               <p>{_`aboutP1`}</p>
               <p>{_`aboutP2`}</p>
-              <p class="font-semibold text-[#6A0DAD]">{_`aboutP3`}</p>
+              <p class="font-semibold text-[#2563eb]">{_`aboutP3`}</p>
             </div>
           </div>
         </div>
