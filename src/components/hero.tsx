@@ -14,7 +14,7 @@ export const Hero = component$(() => {
           class="object-cover w-full h-full absolute inset-0"
           style="z-index:0;"
         />
-        <div class="absolute inset-0 bg-gradient-to-br from-[#1e3a8a]/60 to-[#2563eb]/60"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-[#1e3a8a]/40 to-[#2563eb]/40"></div>
       </div>
       {/* Content */}
       <div class="relative z-10 text-center text-white max-w-4xl mx-auto">
