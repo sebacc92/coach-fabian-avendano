@@ -11,7 +11,7 @@ export const Hero = component$(() => {
         <img
           src="/images/fabian-kettlebell.jpg"
           alt={_`Fabián Avendaño entrenando intensamente con kettlebells en el gimnasio`}
-          class="object-cover w-full h-full absolute inset-0"
+          class="object-cover object-top w-full h-full absolute inset-0"
           style="z-index:0;"
         />
         <div class="absolute inset-0 bg-gradient-to-br from-[#1e3a8a]/40 to-[#2563eb]/40"></div>
@@ -25,7 +25,7 @@ export const Hero = component$(() => {
           {_`hero_subtitle`}
         </p>
         <a
-          href="https://mpago.la/1rjmWz3"
+          href="https://app.harbiz.io/checkout-form/fabianavendao1?product=invitation&lang=es"
           target="_blank"
           rel="noopener noreferrer"
           class="inline-block"
