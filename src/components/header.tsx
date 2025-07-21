@@ -2,10 +2,13 @@ import { component$, useSignal } from '@builder.io/qwik';
 import { LuLanguages, LuDumbbell, LuMenu, LuX } from "@qwikest/icons/lucide";
 import { _, getLocale, locales } from "compiled-i18n";
 import { Popover, buttonVariants } from './ui';
+import { useLocation } from '@builder.io/qwik-city';
 
 export default component$(() => {
     const currentLocale = getLocale();
     const menuOpen = useSignal(false);
+    const loc = useLocation();
+    const isHome = loc.url.pathname === `/${currentLocale}` || loc.url.pathname === `/${currentLocale}/`;
     const menuItems = [
         { label: _`Programas`, href: '#programa', anchor: true },
         { label: _`Testimonios`, href: '#testimonios', anchor: true },
@@ -28,21 +31,30 @@ export default component$(() => {
                     {menuItems.map((item) => (
                         <li key={item.href}>
                             {item.anchor ? (
-                                <a
-                                    href={item.href}
-                                    class="text-gray-700 hover:text-blue-600 cursor-pointer"
-                                    preventdefault:click
-                                    onClick$={() => {
-                                        const el = document.getElementById(item.href.replace('#', ''));
-                                        if (el) {
-                                            el.scrollIntoView({ behavior: 'smooth' });
-                                        } else {
-                                            window.location.href = item.href;
-                                        }
-                                    }}
-                                >
-                                    {item.label}
-                                </a>
+                                isHome ? (
+                                    <a
+                                        href={item.href}
+                                        class="text-gray-700 hover:text-blue-600 cursor-pointer"
+                                        preventdefault:click
+                                        onClick$={() => {
+                                            const el = document.getElementById(item.href.replace('#', ''));
+                                            if (el) {
+                                                el.scrollIntoView({ behavior: 'smooth' });
+                                            } else {
+                                                window.location.href = item.href;
+                                            }
+                                        }}
+                                    >
+                                        {item.label}
+                                    </a>
+                                ) : (
+                                    <a
+                                        href={`/${currentLocale}${item.href}`}
+                                        class="text-gray-700 hover:text-blue-600 cursor-pointer"
+                                    >
+                                        {item.label}
+                                    </a>
+                                )
                             ) : (
                                 <a href={item.href} class="text-gray-700 hover:text-blue-600">
                                     {item.label}
@@ -54,14 +66,14 @@ export default component$(() => {
             </nav>
             {/* Language Toggle Desktop */}
             <div class="hidden md:block">
-                <Popover.Root flip={false} gutter={8}>
-                    <Popover.Trigger class={buttonVariants({ look: 'outline' })}>
-                        <LuLanguages />
-                    </Popover.Trigger>
+            <Popover.Root flip={false} gutter={8}>
+                <Popover.Trigger class={buttonVariants({ look: 'outline' })}>
+                    <LuLanguages />
+                </Popover.Trigger>
                     <Popover.Panel style={{ marginRight: '12px' }}>
-                        {locales.map((locale) => (
-                            <a
-                                key={locale}
+                    {locales.map((locale) => (
+                        <a
+                            key={locale}
                                 class={`flex items-center px-4 py-2 rounded-lg text-base hover:bg-gray-100 transition-colors ${locale === currentLocale ? 'font-semibold text-[#6A0DAD] bg-gray-50' : 'text-gray-900'}`}
                                 href={`/${locale}`}
                             >
@@ -104,24 +116,34 @@ export default component$(() => {
                             {menuItems.map((item) => (
                                 <li key={item.href}>
                                     {item.anchor ? (
-                                        <a
-                                            href={item.href}
-                                            class="text-gray-700 hover:text-blue-600 text-lg"
-                                            preventdefault:click
-                                            onClick$={() => {
-                                                menuOpen.value = false;
-                                                setTimeout(() => {
-                                                    const el = document.getElementById(item.href.replace('#', ''));
-                                                    if (el) {
-                                                        el.scrollIntoView({ behavior: 'smooth' });
-                                                    } else {
-                                                        window.location.href = item.href;
-                                                    }
-                                                }, 100);
-                                            }}
-                                        >
-                                            {item.label}
-                                        </a>
+                                        isHome ? (
+                                            <a
+                                                href={item.href}
+                                                class="text-gray-700 hover:text-blue-600 text-lg"
+                                                preventdefault:click
+                                                onClick$={() => {
+                                                    menuOpen.value = false;
+                                                    setTimeout(() => {
+                                                        const el = document.getElementById(item.href.replace('#', ''));
+                                                        if (el) {
+                                                            el.scrollIntoView({ behavior: 'smooth' });
+                                                        } else {
+                                                            window.location.href = item.href;
+                                                        }
+                                                    }, 100);
+                                                }}
+                                            >
+                                                {item.label}
+                                            </a>
+                                        ) : (
+                                            <a
+                                                href={`/${currentLocale}${item.href}`}
+                                                class="text-gray-700 hover:text-blue-600 text-lg"
+                                                onClick$={() => { menuOpen.value = false; }}
+                                            >
+                                                {item.label}
+                                            </a>
+                                        )
                                     ) : (
                                         <a href={item.href} class="text-gray-700 hover:text-blue-600 text-lg">
                                             {item.label}
@@ -140,16 +162,16 @@ export default component$(() => {
                                         <a
                                             key={locale}
                                             class={`flex items-center px-4 py-2 rounded-lg text-base hover:bg-gray-100 transition-colors ${locale === currentLocale ? 'font-semibold text-[#6A0DAD] bg-gray-50' : 'text-gray-900'}`}
-                                            href={`/${locale}`}
-                                        >
-                                            {locale === currentLocale && (
+                            href={`/${locale}`}
+                        >
+                            {locale === currentLocale && (
                                                 <span class="mr-2 text-lg">✓</span>
-                                            )}
-                                            {locale === 'es' ? 'Español' : 'English'}
-                                        </a>
-                                    ))}
-                                </Popover.Panel>
-                            </Popover.Root>
+                            )}
+                            {locale === 'es' ? 'Español' : 'English'}
+                        </a>
+                    ))}
+                </Popover.Panel>
+            </Popover.Root>
                         </div>
                     </nav>
                 </div>
