@@ -10,7 +10,7 @@ export default component$(() => {
         { label: _`Programas`, href: '#programa', anchor: true },
         { label: _`Testimonios`, href: '#testimonios', anchor: true },
         { label: _`Acerca de`, href: '#acerca', anchor: true },
-        { label: _`Contacto`, href: '/contacto' },
+        { label: _`Contacto`, href: `/${currentLocale}/contacto` },
     ];
 
     // Para evitar hydration issues, solo usar scroll en el browser

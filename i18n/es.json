@@ -105,6 +105,18 @@
     "faq5a": "¡Sí! Hay opciones y adaptaciones para todos los niveles, incluso si nunca entrenaste antes.",
     "faq6q": "¿Qué pasa si no tengo experiencia en el gimnasio?",
     "faq6a": "No te preocupes, los programas incluyen instrucciones y videos para que puedas entrenar seguro y con confianza, aunque seas principiante. Además, tendrás contacto directo conmigo vía WhatsApp y, una vez adquirido el programa, contarás con una entrevista personal online para resolver todas tus dudas.",
-    "Functional Training Coach": "Funcional Training Coach"
+    "Functional Training Coach": "Funcional Training Coach",
+    "contactPhoneLabel": "Teléfono",
+    "contactPhonePlaceholder": "Tu teléfono (opcional)",
+    "contactNameLabel": "Nombre",
+    "contactNamePlaceholder": "Tu nombre",
+    "contactEmailLabel": "Email",
+    "contactEmailPlaceholder": "tu@email.com",
+    "contactMessageLabel": "Mensaje",
+    "contactMessagePlaceholder": "Escribe tu mensaje...",
+    "contactSendButton": "Enviar",
+    "contactSuccessMessage": "¡Mensaje enviado correctamente!",
+    "contactTitle": "Contacto",
+    "contactSubtitle": "¿Tenés dudas, consultas o querés entrenar conmigo? Completá el formulario y te responderé a la brevedad."
   }
 }
