@@ -117,6 +117,7 @@
     "contactSendButton": "Enviar",
     "contactSuccessMessage": "¡Mensaje enviado correctamente!",
     "contactTitle": "Contacto",
-    "contactSubtitle": "¿Tenés dudas, consultas o querés entrenar conmigo? Completá el formulario y te responderé a la brevedad."
+    "contactSubtitle": "¿Tenés dudas, consultas o querés entrenar conmigo? Completá el formulario y te responderé a la brevedad.",
+    "Nombre": ""
   }
 }
