@@ -14,6 +14,9 @@ importers:
       '@builder.io/qwik-city':
         specifier: ^1.14.1
         version: 1.14.1(acorn@8.15.0)(rollup@4.45.1)(typescript@5.4.5)(vite@5.3.5(@types/node@20.14.11))
+      '@emailjs/browser':
+        specifier: ^4.4.1
+        version: 4.4.1
       '@eslint/js':
         specifier: latest
         version: 9.31.0
@@ -241,6 +244,10 @@ packages:
   '@dependents/detective-less@4.1.0':
     resolution: {integrity: sha512-KrkT6qO5NxqNfy68sBl6CTSoJ4SNDIS5iQArkibhlbGU4LaDukZ3q2HIkh8aUKDio6o4itU4xDR7t82Y2eP1Bg==}
     engines: {node: '>=14'}
+
+  '@emailjs/browser@4.4.1':
+    resolution: {integrity: sha512-DGSlP9sPvyFba3to2A50kDtZ+pXVp/0rhmqs2LmbMS3I5J8FSOgLwzY2Xb4qfKlOVHh29EAutLYwe5yuEZmEFg==}
+    engines: {node: '>=14.0.0'}
 
   '@emnapi/core@1.4.4':
     resolution: {integrity: sha512-A9CnAbC6ARNMKcIcrQwq6HeHCjpcBZ5wSx4U01WXCqEKlrzB9F9315WDNHkrs2xbx7YjjSxbUYxuN6EQzpcY2g==}
@@ -7068,6 +7075,8 @@ snapshots:
     dependencies:
       gonzales-pe: 4.3.0
       node-source-walk: 6.0.2
+
+  '@emailjs/browser@4.4.1': {}
 
   '@emnapi/core@1.4.4':
     dependencies:
