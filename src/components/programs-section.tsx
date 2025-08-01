@@ -5,6 +5,7 @@ import { Button } from "./ui/button/button";
 export const ProgramsSection = component$(() => {
     const programs = [
       {
+        slug: "reto-1-transformacion",
         img: "/images/fabian-gym-training.jpg",
         alt: _`program1ImgAlt`,
         price: _`program1Price`,
@@ -19,10 +20,10 @@ export const ProgramsSection = component$(() => {
         title: _`program1Title`,
         subtitle: _`program1Subtitle`,
         desc: _`program1Desc`,
-        cta: _`program1Cta`,
-        link: "https://mpago.la/1rjmWz3",
+        cta: _`verDetalles`,
       },
       {
+        slug: "reto-2-progreso",
         img: "/images/fabian-handstand-reto2.jpeg",
         alt: _`program2ImgAlt`,
         price: _`program2Price`,
@@ -39,10 +40,10 @@ export const ProgramsSection = component$(() => {
         desc: _`program2Desc`,
         featuresLabel: _`program2FeaturesLabel`,
         features: _`program2Features`,
-        cta: _`program2Cta`,
-        link: "https://mpago.la/2axULch",
+        cta: _`verDetalles`,
       },
       {
+        slug: "fuerza-base",
         img: "/images/fabian-kettlebell.jpg",
         alt: _`program3ImgAlt`,
         price: _`program3Price`,
@@ -57,10 +58,10 @@ export const ProgramsSection = component$(() => {
         title: "Fuerza Base: Presencia Física (5 semanas)",
         subtitle: "Construyendo fuerza y estabilidad desde lo simple",
         desc: "Programa de fuerza de 5 semanas (2 días por semana) con enfoque full body. Día 1 centrado en empujes y Día 2 en tracciones. Se prioriza un ejercicio básico por sesión con más series para progresar en carga.",
-        cta: _`program3Cta`,
-        link: "https://mpago.la/17rjJve",
+        cta: _`verDetalles`,
       },
       {
+        slug: "hiit-compacto",
         img: "/images/fabian-gym-program.jpg",
         alt: _`program4ImgAlt`,
         price: _`program4Price`,
@@ -77,10 +78,10 @@ export const ProgramsSection = component$(() => {
         desc: _`program4Desc`,
         featuresLabel: _`program4FeaturesLabel`,
         features: _`program4Features`,
-        cta: _`program4Cta`,
-        link: "https://mpago.la/1LjB1z5",
+        cta: _`verDetalles`,
       },
       {
+        slug: "hiit-basico",
         img: "/images/playa-zoom.jpeg",
         alt: _`program5ImgAlt`,
         price: _`program5Price`,
@@ -95,10 +96,10 @@ export const ProgramsSection = component$(() => {
         title: _`program5Title`,
         subtitle: _`program5Subtitle`,
         desc: _`program5Desc`,
-        cta: _`program5Cta`,
-        link: "https://mpago.la/1FoSTny",
+        cta: _`verDetalles`,
       },
       {
+        slug: "piernas-frecuencia",
         img: "/images/hip-thrust.jpeg",
         alt: _`program6ImgAlt`,
         price: _`program6Price`,
@@ -115,8 +116,7 @@ export const ProgramsSection = component$(() => {
         desc: _`program6Desc`,
         featuresLabel: _`program6FeaturesLabel`,
         features: _`program6Features`,
-        cta: _`program6Cta`,
-        link: "https://mpago.la/1TGNuEC",
+        cta: _`verDetalles`,
       },
     ];
   return (
@@ -148,7 +148,7 @@ export const ProgramsSection = component$(() => {
                     <p class="text-sm text-[#4B4B4B]">{p.features}</p>
                   </div>
                 )}
-                <a href={p.link} target="_blank" rel="noopener noreferrer" class="inline-block w-full mt-auto">
+                <a href={`/es/program/${p.slug}`} class="inline-block w-full mt-auto">
                   <Button class={`${p.buttonColor} ${p.buttonHover} text-white px-4 py-3 text-sm md:text-base font-semibold rounded-lg transition-all transform hover:scale-105 w-full min-h-[48px] flex items-center justify-center`}>
                     {p.cta}
                   </Button>
