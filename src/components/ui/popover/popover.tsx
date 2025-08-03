@@ -12,7 +12,15 @@ const Root = component$<PropsOf<typeof HeadlessPopover.Root>>(
   },
 );
 
-const Trigger = HeadlessPopover.Trigger;
+const Trigger = component$<PropsOf<typeof HeadlessPopover.Trigger>>(
+  ({ ...props }) => {
+    return (
+      <HeadlessPopover.Trigger {...props}>
+        <Slot />
+      </HeadlessPopover.Trigger>
+    );
+  },
+);
 
 const Panel = component$<PropsOf<typeof HeadlessPopover.Panel>>(
   ({ ...props }) => {

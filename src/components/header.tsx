@@ -1,12 +1,12 @@
-import { component$, useSignal } from '@builder.io/qwik';
+import { component$, useSignal, useVisibleTask$, $ } from '@builder.io/qwik';
 import { LuLanguages, LuDumbbell, LuMenu, LuX } from "@qwikest/icons/lucide";
 import { _, getLocale, locales } from "compiled-i18n";
-import { Popover, buttonVariants } from './ui';
 import { useLocation } from '@builder.io/qwik-city';
 
 export default component$(() => {
     const currentLocale = getLocale();
     const menuOpen = useSignal(false);
+    const languageDropdownOpen = useSignal(false);
     const loc = useLocation();
     const isHome = loc.url.pathname === `/${currentLocale}` || loc.url.pathname === `/${currentLocale}/`;
     const menuItems = [
@@ -15,6 +15,23 @@ export default component$(() => {
         { label: _`Acerca de`, href: '#acerca', anchor: true },
         { label: _`Contacto`, href: `/${currentLocale}/contacto` },
     ];
+
+    // Cerrar dropdown al hacer click fuera
+    useVisibleTask$(({ cleanup }) => {
+        const handleClickOutside = (event: MouseEvent) => {
+            const target = event.target as HTMLElement;
+            if (!target.closest('.language-dropdown')) {
+                languageDropdownOpen.value = false;
+            }
+        };
+
+        document.addEventListener('click', handleClickOutside);
+        cleanup(() => document.removeEventListener('click', handleClickOutside));
+    });
+
+    const toggleLanguageDropdown = $(() => {
+        languageDropdownOpen.value = !languageDropdownOpen.value;
+    });
 
     return (
         <header class="flex items-center justify-between px-6 py-4 bg-white shadow relative">
@@ -64,16 +81,22 @@ export default component$(() => {
                 </ul>
             </nav>
             {/* Language Toggle Desktop */}
-            <div class="hidden md:block">
-            <Popover.Root flip={false} gutter={8}>
-                <Popover.Trigger class={buttonVariants({ look: 'outline' })}>
+            <div class="hidden md:block relative language-dropdown">
+                <button
+                    onClick$={toggleLanguageDropdown}
+                    class="flex items-center justify-center p-2 rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#6A0DAD] focus:ring-offset-2 transition-colors"
+                    aria-expanded={languageDropdownOpen.value}
+                    aria-haspopup="true"
+                >
                     <LuLanguages />
-                </Popover.Trigger>
-                    <Popover.Panel style={{ marginRight: '12px' }}>
-                    {locales.map((locale) => (
-                        <a
-                            key={locale}
-                                class={`flex items-center px-4 py-2 rounded-lg text-base hover:bg-gray-100 transition-colors ${locale === currentLocale ? 'font-semibold text-[#6A0DAD] bg-gray-50' : 'text-gray-900'}`}
+                </button>
+                
+                {languageDropdownOpen.value && (
+                    <div class="absolute right-0 mt-2 min-w-[180px] bg-white border border-gray-200 shadow-xl rounded-lg p-2 z-50">
+                        {locales.map((locale) => (
+                            <a
+                                key={locale}
+                                class={`block w-full text-left px-4 py-2 rounded-lg text-base hover:bg-gray-100 transition-colors cursor-pointer ${locale === currentLocale ? 'font-semibold text-[#6A0DAD] bg-gray-50' : 'text-gray-900'}`}
                                 href={`/${locale}`}
                             >
                                 {locale === currentLocale && (
@@ -82,8 +105,8 @@ export default component$(() => {
                                 {locale === 'es' ? 'Español' : 'English'}
                             </a>
                         ))}
-                    </Popover.Panel>
-                </Popover.Root>
+                    </div>
+                )}
             </div>
             {/* Hamburger Mobile */}
             <button
@@ -151,19 +174,26 @@ export default component$(() => {
                                 </li>
                             ))}
                         </ul>
-                        <div class="mt-8">
-                            <Popover.Root flip={false} gutter={8}>
-                                <Popover.Trigger class={buttonVariants({ look: 'outline' })}>
-                                    <LuLanguages />
-                                </Popover.Trigger>
-                                <Popover.Panel style={{ marginRight: '12px' }}>
+                        <div class="mt-8 relative language-dropdown">
+                            <button
+                                onClick$={toggleLanguageDropdown}
+                                class="flex items-center justify-center p-2 rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#6A0DAD] focus:ring-offset-2 transition-colors"
+                                aria-expanded={languageDropdownOpen.value}
+                                aria-haspopup="true"
+                            >
+                                <LuLanguages />
+                            </button>
+                            
+                            {languageDropdownOpen.value && (
+                                <div class="absolute right-0 mt-2 min-w-[180px] bg-white border border-gray-200 shadow-xl rounded-lg p-2 z-50">
                                     {locales.map((locale) => (
                                         <a
                                             key={locale}
-                                            class={`flex items-center px-4 py-2 rounded-lg text-base hover:bg-gray-100 transition-colors ${locale === currentLocale ? 'font-semibold text-[#6A0DAD] bg-gray-50' : 'text-gray-900'}`}
+                                            class={`block w-full text-left px-4 py-2 rounded-lg text-base hover:bg-gray-100 transition-colors cursor-pointer ${locale === currentLocale ? 'font-semibold text-[#6A0DAD] bg-gray-50' : 'text-gray-900'}`}
                                             href={`/${locale}`}
                                             onClick$={() => {
                                                 menuOpen.value = false;
+                                                languageDropdownOpen.value = false;
                                                 setTimeout(() => {
                                                     window.location.href = `/${locale}`;
                                                 }, 100);
@@ -175,8 +205,8 @@ export default component$(() => {
                                             {locale === 'es' ? 'Español' : 'English'}
                                         </a>
                                     ))}
-                                </Popover.Panel>
-                            </Popover.Root>
+                                </div>
+                            )}
                         </div>
                     </nav>
                 </div>
