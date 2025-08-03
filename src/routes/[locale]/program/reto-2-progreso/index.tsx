@@ -2,6 +2,7 @@ import { component$, useSignal, $ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { _ } from "compiled-i18n";
 import { Button } from "~/components/ui/button/button";
+import { Calendar } from "~/components/calendar";
 import { generateProgramMetadata, createProgramHead } from "~/utils/metadata";
 
 export default component$(() => {
@@ -254,6 +255,9 @@ export default component$(() => {
           </div>
         </div>
       </section>
+
+      {/* Calendar Section */}
+      <Calendar />
     </>
   );
 });
