@@ -2,6 +2,7 @@ import { component$, useSignal, $ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { _ } from "compiled-i18n";
 import { Button } from "~/components/ui/button/button";
+import { generateProgramMetadata, createProgramHead } from "~/utils/metadata";
 
 export default component$(() => {
   const currentTestimonial = useSignal(0);
@@ -59,7 +60,7 @@ export default component$(() => {
           <img 
             src={program.img} 
             alt={program.alt} 
-            class="w-full h-full object-cover"
+            class="w-full h-full object-cover object-top"
           />
           <div class="absolute inset-0 bg-black/50"></div>
         </div>
@@ -258,13 +259,41 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = () => {
-  return {
-    title: "Piernas 6 semanas (2 por semana) - Fabián Avendaño",
-    meta: [
-      {
-        name: "description",
-        content: "Especialización completa en miembros inferiores. Programa de 6 semanas para el desarrollo completo de piernas y glúteos.",
-      },
+  const program = {
+    img: "/images/hip-thrust.jpeg",
+    alt: _`program6ImgAlt`,
+    price: _`program6Price`,
+    priceColor: "bg-[#E91E63]",
+    borderColor: "border-[#E91E63]",
+    titleColor: "text-[#E91E63]",
+    subtitleColor: "text-[#C2185B]",
+    buttonColor: "bg-[#E91E63]",
+    buttonHover: "hover:bg-[#C2185B]",
+    level: "PIERNAS",
+    levelColor: "bg-[#E91E63]",
+    title: _`program6Title`,
+    subtitle: _`program6Subtitle`,
+    desc: _`program6Desc`,
+    featuresLabel: _`program6FeaturesLabel`,
+    features: _`program6Features`,
+    cta: _`program6Cta`,
+    link: "https://mpago.la/1TGNuEC",
+    duration: "6 semanas",
+    frequency: "3 días por semana",
+    equipment: ["Barbell", "Dumbbells", "Resistance Bands", "Step", "Bench"],
+    benefits: [
+      "Especialización completa en miembros inferiores",
+      "Progresión sistemática",
+      "3 días semanales",
+      "Desarrollo de glúteos y piernas",
+      "Técnicas avanzadas"
     ],
+    testimonials: [
+      "El programa de piernas transformó completamente mis glúteos y piernas.",
+      "Nunca había visto resultados tan buenos en mis piernas. ¡Increíble programa!"
+    ]
   };
+
+  const metadata = generateProgramMetadata(program, "piernas-frecuencia");
+  return createProgramHead(metadata);
 }; 

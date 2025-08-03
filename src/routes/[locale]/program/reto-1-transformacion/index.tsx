@@ -2,6 +2,7 @@ import { component$, useSignal, $ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { _ } from "compiled-i18n";
 import { Button } from "~/components/ui/button/button";
+import { generateProgramMetadata, createProgramHead } from "~/utils/metadata";
 
 export default component$(() => {
   const currentTestimonial = useSignal(0);
@@ -22,7 +23,7 @@ export default component$(() => {
     subtitle: _`program1Subtitle`,
     desc: _`program1Desc`,
     cta: _`program1Cta`,
-    link: "https://mpago.la/1rjmWz3",
+    link: "https://app.harbiz.io/checkout-form/fabianavendao1?product=invitation&lang=es",
     duration: "28 días",
     frequency: "5 días por semana",
     equipment: ["Kettlebells", "Dumbbells", "Resistance Bands", "Mat"],
@@ -57,7 +58,7 @@ export default component$(() => {
           <img 
             src={program.img} 
             alt={program.alt} 
-            class="w-full h-full object-cover"
+            class="w-full h-full object-cover object-top"
           />
           <div class="absolute inset-0 bg-black/50"></div>
         </div>
@@ -248,13 +249,39 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = () => {
-  return {
-    title: "Reto 1: TU TRANSFORMACIÓN EMPIEZA HOY - Fabián Avendaño",
-    meta: [
-      {
-        name: "description",
-        content: "Comienza con 7 Días de Acceso Totalmente Gratis. Un plan probado que combina fuerza, cardio y calma activa.",
-      },
+  const program = {
+    img: "/images/fabian-gym-training.jpg",
+    alt: _`program1ImgAlt`,
+    price: _`program1Price`,
+    priceColor: "bg-[#6A0DAD]",
+    borderColor: "border-[#6A0DAD]",
+    titleColor: "text-[#6A0DAD]",
+    subtitleColor: "text-[#8A2BE2]",
+    buttonColor: "bg-[#6A0DAD]",
+    buttonHover: "hover:bg-[#5A0B9D]",
+    level: "NIVEL INICIAL",
+    levelColor: "bg-[#6A0DAD]",
+    title: _`program1Title`,
+    subtitle: _`program1Subtitle`,
+    desc: _`program1Desc`,
+    cta: _`program1Cta`,
+    link: "https://app.harbiz.io/checkout-form/fabianavendao1?product=invitation&lang=es",
+    duration: "28 días",
+    frequency: "5 días por semana",
+    equipment: ["Kettlebells", "Dumbbells", "Resistance Bands", "Mat"],
+    benefits: [
+      "Acceso gratuito por 7 días",
+      "Rutinas de 45 minutos",
+      "Entrenamiento desde casa o gym",
+      "Combinación de fuerza, cardio y calma activa",
+      "Plan probado y efectivo"
     ],
+    testimonials: [
+      "Nunca pensé que podría lograr tanto en tan poco tiempo. El programa es increíble y Fabián siempre está ahí para motivarte.",
+      "La metodología funciona de verdad. Gané masa muscular y me siento más fuerte que nunca. Totalmente recomendado."
+    ]
   };
+
+  const metadata = generateProgramMetadata(program, "reto-1-transformacion");
+  return createProgramHead(metadata);
 }; 

@@ -2,6 +2,7 @@ import { component$, useSignal, $ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { _ } from "compiled-i18n";
 import { Button } from "~/components/ui/button/button";
+import { generateProgramMetadata, createProgramHead } from "~/utils/metadata";
 
 export default component$(() => {
   const currentTestimonial = useSignal(0);
@@ -57,7 +58,7 @@ export default component$(() => {
           <img 
             src={program.img} 
             alt={program.alt} 
-            class="w-full h-full object-cover"
+            class="w-full h-full object-cover object-top"
           />
           <div class="absolute inset-0 bg-black/50"></div>
         </div>
@@ -248,13 +249,39 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = () => {
-  return {
-    title: "Fuerza Base: Presencia Física - Fabián Avendaño",
-    meta: [
-      {
-        name: "description",
-        content: "Construyendo fuerza y estabilidad desde lo simple. Programa de 5 semanas con enfoque full body.",
-      },
+  const program = {
+    img: "/images/fabian-kettlebell.jpg",
+    alt: _`program3ImgAlt`,
+    price: _`program3Price`,
+    priceColor: "bg-[#FF6B35]",
+    borderColor: "border-[#FF6B35]",
+    titleColor: "text-[#FF6B35]",
+    subtitleColor: "text-[#D55A2A]",
+    buttonColor: "bg-[#FF6B35]",
+    buttonHover: "hover:bg-[#E55A2A]",
+    level: "FUERZA BASE",
+    levelColor: "bg-[#FF6B35]",
+    title: "Fuerza Base: Presencia Física (5 semanas)",
+    subtitle: "Construyendo fuerza y estabilidad desde lo simple",
+    desc: "Programa de fuerza de 5 semanas (2 días por semana) con enfoque full body. Día 1 centrado en empujes y Día 2 en tracciones. Se prioriza un ejercicio básico por sesión con más series para progresar en carga.",
+    cta: _`program3Cta`,
+    link: "https://mpago.la/17rjJve",
+    duration: "5 semanas",
+    frequency: "2 días por semana",
+    equipment: ["Barbell", "Dumbbells", "Squat Rack", "Bench"],
+    benefits: [
+      "Enfoque en fuerza base",
+      "Progresión sistemática",
+      "Movimientos funcionales",
+      "Desarrollo de estabilidad",
+      "Rutinas de 60 minutos"
     ],
+    testimonials: [
+      "Gané fuerza real que se nota en todo lo que hago.",
+      "El programa de fuerza base cambió mi forma de entrenar."
+    ]
   };
+
+  const metadata = generateProgramMetadata(program, "fuerza-base");
+  return createProgramHead(metadata);
 }; 

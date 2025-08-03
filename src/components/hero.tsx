@@ -1,6 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import { _ } from "compiled-i18n";
 import { Button } from "./ui/button/button";
+import { Link } from "@builder.io/qwik-city";
 
 export const Hero = component$(() => {
   return (
@@ -24,7 +25,7 @@ export const Hero = component$(() => {
         <p class="text-base md:text-xl lg:text-2xl mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed px-4">
           {_`hero_subtitle`}
         </p>
-        <a
+        <Link
           href="https://app.harbiz.io/checkout-form/fabianavendao1?product=invitation&lang=es"
           target="_blank"
           rel="noopener noreferrer"
@@ -33,7 +34,7 @@ export const Hero = component$(() => {
           <Button class="bg-white hover:bg-gray-100 text-[#2563eb] hover:text-[#1e3a8a] px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold rounded-lg transition-all transform hover:scale-105">
             {_`hero_cta`}
           </Button>
-        </a>
+        </Link>
       </div>
     </section>
   );

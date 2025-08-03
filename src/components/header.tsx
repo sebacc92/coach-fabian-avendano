@@ -16,7 +16,6 @@ export default component$(() => {
         { label: _`Contacto`, href: `/${currentLocale}/contacto` },
     ];
 
-    // Para evitar hydration issues, solo usar scroll en el browser
     return (
         <header class="flex items-center justify-between px-6 py-4 bg-white shadow relative">
             {/* Logo */}
@@ -162,16 +161,22 @@ export default component$(() => {
                                         <a
                                             key={locale}
                                             class={`flex items-center px-4 py-2 rounded-lg text-base hover:bg-gray-100 transition-colors ${locale === currentLocale ? 'font-semibold text-[#6A0DAD] bg-gray-50' : 'text-gray-900'}`}
-                            href={`/${locale}`}
-                        >
-                            {locale === currentLocale && (
+                                            href={`/${locale}`}
+                                            onClick$={() => {
+                                                menuOpen.value = false;
+                                                setTimeout(() => {
+                                                    window.location.href = `/${locale}`;
+                                                }, 100);
+                                            }}
+                                        >
+                                            {locale === currentLocale && (
                                                 <span class="mr-2 text-lg">✓</span>
-                            )}
-                            {locale === 'es' ? 'Español' : 'English'}
-                        </a>
-                    ))}
-                </Popover.Panel>
-            </Popover.Root>
+                                            )}
+                                            {locale === 'es' ? 'Español' : 'English'}
+                                        </a>
+                                    ))}
+                                </Popover.Panel>
+                            </Popover.Root>
                         </div>
                     </nav>
                 </div>

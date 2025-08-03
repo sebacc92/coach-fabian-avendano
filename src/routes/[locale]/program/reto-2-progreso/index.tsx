@@ -2,6 +2,7 @@ import { component$, useSignal, $ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { _ } from "compiled-i18n";
 import { Button } from "~/components/ui/button/button";
+import { generateProgramMetadata, createProgramHead } from "~/utils/metadata";
 
 export default component$(() => {
   const currentTestimonial = useSignal(0);
@@ -59,7 +60,7 @@ export default component$(() => {
           <img 
             src={program.img} 
             alt={program.alt} 
-            class="w-full h-full object-cover"
+            class="w-full h-full object-cover object-top"
           />
           <div class="absolute inset-0 bg-black/50"></div>
         </div>
@@ -258,13 +259,41 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = () => {
-  return {
-    title: "Reto 2: DEL PROGRESO A LA TRANSFORMACIÓN - Fabián Avendaño",
-    meta: [
-      {
-        name: "description",
-        content: "Para quienes buscan el siguiente nivel. Continuación natural del Reto 1 con técnicas avanzadas y mayor intensidad.",
-      },
+  const program = {
+    img: "/images/fabian-handstand-reto2.jpeg",
+    alt: _`program2ImgAlt`,
+    price: _`program2Price`,
+    priceColor: "bg-[#8A2BE2]",
+    borderColor: "border-[#8A2BE2]",
+    titleColor: "text-[#8A2BE2]",
+    subtitleColor: "text-[#6A0DAD]",
+    buttonColor: "bg-[#8A2BE2]",
+    buttonHover: "hover:bg-[#7B1FA2]",
+    level: "NIVEL BASICO/INTERMEDIO",
+    levelColor: "bg-[#8A2BE2]",
+    title: _`program2Title`,
+    subtitle: _`program2Subtitle`,
+    desc: _`program2Desc`,
+    featuresLabel: _`program2FeaturesLabel`,
+    features: _`program2Features`,
+    cta: _`program2Cta`,
+    link: "https://mpago.la/2axULch",
+    duration: "28 días",
+    frequency: "5 días por semana",
+    equipment: ["Kettlebells", "Dumbbells", "Pull-up Bar", "Resistance Bands"],
+    benefits: [
+      "Continuación del Reto 1",
+      "Técnicas avanzadas",
+      "Mayor intensidad",
+      "Plan para siguiente nivel",
+      "Fuerza, resistencia, calma y movimiento libre"
     ],
+    testimonials: [
+      "El Reto 2 me llevó a un nivel completamente nuevo. Los resultados son increíbles.",
+      "Transformación total. No solo cambió mi cuerpo, cambió mi mentalidad."
+    ]
   };
+
+  const metadata = generateProgramMetadata(program, "reto-2-progreso");
+  return createProgramHead(metadata);
 }; 

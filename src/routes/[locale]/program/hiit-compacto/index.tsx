@@ -59,7 +59,7 @@ export default component$(() => {
           <img 
             src={program.img} 
             alt={program.alt} 
-            class="w-full h-full object-cover"
+            class="w-full h-full object-cover object-top"
           />
           <div class="absolute inset-0 bg-black/50"></div>
         </div>
