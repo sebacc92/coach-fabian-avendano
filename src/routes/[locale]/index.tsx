@@ -1,6 +1,5 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { _ } from "compiled-i18n";
 import { Hero } from "../../components/hero";
 import { MethodologySection } from "../../components/methodology";
 import { ProgramsSection } from "../../components/programs-section";
@@ -22,13 +21,29 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = () => {
-  const title = _`Welcome to Qwik`;
+  const title = "Coach Fabian Avendaño - Programas de Entrenamiento Personalizado | Transformación Física y Mental";
   return {
     title,
     meta: [
       {
         name: "description",
-        content: "Qwik site description",
+        content: "Descubre programas de entrenamiento personalizado con Coach Fabian Avendaño. Retos de transformación, HIIT, fuerza base y más. Transforma tu cuerpo y mente con metodología probada.",
+      },
+      {
+        name: "keywords",
+        content: "entrenamiento personal, coach personal, transformación física, retos fitness, HIIT, fuerza base, entrenamiento en casa, fitness online",
+      },
+      {
+        property: "og:title",
+        content: "Coach Fabian Avendaño - Programas de Entrenamiento Personalizado",
+      },
+      {
+        property: "og:description",
+        content: "Programas de entrenamiento personalizado para transformar tu cuerpo y mente. Retos, HIIT, fuerza base y más.",
+      },
+      {
+        property: "og:type",
+        content: "website",
       },
     ],
   };
