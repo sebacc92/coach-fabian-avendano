@@ -129,7 +129,7 @@ export const ProgramsSection = component$(() => {
           {programs.map((p, i) => (
             <div key={i} class={`border-2 ${p.borderColor} shadow-2xl rounded-lg flex flex-col bg-white`}>
               <div class="relative h-64 md:h-80 rounded-t-lg overflow-hidden">
-                <img src={p.img} alt={p.alt} class={`w-full h-full rounded-t-lg ${i === 5 ? 'object-[0_30%]' : 'object-top'}`} />
+                <img src={p.img} alt={p.alt} class={`w-full h-full rounded-t-lg object-cover ${i === 5 ? 'object-[0_30%]' : i === 1 ? 'object-center' : 'object-top'}`} />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-t-lg"></div>
                 <div class="absolute top-4 right-4">
                   <span class={`${p.priceColor} text-white px-3 py-1 rounded-full text-lg font-bold`}>{p.price}</span>
