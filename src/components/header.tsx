@@ -1,7 +1,7 @@
 import { component$, useSignal, useVisibleTask$, $ } from '@builder.io/qwik';
 import { LuLanguages, LuDumbbell, LuMenu, LuX } from "@qwikest/icons/lucide";
 import { _, getLocale, locales } from "compiled-i18n";
-import { useLocation } from '@builder.io/qwik-city';
+import { Link, useLocation } from '@builder.io/qwik-city';
 
 export default component$(() => {
     const currentLocale = getLocale();
@@ -36,11 +36,13 @@ export default component$(() => {
     return (
         <header class="flex items-center justify-between px-6 py-4 bg-white shadow relative">
             {/* Logo */}
-            <div class="flex items-center">
-                <LuDumbbell class="h-10 w-10 text-[#6A0DAD] mr-3" />
-                <span class="font-bold text-xl hidden sm:inline">Coach Fabian Avendaño</span>
-                <span class="font-bold text-lg sm:hidden">F. Avendaño</span>
-            </div>
+            <Link href="/">
+                <div class="flex items-center">
+                    <LuDumbbell class="h-10 w-10 text-[#6A0DAD] mr-3" />
+                    <span class="font-bold text-xl hidden sm:inline">Coach Fabian Avendaño</span>
+                    <span class="font-bold text-lg sm:hidden">F. Avendaño</span>
+                </div>
+            </Link>
             {/* Navigation Desktop */}
             <nav class="hidden md:block">
                 <ul class="flex space-x-6">

@@ -7,7 +7,7 @@ export default component$(() => {
   const currentTestimonial = useSignal(0);
 
   const program = {
-    img: "/images/fabian-gym-program.jpg",
+    img: "/images/1.jpeg",
     alt: _`program4ImgAlt`,
     price: _`program4Price`,
     priceColor: "bg-[#9C27B0]",
@@ -59,7 +59,7 @@ export default component$(() => {
           <img 
             src={program.img} 
             alt={program.alt} 
-            class="w-full h-full object-cover object-top"
+            class="w-full h-full object-cover object-center"
           />
           <div class="absolute inset-0 bg-black/50"></div>
         </div>
