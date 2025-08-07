@@ -1,12 +1,18 @@
 import { component$, useSignal, $ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { _ } from "compiled-i18n";
+import { _, getLocale } from "compiled-i18n";
 import { Button } from "~/components/ui/button/button";
 import { Calendar } from "~/components/calendar";
 import { generateProgramMetadata, createProgramHead } from "~/utils/metadata";
 
 export default component$(() => {
   const currentTestimonial = useSignal(0);
+  const currentLocale = getLocale();
+  
+  // Define the link based on locale
+  const programLink = currentLocale === 'en' 
+    ? "https://my.playbookapp.io/fabian-avendano/programs/challenge-2-from-progress-to-transformation/34697"
+    : "https://app.harbiz.io/checkout-form/fabianavendao1?product=invitation&lang=es";
 
   const program = {
     img: "/images/fabian-handstand-reto2.jpeg",
@@ -26,7 +32,7 @@ export default component$(() => {
     featuresLabel: _`program2FeaturesLabel`,
     features: _`program2Features`,
     cta: _`program2Cta`,
-    link: "https://mpago.la/2axULch",
+    link: programLink,
     duration: "28 días",
     frequency: "5 días por semana",
     equipment: ["Kettlebells", "Dumbbells", "Pull-up Bar", "Resistance Bands"],
@@ -76,6 +82,17 @@ export default component$(() => {
           <p class="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto">
             {program.subtitle}
           </p>
+          
+          {/* Platform Information */}
+          <div class="mb-6 md:mb-8">
+            <p class="text-sm md:text-base text-white/80 mb-2">
+              {_`platformInfoFree`}
+            </p>
+            <p class="text-xs md:text-sm text-white/70 max-w-2xl mx-auto">
+              {_`platformTrust`}
+            </p>
+          </div>
+          
           <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <div class={`${program.priceColor} text-white px-8 py-4 rounded-full text-2xl font-bold`}>
               {program.price}
@@ -263,6 +280,13 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = () => {
+  const currentLocale = getLocale();
+  
+  // Define the link based on locale
+  const programLink = currentLocale === 'en' 
+    ? "https://my.playbookapp.io/fabian-avendano/programs/challenge-2-from-progress-to-transformation/34697"
+    : "https://app.harbiz.io/checkout-form/fabianavendao1?product=invitation&lang=es";
+
   const program = {
     img: "/images/fabian-handstand-reto2.jpeg",
     alt: _`program2ImgAlt`,
@@ -281,7 +305,7 @@ export const head: DocumentHead = () => {
     featuresLabel: _`program2FeaturesLabel`,
     features: _`program2Features`,
     cta: _`program2Cta`,
-    link: "https://mpago.la/2axULch",
+    link: programLink,
     duration: "28 días",
     frequency: "5 días por semana",
     equipment: ["Kettlebells", "Dumbbells", "Pull-up Bar", "Resistance Bands"],

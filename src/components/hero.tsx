@@ -1,9 +1,16 @@
 import { component$ } from "@builder.io/qwik";
-import { _ } from "compiled-i18n";
+import { _, getLocale } from "compiled-i18n";
 import { Button } from "./ui/button/button";
 import { Link } from "@builder.io/qwik-city";
 
 export const Hero = component$(() => {
+  const currentLocale = getLocale();
+  
+  // Define the link based on locale
+  const heroLink = currentLocale === 'en' 
+    ? "https://my.playbookapp.io/fabian-avendano/programs/challange-1-your-transformation-starts-today/33404"
+    : "https://app.harbiz.io/checkout-form/fabianavendao1?product=invitation&lang=es";
+
   return (
     <section class="relative min-h-screen flex items-center justify-center px-4">
       {/* Background image and overlay */}
@@ -25,8 +32,19 @@ export const Hero = component$(() => {
         <p class="text-base md:text-xl lg:text-2xl mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed px-4">
           {_`hero_subtitle`}
         </p>
+        
+        {/* Platform Information */}
+        <div class="mb-6 md:mb-8">
+          <p class="text-sm md:text-base text-white/80 mb-2">
+            {_`platformInfoFree`}
+          </p>
+          <p class="text-xs md:text-sm text-white/70 max-w-2xl mx-auto">
+            {_`platformTrust`}
+          </p>
+        </div>
+        
         <Link
-          href="https://app.harbiz.io/checkout-form/fabianavendao1?product=invitation&lang=es"
+          href={heroLink}
           target="_blank"
           rel="noopener noreferrer"
           class="inline-block"
