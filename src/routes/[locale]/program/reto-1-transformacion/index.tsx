@@ -26,7 +26,7 @@ export default component$(() => {
     cta: _`program1Cta`,
     link: "https://app.harbiz.io/checkout-form/fabianavendao1?product=invitation&lang=es",
     duration: "28 días",
-    frequency: "5 días por semana",
+    frequency: "6 días por semana",
     equipment: ["Kettlebells", "Dumbbells", "Resistance Bands", "Mat"],
     benefits: [
       "Acceso gratuito por 7 días",
@@ -282,7 +282,7 @@ export const head: DocumentHead = () => {
     cta: _`program1Cta`,
     link: "https://app.harbiz.io/checkout-form/fabianavendao1?product=invitation&lang=es",
     duration: "28 días",
-    frequency: "5 días por semana",
+    frequency: "5/6 días por semana",
     equipment: ["Kettlebells", "Dumbbells", "Resistance Bands", "Mat"],
     benefits: [
       "Acceso gratuito por 7 días",

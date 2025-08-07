@@ -34,7 +34,7 @@ export default component$(() => {
     cta: _`program2Cta`,
     link: programLink,
     duration: "28 días",
-    frequency: "5 días por semana",
+    frequency: "6 días por semana",
     equipment: ["Kettlebells", "Dumbbells", "Pull-up Bar", "Resistance Bands"],
     benefits: [
       "Continuación del Reto 1",
@@ -307,7 +307,7 @@ export const head: DocumentHead = () => {
     cta: _`program2Cta`,
     link: programLink,
     duration: "28 días",
-    frequency: "5 días por semana",
+    frequency: "6 días por semana",
     equipment: ["Kettlebells", "Dumbbells", "Pull-up Bar", "Resistance Bands"],
     benefits: [
       "Continuación del Reto 1",

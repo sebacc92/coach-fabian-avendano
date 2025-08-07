@@ -1,11 +1,19 @@
 import { component$, useSignal, $ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { _ } from "compiled-i18n";
+import { _, getLocale } from "compiled-i18n";
 import { Button } from "~/components/ui/button/button";
 import { generateProgramMetadata, createProgramHead } from "~/utils/metadata";
 
 export default component$(() => {
   const currentTestimonial = useSignal(0);
+  const currentLocale = getLocale();
+  
+  // Function to get equipment based on locale
+  const getEquipment = () => {
+    return currentLocale === 'en' 
+      ? ["Barbell", "Dumbbells", "Resistance Bands", "Step", "Bench"]
+      : ["Barra", "Mancuernas", "Bandas de Resistencia", "Step", "Banco"];
+  };
 
   const program = {
     img: "/images/hip-thrust.jpeg",
@@ -25,10 +33,10 @@ export default component$(() => {
     featuresLabel: _`program6FeaturesLabel`,
     features: _`program6Features`,
     cta: _`program6Cta`,
-    link: "https://mpago.la/1TGNuEC",
+    link: "https://mpago.la/1B8SeYt",
     duration: "6 semanas",
     frequency: "3 días por semana",
-    equipment: ["Barbell", "Dumbbells", "Resistance Bands", "Step", "Bench"],
+    equipment: getEquipment(),
     benefits: [
       "Especialización completa en miembros inferiores",
       "Progresión sistemática",
@@ -270,6 +278,15 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = () => {
+  const currentLocale = getLocale();
+  
+  // Function to get equipment based on locale
+  const getEquipment = () => {
+    return currentLocale === 'en' 
+      ? ["Barbell", "Dumbbells", "Resistance Bands", "Step", "Bench"]
+      : ["Barra", "Mancuernas", "Bandas de Resistencia", "Step", "Banco"];
+  };
+
   const program = {
     img: "/images/hip-thrust.jpeg",
     alt: _`program6ImgAlt`,
@@ -288,10 +305,10 @@ export const head: DocumentHead = () => {
     featuresLabel: _`program6FeaturesLabel`,
     features: _`program6Features`,
     cta: _`program6Cta`,
-    link: "https://mpago.la/1TGNuEC",
+    link: "https://mpago.la/1B8SeYt",
     duration: "6 semanas",
     frequency: "3 días por semana",
-    equipment: ["Barbell", "Dumbbells", "Resistance Bands", "Step", "Bench"],
+    equipment: getEquipment(),
     benefits: [
       "Especialización completa en miembros inferiores",
       "Progresión sistemática",
