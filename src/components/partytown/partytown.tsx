@@ -8,6 +8,7 @@ import { partytownSnippet } from "@builder.io/partytown/integration";
  *
  * @public
  */
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface PartytownProps extends PartytownConfig {}
 
 /**
