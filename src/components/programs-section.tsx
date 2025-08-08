@@ -131,7 +131,7 @@ export const ProgramsSection = component$(() => {
               <div class="relative h-64 md:h-80 rounded-t-lg overflow-hidden">
                 <img src={p.img} alt={p.alt} class={`w-full h-full rounded-t-lg object-cover ${i === 5 ? 'object-[0_30%]' : i === 3 ? 'object-center' : 'object-top'}`} />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-t-lg"></div>
-                <div class="absolute top-4 right-4">
+                <div class="absolute top-1 right-1">
                   <span class={`${p.priceColor} text-white px-3 py-1 rounded-full text-lg font-bold`}>{p.price}</span>
                 </div>
                 <div class="absolute bottom-4 left-4 text-white">
