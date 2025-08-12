@@ -191,23 +191,23 @@ export default component$(() => {
             {programs.map((program) => {
               const colors = getColorClasses(program.color);
               return (
-                <div key={program.id} class="bg-white rounded-xl shadow-lg overflow-hidden flex h-48">
+                <div key={program.id} class="bg-white rounded-xl shadow-lg overflow-hidden flex h-56">
                   <div class="w-48 flex-shrink-0">
                     <img src={program.img} alt={program.alt} class="w-full h-full object-cover object-top" />
                   </div>
-                  <div class="flex-1 p-6">
+                  <div class="flex-1 p-6 flex flex-col">
                     <div class="flex items-center justify-between mb-3">
                       <span class={`${colors.text} text-sm font-medium`}>{program.level}</span>
                       <span class="text-xl font-bold text-gray-800">{program.price}</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-800 mb-2">{program.title}</h3>
                     <p class="text-gray-600 mb-3">{program.subtitle}</p>
-                    <p class="text-sm text-gray-700 mb-4">{program.desc}</p>
-                    <div class="flex items-center justify-between">
-                      <div class="text-sm text-gray-600">
+                    <p class="text-sm text-gray-700 mb-4 flex-1">{program.desc}</p>
+                    <div class="flex items-center justify-between mt-auto">
+                      <div class="text-sm text-gray-600 flex-1 mr-4">
                         <span class="font-medium">Incluye:</span> {program.features}
                       </div>
-                      <Button class={`${colors.bg} ${colors.hover} text-white px-6 py-2 rounded-lg text-sm font-medium`}>
+                      <Button class={`${colors.bg} ${colors.hover} text-white px-6 py-2 rounded-lg text-sm font-medium flex-shrink-0`}>
                         {program.cta}
                       </Button>
                     </div>
