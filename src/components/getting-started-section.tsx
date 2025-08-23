@@ -60,6 +60,15 @@ export const GettingStartedSection = component$(() => {
                     <div class="hidden sm:block lg:hidden absolute top-1/2 left-1/2 w-1 h-8 bg-gradient-to-b from-blue-500 to-purple-600 transform -translate-x-1/2 -translate-y-1/2 z-0"></div>
                   </>
                 )}
+                {/* Special line for the last step (4) to complete the flow */}
+                {index === steps.length - 1 && (
+                  <>
+                    {/* Horizontal line for desktop - extends to the right */}
+                    <div class="hidden lg:block absolute top-1/2 left-1/2 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-600 transform -translate-x-1/2 -translate-y-1/2 z-0"></div>
+                    {/* Vertical line for mobile/tablet - extends downward */}
+                    <div class="hidden sm:block lg:hidden absolute top-1/2 left-1/2 w-1 h-8 bg-gradient-to-b from-blue-500 to-purple-600 transform -translate-x-1/2 -translate-y-1/2 z-0"></div>
+                  </>
+                )}
               </div>
 
               {/* Image with pure transparency - no background container */}
