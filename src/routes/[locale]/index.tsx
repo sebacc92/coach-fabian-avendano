@@ -3,6 +3,7 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 import { Hero } from "../../components/hero";
 import { MethodologySection } from "../../components/methodology";
 import { ProgramsSection } from "../../components/programs-section";
+import { GettingStartedSection } from "../../components/getting-started-section";
 import { TestimonialsSection } from "../../components/testimonials-section";
 import { FAQSection } from "../../components/faq-section";
 import { AboutSection } from "../../components/about-section";
@@ -13,6 +14,7 @@ export default component$(() => {
       <Hero />
       <MethodologySection />
       <ProgramsSection />
+      <GettingStartedSection />
       <TestimonialsSection />
       <FAQSection />
       <AboutSection />
