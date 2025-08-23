@@ -46,34 +46,30 @@ export const GettingStartedSection = component$(() => {
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {steps.map((step, index) => (
             <div key={step.id} class="text-center group relative">
-              {/* Step Number with improved styling */}
+              {/* Step Number with improved styling and symmetric lines */}
               <div class="relative mb-6">
-                <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-blue-500 via-purple-600 to-blue-700 rounded-full flex items-center justify-center mx-auto text-white text-xl md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-all duration-300 border-4 border-white">
+                <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-blue-500 via-purple-600 to-blue-700 rounded-full flex items-center justify-center mx-auto text-white text-xl md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-all duration-300 border-4 border-white relative z-10">
                   {step.id}
                 </div>
-                {/* Connecting Lines - Responsive */}
+                {/* Connecting Lines - Symmetric and properly positioned */}
                 {index < steps.length - 1 && (
                   <>
-                    {/* Horizontal line for desktop */}
-                    <div class="hidden lg:block absolute top-1/2 left-full w-full h-1 bg-gradient-to-r from-blue-500 to-purple-600 transform -translate-y-1/2 z-0"></div>
-                    {/* Vertical line for mobile/tablet */}
-                    <div class="hidden sm:block lg:hidden absolute top-full left-1/2 w-1 h-8 bg-gradient-to-b from-blue-500 to-purple-600 transform -translate-x-1/2 z-0"></div>
+                    {/* Horizontal line for desktop - centered and symmetric */}
+                    <div class="hidden lg:block absolute top-1/2 left-1/2 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-600 transform -translate-x-1/2 -translate-y-1/2 z-0"></div>
+                    {/* Vertical line for mobile/tablet - centered and symmetric */}
+                    <div class="hidden sm:block lg:hidden absolute top-1/2 left-1/2 w-1 h-8 bg-gradient-to-b from-blue-500 to-purple-600 transform -translate-x-1/2 -translate-y-1/2 z-0"></div>
                   </>
                 )}
               </div>
 
-              {/* Image with transparent background support */}
-              <div class="mb-6 relative">
-                <div class="w-full rounded-2xl overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300 bg-transparent">
-                  <img 
-                    src={step.image} 
-                    alt={`${step.title} - Paso ${step.id}`}
-                    class="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-300 mix-blend-multiply"
-                    style="background: transparent;"
-                  />
-                </div>
-                {/* Subtle overlay on hover */}
-                <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none"></div>
+              {/* Image with pure transparency - no background container */}
+              <div class="mb-6 relative flex justify-center">
+                <img 
+                  src={step.image} 
+                  alt={`${step.title} - Paso ${step.id}`}
+                  class="w-full max-w-xs h-auto object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-lg"
+                  style="background: transparent; mix-blend-mode: multiply;"
+                />
               </div>
 
               {/* Content */}
