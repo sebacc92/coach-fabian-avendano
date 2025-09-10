@@ -34,7 +34,7 @@ export default component$(() => {
     });
 
     return (
-        <header class="flex items-center justify-between px-6 py-4 bg-white shadow relative">
+        <header class="flex items-center px-6 py-4 bg-white shadow relative">
             {/* Logo */}
             <Link href="/">
                 <div class="flex items-center">
@@ -44,7 +44,7 @@ export default component$(() => {
                 </div>
             </Link>
             {/* Navigation Desktop */}
-            <nav class="hidden md:block">
+            <nav class="hidden md:block ml-auto mr-6">
                 <ul class="flex space-x-6">
                     {menuItems.map((item) => (
                         <li key={item.href}>
@@ -112,7 +112,7 @@ export default component$(() => {
             </div>
             {/* Hamburger Mobile */}
             <button
-                class="md:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-[#6A0DAD]"
+                class="md:hidden ml-auto p-2 rounded focus:outline-none focus:ring-2 focus:ring-[#6A0DAD]"
                 aria-label="Open menu"
                 onClick$={() => (menuOpen.value = true)}
             >

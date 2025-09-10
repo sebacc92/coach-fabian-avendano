@@ -16,6 +16,46 @@ export default component$(() => {
       <ProgramsSection />
       <GettingStartedSection />
       <TestimonialsSection />
+      <section class="mx-auto max-w-7xl px-4 py-12">
+        <h2 class="text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
+          Videos
+        </h2>
+        <div class="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="w-full overflow-hidden rounded-xl shadow">
+            <video
+              class="h-full w-full"
+              controls
+              preload="metadata"
+              playsInline
+            >
+              <source src="/videos/1.mp4" type="video/mp4" />
+              Tu navegador no soporta el elemento de video.
+            </video>
+          </div>
+          <div class="w-full overflow-hidden rounded-xl shadow">
+            <video
+              class="h-full w-full"
+              controls
+              preload="metadata"
+              playsInline
+            >
+              <source src="/videos/2.mp4" type="video/mp4" />
+              Tu navegador no soporta el elemento de video.
+            </video>
+          </div>
+          <div class="w-full overflow-hidden rounded-xl shadow">
+            <video
+              class="h-full w-full"
+              controls
+              preload="metadata"
+              playsInline
+            >
+              <source src="/videos/3.mp4" type="video/mp4" />
+              Tu navegador no soporta el elemento de video.
+            </video>
+          </div>
+        </div>
+      </section>
       <FAQSection />
       <AboutSection />
     </>
