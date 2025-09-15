@@ -19,11 +19,11 @@ export default component$(() => {
       <ProgramsSection />
       <GettingStartedSection />
       {/* Videos Cover Section */}
-      <section class="relative py-16 md:py-24 bg-gradient-to-br from-green-50 to-blue-50">
+      <section class="relative py-16 md:py-24 bg-gradient-to-br from-blue-50 to-blue-100">
         <div class="mx-auto max-w-7xl px-4">
           <div class="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <div class="inline-block bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              <div class="inline-block bg-[#1e3a8a] text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
                 🎁 CONTENIDO GRATUITO
               </div>
               <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -35,7 +35,7 @@ export default component$(() => {
               </p>
               <div class="flex flex-col sm:flex-row gap-4">
                 <Link href={videosPath}>
-                  <button class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors transform hover:scale-105">
+                  <button class="bg-[#1e3a8a] hover:bg-[#1e40af] text-white px-8 py-4 rounded-lg font-semibold transition-colors transform hover:scale-105">
                     Ver Videos Gratuitos
                   </button>
                 </Link>
@@ -46,7 +46,7 @@ export default component$(() => {
               </div>
             </div>
             <div class="relative">
-              <div class="aspect-video bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl shadow-2xl flex items-center justify-center">
+              <div class="aspect-video bg-gradient-to-br from-[#1e3a8a] to-[#1e40af] rounded-2xl shadow-2xl flex items-center justify-center">
                 <div class="text-center text-white">
                   <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
@@ -57,7 +57,7 @@ export default component$(() => {
                   <p class="text-sm opacity-90">Gratuitos para toda la comunidad</p>
                 </div>
               </div>
-              <div class="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+              <div class="absolute -top-4 -right-4 bg-[#1e3a8a] text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
                 ¡GRATIS!
               </div>
             </div>

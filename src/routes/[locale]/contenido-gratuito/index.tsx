@@ -7,7 +7,8 @@ export default component$(() => {
     { src: "/videos/1.mp4", title: "Caminata de oso" },
     { src: "/videos/2.mp4", title: "Remo invertido con banda" },
     { src: "/videos/3.mp4", title: "Buenos días con barra" },
-    { src: "/videos/4.mp4", title: "Hip Thrust" }
+    { src: "/videos/4.mp4", title: "Hip Thrust" },
+    { src: "/videos/30.mp4", title: "Caminata de granjero" }
   ];
 
   return (
@@ -24,7 +25,7 @@ export default component$(() => {
         </div>
         
         <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-          <div class="inline-block bg-green-500 px-6 py-3 rounded-full text-lg font-semibold mb-6">
+          <div class="inline-block bg-[#1e3a8a] px-6 py-3 rounded-full text-lg font-semibold mb-6">
             🎁 CONTENIDO GRATUITO
           </div>
           <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
@@ -44,7 +45,7 @@ export default component$(() => {
           </div>
           
           <a href="#videos">
-            <Button class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 text-lg font-bold rounded-lg transition-all transform hover:scale-105">
+            <Button class="bg-[#1e3a8a] hover:bg-[#1e40af] text-white px-8 py-4 text-lg font-bold rounded-lg transition-all transform hover:scale-105">
               Ver Videos Gratuitos
             </Button>
           </a>
@@ -101,7 +102,7 @@ export default component$(() => {
           
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="text-center p-6 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow">
-              <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div class="w-16 h-16 bg-[#1e3a8a] rounded-full flex items-center justify-center mx-auto mb-4">
                 <span class="text-white text-2xl">🎥</span>
               </div>
               <h3 class="text-xl font-bold text-gray-800 mb-3">Videos Semanales</h3>
@@ -109,7 +110,7 @@ export default component$(() => {
             </div>
             
             <div class="text-center p-6 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow">
-              <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div class="w-16 h-16 bg-[#1e3a8a] rounded-full flex items-center justify-center mx-auto mb-4">
                 <span class="text-white text-2xl">💡</span>
               </div>
               <h3 class="text-xl font-bold text-gray-800 mb-3">Tips y Consejos</h3>
@@ -117,7 +118,7 @@ export default component$(() => {
             </div>
             
             <div class="text-center p-6 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow">
-              <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div class="w-16 h-16 bg-[#1e3a8a] rounded-full flex items-center justify-center mx-auto mb-4">
                 <span class="text-white text-2xl">🤝</span>
               </div>
               <h3 class="text-xl font-bold text-gray-800 mb-3">Comunidad Activa</h3>
@@ -125,7 +126,7 @@ export default component$(() => {
             </div>
             
             <div class="text-center p-6 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow">
-              <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div class="w-16 h-16 bg-[#1e3a8a] rounded-full flex items-center justify-center mx-auto mb-4">
                 <span class="text-white text-2xl">🏠</span>
               </div>
               <h3 class="text-xl font-bold text-gray-800 mb-3">Desde Casa</h3>
@@ -133,7 +134,7 @@ export default component$(() => {
             </div>
             
             <div class="text-center p-6 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow">
-              <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div class="w-16 h-16 bg-[#1e3a8a] rounded-full flex items-center justify-center mx-auto mb-4">
                 <span class="text-white text-2xl">⚡</span>
               </div>
               <h3 class="text-xl font-bold text-gray-800 mb-3">Rutinas Efectivas</h3>
@@ -141,7 +142,7 @@ export default component$(() => {
             </div>
             
             <div class="text-center p-6 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow">
-              <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div class="w-16 h-16 bg-[#1e3a8a] rounded-full flex items-center justify-center mx-auto mb-4">
                 <span class="text-white text-2xl">🎯</span>
               </div>
               <h3 class="text-xl font-bold text-gray-800 mb-3">Objetivos Claros</h3>
@@ -162,7 +163,7 @@ export default component$(() => {
             Únete a nuestra comunidad y comienza tu transformación hoy mismo. Contenido 100% gratuito y actualizado semanalmente.
           </p>
           <a href="#videos">
-            <Button class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 text-lg font-bold rounded-lg transition-all transform hover:scale-105">
+            <Button class="bg-[#1e3a8a] hover:bg-[#1e40af] text-white px-8 py-4 text-lg font-bold rounded-lg transition-all transform hover:scale-105">
               Ver Videos Gratuitos
             </Button>
           </a>
