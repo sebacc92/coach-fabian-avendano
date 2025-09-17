@@ -12,7 +12,7 @@ export const Hero = component$(() => {
     : "https://app.harbiz.io/checkout-form/fabianavendao1?product=invitation&lang=es";
 
   return (
-    <section class="relative min-h-screen flex items-center justify-center px-4">
+    <section class="relative min-h-screen flex items-center justify-center px-4 pt-20">
       {/* Background image and overlay */}
       <div class="absolute inset-0">
         {/* Usar una imagen de fondo, cambiar src cuando esté disponible */}
