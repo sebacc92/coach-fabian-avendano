@@ -126,33 +126,6 @@ export default component$(() => {
                             Comienza a entrenar
                         </button>
                     </Link>
-                    <div class="relative language-dropdown">
-                        <button
-                            onClick$={toggleLanguageDropdown}
-                            class="flex items-center justify-center p-2 rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#6A0DAD] focus:ring-offset-2 transition-colors"
-                            aria-expanded={languageDropdownOpen.value}
-                            aria-haspopup="true"
-                        >
-                            <LuLanguages />
-                        </button>
-                        
-                        {languageDropdownOpen.value && (
-                            <div class="absolute right-0 mt-2 min-w-[180px] bg-white border border-gray-200 shadow-xl rounded-lg p-2 z-50">
-                                {locales.map((locale) => (
-                                    <a
-                                        key={locale}
-                                        class={`block w-full text-left px-4 py-2 rounded-lg text-base hover:bg-gray-100 transition-colors cursor-pointer ${locale === currentLocale ? 'font-semibold text-[#6A0DAD] bg-gray-50' : 'text-gray-900'}`}
-                                        href={`/${locale}`}
-                                    >
-                                        {locale === currentLocale && (
-                                            <span class="mr-2 text-lg">✓</span>
-                                        )}
-                                        {locale === 'es' ? 'Español' : 'English'}
-                                    </a>
-                                ))}
-                            </div>
-                        )}
-                    </div>
                 </div>
                 
                 {/* Hamburger Mobile */}

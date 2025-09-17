@@ -1,13 +1,13 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { Link, useLocation } from "@builder.io/qwik-city";
-import { Hero } from "../../components/hero";
-import { MethodologySection } from "../../components/methodology";
-import { ProgramsSection } from "../../components/programs-section";
-import { GettingStartedSection } from "../../components/getting-started-section";
-import { TestimonialsSection } from "../../components/testimonials-section";
-import { FAQSection } from "../../components/faq-section";
-import { AboutSection } from "../../components/about-section";
+import { Hero } from "~/components/hero";
+import { MethodologySection } from "~/components/methodology";
+import { ProgramsSection } from "~/components/programs-section";
+import { GettingStartedSection } from "~/components/getting-started-section";
+import { TestimonialsSection } from "~/components/testimonials-section";
+import { FAQSection } from "~/components/faq-section";
+import { AboutSection } from "~/components/about-section";
 
 export default component$(() => {
   const loc = useLocation();
@@ -74,6 +74,20 @@ export default component$(() => {
       <TestimonialsSection />
       <FAQSection />
       <AboutSection />
+
+      {/* CTA Section */}
+      <section class="py-16 md:py-24 bg-[#1e3a8a]">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+          <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white text-left flex-1">
+            Únete a nuestro entrenamiento y comienza tu viaje hacia el bienestar físico hoy mismo
+          </h2>
+          <Link href={`/${loc.params.locale}/contenido-gratuito`} class="flex-shrink-0">
+            <button class="bg-white hover:bg-gray-100 text-[#1e3a8a] px-8 py-4 rounded-lg font-semibold text-lg transition-colors transform hover:scale-105">
+              Únete hoy
+            </button>
+          </Link>
+        </div>
+      </section>
     </>
   );
 });
