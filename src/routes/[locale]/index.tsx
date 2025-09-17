@@ -8,6 +8,7 @@ import { GettingStartedSection } from "~/components/getting-started-section";
 import { TestimonialsSection } from "~/components/testimonials-section";
 import { FAQSection } from "~/components/faq-section";
 import { AboutSection } from "~/components/about-section";
+import { CommunityGallery } from "~/components/community-gallery";
 
 export default component$(() => {
   const loc = useLocation();
@@ -16,6 +17,7 @@ export default component$(() => {
     <>
       <Hero />
       <MethodologySection />
+      <CommunityGallery />
       <ProgramsSection />
       <GettingStartedSection />
       {/* Videos Cover Section */}
