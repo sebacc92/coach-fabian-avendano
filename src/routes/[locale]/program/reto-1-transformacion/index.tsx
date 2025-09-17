@@ -86,14 +86,16 @@ export default component$(() => {
           </div>
           
           <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <div class={`${program.priceColor} text-white px-8 py-4 rounded-full text-2xl font-bold`}>
-              {program.price}
-            </div>
-            <a href={program.link} target="_blank" rel="noopener noreferrer">
-              <Button class={`${program.buttonColor} ${program.buttonHover} text-white px-8 py-4 text-lg font-bold rounded-lg transition-all transform hover:scale-105`}>
-                {program.cta}
-              </Button>
-            </a>
+              <div class={`${program.priceColor} text-white px-8 py-4 rounded-full text-2xl font-bold`}>
+                  {program.price}
+              </div>
+              <div class="flex flex-col items-center">
+                  <a href={program.link} target="_blank" rel="noopener noreferrer">
+                      <Button class={`${program.buttonColor} ${program.buttonHover} text-white px-8 py-4 text-lg font-bold rounded-lg transition-all transform hover:scale-105`}>
+                          {program.cta}
+                      </Button>
+                  </a>
+              </div>
           </div>
         </div>
       </section>
@@ -245,14 +247,14 @@ export default component$(() => {
             {_`programCtaDesc`}
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <div class={`${program.priceColor} text-white px-8 py-4 rounded-full text-2xl font-bold`}>
-              {program.price}
-            </div>
-            <a href={program.link} target="_blank" rel="noopener noreferrer">
-              <Button class={`${program.buttonColor} ${program.buttonHover} text-white px-8 py-4 text-lg font-bold rounded-lg transition-all transform hover:scale-105`}>
-                {program.cta}
-              </Button>
-            </a>
+              <div class={`${program.priceColor} text-white px-8 py-4 rounded-full text-2xl font-bold`}>
+                  {program.price}
+              </div>
+              <a href={program.link} target="_blank" rel="noopener noreferrer">
+                  <Button class={`${program.buttonColor} ${program.buttonHover} text-white px-8 py-4 text-lg font-bold rounded-lg transition-all transform hover:scale-105`}>
+                      {program.cta}
+                  </Button>
+              </a>
           </div>
         </div>
       </section>

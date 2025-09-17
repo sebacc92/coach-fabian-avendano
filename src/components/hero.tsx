@@ -46,122 +46,17 @@ export const Hero = component$(() => {
               {_`hero_cta`}
             </Button>
           </Link>
-        </div>
-      </div>
-
-      {/* Animated Words at Bottom */}
-      <div class="absolute bottom-8 left-0 right-0">
-        <div class="bg-[#1e3a8a]/90 backdrop-blur-sm overflow-hidden h-16 flex items-center px-6">
-          <div class="whitespace-nowrap">
-            <div class="inline-flex animate-marquee">
-              <span class="text-white text-xl font-semibold">Cree en ti mismo</span>
-              <span class="text-white text-xl mx-6">💪</span>
-              <span class="text-white text-xl font-semibold">Vida saludable</span>
-              <span class="text-white text-xl mx-6">🔥</span>
-              <span class="text-white text-xl font-semibold">Mantente activo</span>
-              <span class="text-white text-xl mx-6">💪</span>
-              <span class="text-white text-xl font-semibold">Nunca te rindas</span>
-              <span class="text-white text-xl mx-6">⚡</span>
-              <span class="text-white text-xl font-semibold">Supera tus límites</span>
-              <span class="text-white text-xl mx-6">💪</span>
-              <span class="text-white text-xl font-semibold">Cada día cuenta</span>
-              <span class="text-white text-xl mx-6">🏆</span>
-              <span class="text-white text-xl font-semibold">Eres más fuerte</span>
-              <span class="text-white text-xl mx-6">💪</span>
-              <span class="text-white text-xl font-semibold">Sin excusas</span>
-              <span class="text-white text-xl mx-6">🔥</span>
-              <span class="text-white text-xl font-semibold">Hazlo posible</span>
-              <span class="text-white text-xl mx-6">💪</span>
-              <span class="text-white text-xl font-semibold">Siéntete orgulloso</span>
-              <span class="text-white text-xl mx-6">🌟</span>
-              <span class="text-white text-xl font-semibold">Sé humilde</span>
-              <span class="text-white text-xl mx-6">💪</span>
-              <span class="text-white text-xl font-semibold">Entrena duro</span>
-              <span class="text-white text-xl mx-6">⚡</span>
-              <span class="text-white text-xl font-semibold">Mente positiva</span>
-              <span class="text-white text-xl mx-6">💪</span>
-              <span class="text-white text-xl font-semibold">Constancia total</span>
-              <span class="text-white text-xl mx-6">🔥</span>
-              <span class="text-white text-xl font-semibold">Fuerza interior</span>
-              <span class="text-white text-xl mx-6">💪</span>
-              <span class="text-white text-xl font-semibold">Actitud ganadora</span>
-              <span class="text-white text-xl mx-6">🏆</span>
-              <span class="text-white text-xl font-semibold">Disciplina diaria</span>
-              <span class="text-white text-xl mx-6">💪</span>
-              <span class="text-white text-xl font-semibold">Vive saludable</span>
-              <span class="text-white text-xl mx-6">🌟</span>
-              <span class="text-white text-xl font-semibold">Transforma tu cuerpo</span>
-              <span class="text-white text-xl mx-6">💪</span>
-              <span class="text-white text-xl font-semibold">Energía pura</span>
-              <span class="text-white text-xl mx-6">⚡</span>
-              <span class="text-white text-xl font-semibold">Rompe barreras</span>
-              <span class="text-white text-xl mx-6">💪</span>
-              <span class="text-white text-xl font-semibold">Sé imparable</span>
-              <span class="text-white text-xl mx-6">🔥</span>
-              <span class="text-white text-xl font-semibold">Mejora cada día</span>
-              <span class="text-white text-xl mx-6">💪</span>
-              <span class="text-white text-xl font-semibold">Desafía lo imposible</span>
-              <span class="text-white text-xl mx-6">🏆</span>
-              <span class="text-white text-xl font-semibold">Eres un guerrero</span>
-              <span class="text-white text-xl mx-6">💪</span>
-              <span class="text-white text-xl font-semibold">Pasión y dedicación</span>
-              <span class="text-white text-xl mx-6">🌟</span>
-              <span class="text-white text-xl font-semibold">Fortalece tu mente</span>
-              <span class="text-white text-xl mx-6">💪</span>
-              <span class="text-white text-xl font-semibold">Supérate hoy</span>
-              <span class="text-white text-xl mx-6">⚡</span>
-              <span class="text-white text-xl font-semibold">Vive el momento</span>
-              <span class="text-white text-xl mx-6">💪</span>
-              <span class="text-white text-xl font-semibold">Conquista tus metas</span>
-              <span class="text-white text-xl mx-6">🔥</span>
-              <span class="text-white text-xl font-semibold">Poder mental</span>
-              <span class="text-white text-xl mx-6">💪</span>
-              <span class="text-white text-xl font-semibold">Determinación total</span>
-              <span class="text-white text-xl mx-6">🏆</span>
-              <span class="text-white text-xl font-semibold">Sé la diferencia</span>
-              <span class="text-white text-xl mx-6">💪</span>
-              <span class="text-white text-xl font-semibold">Voluntad de acero</span>
-              <span class="text-white text-xl mx-6">🌟</span>
-              <span class="text-white text-xl font-semibold">Abraza el desafío</span>
-              <span class="text-white text-xl mx-6">💪</span>
-              <span class="text-white text-xl font-semibold">Fuerza imparable</span>
-              <span class="text-white text-xl mx-6">⚡</span>
-              <span class="text-white text-xl font-semibold">Logra lo extraordinario</span>
-              <span class="text-white text-xl mx-6">💪</span>
-              <span class="text-white text-xl font-semibold">Persiste siempre</span>
-              <span class="text-white text-xl mx-6">🔥</span>
-              <span class="text-white text-xl font-semibold">Sé tu mejor versión</span>
-              <span class="text-white text-xl mx-6">💪</span>
-              <span class="text-white text-xl font-semibold">Esfuerzo constante</span>
-              <span class="text-white text-xl mx-6">🏆</span>
-              <span class="text-white text-xl font-semibold">Mentalidad ganadora</span>
-              <span class="text-white text-xl mx-6">💪</span>
-              <span class="text-white text-xl font-semibold">Cuerpo y alma</span>
-              <span class="text-white text-xl mx-6">🌟</span>
-              <span class="text-white text-xl font-semibold">Entrena con pasión</span>
-              <span class="text-white text-xl mx-6">💪</span>
-              <span class="text-white text-xl font-semibold">Resistencia total</span>
-              <span class="text-white text-xl mx-6">⚡</span>
-              <span class="text-white text-xl font-semibold">Vence la pereza</span>
-              <span class="text-white text-xl mx-6">💪</span>
-              <span class="text-white text-xl font-semibold">Compromiso real</span>
-              <span class="text-white text-xl mx-6">🔥</span>
-              <span class="text-white text-xl font-semibold">Mantente enfocado</span>
-              <span class="text-white text-xl mx-6">💪</span>
-              <span class="text-white text-xl font-semibold">Victoria segura</span>
-              <span class="text-white text-xl mx-6">🏆</span>
-              <span class="text-white text-xl font-semibold">Impulso positivo</span>
-              <span class="text-white text-xl mx-6">💪</span>
-              <span class="text-white text-xl font-semibold">Respira y avanza</span>
-              <span class="text-white text-xl mx-6">🌟</span>
-              <span class="text-white text-xl font-semibold">Forja tu destino</span>
-              <span class="text-white text-xl mx-6">💪</span>
-              <span class="text-white text-xl font-semibold">Sin rendirse jamás</span>
-              <span class="text-white text-xl mx-6">⚡</span>
-            </div>
+          <div class="mt-6 md:mb-8">
+            <p class="text-sm md:text-base text-white/80 mb-2">
+              {_`platformInfoFree`}
+            </p>
+            <p class="text-xs md:text-sm text-white/70 max-w-2xl">
+              {_`platformTrust`}
+            </p>
           </div>
         </div>
       </div>
+
     </section>
   );
 }); 

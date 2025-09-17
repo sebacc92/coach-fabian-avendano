@@ -44,12 +44,12 @@ export default component$(() => {
     });
 
     return (
-        <header class={`fixed top-[env(safe-area-inset-top)] left-0 right-0 z-50 px-6 py-4 pt-[env(safe-area-inset-top)] transition-all duration-300 ease-in-out ${
+        <header class={`fixed left-0 right-0 z-50 px-6 py-2 transition-all duration-300 ease-in-out ${
             scrolled.value
                 ? 'bg-white text-gray-900 drop-shadow-none border-b border-gray-200'
                 : 'bg-transparent text-white drop-shadow-lg'
         }`}>
-            <div class="flex items-center justify-between max-w-7xl mx-auto">
+            <div class="flex items-center justify-between min-h-16 max-w-7xl mx-auto">
                 {/* Logo */}
                 <Link href="/">
                     <div class="flex items-center">
@@ -117,11 +117,13 @@ export default component$(() => {
                 
                 {/* Desktop Right: Button + Language */}
                 <div class="hidden md:flex items-center space-x-4">
-                    <Link href={`/${currentLocale}/contenido-gratuito`}>
-                        <button class="bg-[#1e3a8a] hover:bg-[#1e40af] text-white px-8 py-3 rounded-lg font-semibold transition-colors text-lg">
-                            Comienza a entrenar
-                        </button>
-                    </Link>
+                    <div class="flex flex-col items-center">
+                        <Link href={`/${currentLocale}/contenido-gratuito`}>
+                            <button class="bg-[#1e3a8a] hover:bg-[#1e40af] text-white px-8 py-3 rounded-lg font-semibold transition-colors text-lg">
+                                Comienza a entrenar
+                            </button>
+                        </Link>
+                    </div>
                 </div>
                 
                 {/* Hamburger Mobile */}
@@ -215,11 +217,13 @@ export default component$(() => {
 
                         {/* CTA Button at Bottom */}
                         <div class="mt-auto pt-8">
-                            <Link href={`/${currentLocale}/contenido-gratuito`}>
-                                <button class="w-full bg-[#1e3a8a] hover:bg-[#1e40af] text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 text-lg shadow-lg hover:shadow-xl transform hover:scale-[1.02] opacity-0 translate-y-10 animate-menu-cta">
-                                    Comienza a entrenar
-                                </button>
-                            </Link>
+                            <div class="flex flex-col items-center">
+                                <Link href={`/${currentLocale}/contenido-gratuito`}>
+                                    <button class="w-full bg-[#1e3a8a] hover:bg-[#1e40af] text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 text-lg shadow-lg hover:shadow-xl transform hover:scale-[1.02] opacity-0 translate-y-10 animate-menu-cta">
+                                        Comienza a entrenar
+                                    </button>
+                                </Link>
+                            </div>
                         </div>
                     </nav>
                 </div>
@@ -252,6 +256,7 @@ export default component$(() => {
                             }
                         }
                         .animate-menu-cta { animation: ctaSlideIn 0.4s ease-out 0.6s forwards; }
+                        .animate-menu-cta-delayed { animation: ctaSlideIn 0.4s ease-out 0.7s forwards; }
                     `}
                 </style>
             )}
