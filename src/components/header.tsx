@@ -1,6 +1,6 @@
-import { component$, useSignal, useVisibleTask$, $ } from '@builder.io/qwik';
-import { LuLanguages, LuDumbbell, LuMenu, LuX } from "@qwikest/icons/lucide";
-import { _, getLocale, locales } from "compiled-i18n";
+import { component$, useSignal, useVisibleTask$ } from '@builder.io/qwik';
+import { LuDumbbell, LuMenu, LuX } from "@qwikest/icons/lucide";
+import { _, getLocale } from "compiled-i18n";
 import { Link, useLocation } from '@builder.io/qwik-city';
 
 export default component$(() => {
@@ -41,10 +41,6 @@ export default component$(() => {
 
         document.addEventListener('click', handleClickOutside);
         cleanup(() => document.removeEventListener('click', handleClickOutside));
-    });
-
-    const toggleLanguageDropdown = $(() => {
-        languageDropdownOpen.value = !languageDropdownOpen.value;
     });
 
     return (
@@ -144,39 +140,37 @@ export default component$(() => {
 
             {/* Mobile Menu Overlay */}
             {menuOpen.value && (
-                <div class="fixed inset-0 z-40 bg-black/40 flex justify-end md:hidden" onClick$={() => (menuOpen.value = false)}>
+                <div class="fixed inset-0 z-40 bg-black/80 flex flex-col md:hidden" onClick$={() => (menuOpen.value = false)}>
                     <nav
-                        class={`w-64 h-full p-6 flex flex-col gap-6 relative transition-all duration-300 ${
-                            scrolled.value
-                                ? 'bg-white text-gray-900 shadow-lg'
-                                : 'bg-transparent text-white drop-shadow-lg'
-                        }`}
+                        class="flex-1 w-full p-8 flex flex-col justify-between relative"
+                        style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(26,26,26,0.95) 100%)' }}
                         onClick$={e => e.stopPropagation()}
                     >
-                        <button
-                            class="absolute top-4 right-4 p-2 rounded focus:outline-none focus:ring-2 focus:ring-[#6A0DAD]"
-                            aria-label="Close menu"
-                            onClick$={() => (menuOpen.value = false)}
-                        >
-                            <LuX class="h-6 w-6 text-[#6A0DAD]" />
-                        </button>
-                        <div class="flex items-center mb-8 mt-2">
-                            <LuDumbbell class="h-8 w-8 text-[#6A0DAD] mr-2" />
-                            <span class={`font-bold text-lg transition-colors duration-300 ${
-                                scrolled.value ? 'text-gray-900' : 'text-white'
-                            }`}>F. Avendaño</span>
+                        {/* Header with logo and close */}
+                        <div class="flex justify-between items-center mb-12">
+                            <div class="flex items-center">
+                                <LuDumbbell class="h-8 w-8 text-[#6A0DAD] mr-3" />
+                                <span class="font-bold text-xl text-white">F. Avendaño</span>
+                            </div>
+                            <button
+                                class="p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-[#6A0DAD] transition-colors"
+                                aria-label="Close menu"
+                                onClick$={() => (menuOpen.value = false)}
+                            >
+                                <LuX class="h-8 w-8 text-white hover:text-[#6A0DAD]" />
+                            </button>
                         </div>
-                        <ul class="flex flex-col gap-4">
-                            {menuItems.map((item) => (
+
+                        {/* Navigation Items */}
+                        <ul class="flex flex-col gap-6 mb-auto">
+                            {menuItems.map((item, index) => (
                                 <li key={item.href}>
                                     {item.anchor ? (
                                         isHome ? (
                                             <a
                                                 href={item.href}
-                                                class={`text-xl transition-colors duration-300 ${
-                                                    scrolled.value
-                                                        ? 'text-gray-700 hover:text-blue-600'
-                                                        : 'text-white hover:text-gray-200'
+                                                class={`text-2xl font-semibold transition-all duration-300 text-white hover:text-[#6A0DAD] flex items-center py-2 opacity-0 translate-x-[-20px] ${
+                                                    `animate-menu-item-${index}`
                                                 }`}
                                                 preventdefault:click
                                                 onClick$={() => {
@@ -188,7 +182,7 @@ export default component$(() => {
                                                         } else {
                                                             window.location.href = item.href;
                                                         }
-                                                    }, 100);
+                                                    }, 300);
                                                 }}
                                             >
                                                 {item.label}
@@ -196,10 +190,8 @@ export default component$(() => {
                                         ) : (
                                             <a
                                                 href={`/${currentLocale}${item.href}`}
-                                                class={`text-xl transition-colors duration-300 ${
-                                                    scrolled.value
-                                                        ? 'text-gray-700 hover:text-blue-600'
-                                                        : 'text-white hover:text-gray-200'
+                                                class={`text-2xl font-semibold transition-all duration-300 text-white hover:text-[#6A0DAD] flex items-center py-2 opacity-0 translate-x-[-20px] ${
+                                                    `animate-menu-item-${index}`
                                                 }`}
                                                 onClick$={() => { menuOpen.value = false; }}
                                             >
@@ -207,58 +199,61 @@ export default component$(() => {
                                             </a>
                                         )
                                     ) : (
-                                        <a href={item.href} class={`text-xl transition-colors duration-300 ${
-                                            scrolled.value
-                                                ? 'text-gray-700 hover:text-blue-600'
-                                                : 'text-white hover:text-gray-200'
-                                        }`}>
+                                        <a
+                                            href={item.href}
+                                            class={`text-2xl font-semibold transition-all duration-300 text-white hover:text-[#6A0DAD] flex items-center py-2 opacity-0 translate-x-[-20px] ${
+                                                `animate-menu-item-${index}`
+                                            }`}
+                                            onClick$={() => (menuOpen.value = false)}
+                                        >
                                             {item.label}
                                         </a>
                                     )}
                                 </li>
                             ))}
                         </ul>
-                        <Link href={`/${currentLocale}/contenido-gratuito`}>
-                            <button class="w-full bg-[#1e3a8a] hover:bg-[#1e40af] text-white px-8 py-3 rounded-lg font-semibold transition-colors text-lg mb-4">
-                                Comienza a entrenar
-                            </button>
-                        </Link>
-                        <div class="relative language-dropdown">
-                            <button
-                                onClick$={toggleLanguageDropdown}
-                                class="flex items-center justify-center p-2 rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#6A0DAD] focus:ring-offset-2 transition-colors"
-                                aria-expanded={languageDropdownOpen.value}
-                                aria-haspopup="true"
-                            >
-                                <LuLanguages />
-                            </button>
-                            
-                            {languageDropdownOpen.value && (
-                                <div class="absolute right-0 mt-2 min-w-[180px] bg-white border border-gray-200 shadow-xl rounded-lg p-2 z-50">
-                                    {locales.map((locale) => (
-                                        <a
-                                            key={locale}
-                                            class={`block w-full text-left px-4 py-2 rounded-lg text-base hover:bg-gray-100 transition-colors cursor-pointer ${locale === currentLocale ? 'font-semibold text-[#6A0DAD] bg-gray-50' : 'text-gray-900'}`}
-                                            href={`/${locale}`}
-                                            onClick$={() => {
-                                                menuOpen.value = false;
-                                                languageDropdownOpen.value = false;
-                                                setTimeout(() => {
-                                                    window.location.href = `/${locale}`;
-                                                }, 100);
-                                            }}
-                                        >
-                                            {locale === currentLocale && (
-                                                <span class="mr-2 text-lg">✓</span>
-                                            )}
-                                            {locale === 'es' ? 'Español' : 'English'}
-                                        </a>
-                                    ))}
-                                </div>
-                            )}
+
+                        {/* CTA Button at Bottom */}
+                        <div class="mt-auto pt-8">
+                            <Link href={`/${currentLocale}/contenido-gratuito`}>
+                                <button class="w-full bg-[#1e3a8a] hover:bg-[#1e40af] text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 text-lg shadow-lg hover:shadow-xl transform hover:scale-[1.02] opacity-0 translate-y-10 animate-menu-cta">
+                                    Comienza a entrenar
+                                </button>
+                            </Link>
                         </div>
                     </nav>
                 </div>
+            )}
+            {menuOpen.value && (
+                <style>
+                    {`
+                        @keyframes menuSlideIn {
+                            from {
+                                opacity: 0;
+                                transform: translateX(-20px);
+                            }
+                            to {
+                                opacity: 1;
+                                transform: translateX(0);
+                            }
+                        }
+                        .animate-menu-item-0 { animation: menuSlideIn 0.4s ease-out 0.2s forwards; }
+                        .animate-menu-item-1 { animation: menuSlideIn 0.4s ease-out 0.3s forwards; }
+                        .animate-menu-item-2 { animation: menuSlideIn 0.4s ease-out 0.4s forwards; }
+                        .animate-menu-item-3 { animation: menuSlideIn 0.4s ease-out 0.5s forwards; }
+                        @keyframes ctaSlideIn {
+                            from {
+                                opacity: 0;
+                                transform: translateY(10px);
+                            }
+                            to {
+                                opacity: 1;
+                                transform: translateY(0);
+                            }
+                        }
+                        .animate-menu-cta { animation: ctaSlideIn 0.4s ease-out 0.6s forwards; }
+                    `}
+                </style>
             )}
         </header>
     );
