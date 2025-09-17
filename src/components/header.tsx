@@ -44,7 +44,7 @@ export default component$(() => {
     });
 
     return (
-        <header class={`fixed top-0 left-0 right-0 z-50 px-6 py-4 transition-all duration-300 ease-in-out ${
+        <header class={`fixed top-[env(safe-area-inset-top)] left-0 right-0 z-50 px-6 py-4 pt-[env(safe-area-inset-top)] transition-all duration-300 ease-in-out ${
             scrolled.value
                 ? 'bg-white text-gray-900 drop-shadow-none border-b border-gray-200'
                 : 'bg-transparent text-white drop-shadow-lg'
