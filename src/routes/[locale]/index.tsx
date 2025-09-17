@@ -46,15 +46,22 @@ export default component$(() => {
               </div>
             </div>
             <div class="relative">
-              <div class="aspect-video bg-gradient-to-br from-[#1e3a8a] to-[#1e40af] rounded-2xl shadow-2xl flex items-center justify-center">
-                <div class="text-center text-white">
-                  <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z"/>
-                    </svg>
+              <div class="aspect-video relative rounded-2xl shadow-2xl overflow-hidden">
+                <img
+                  src="/images/2.jpeg"
+                  alt="Videos de entrenamiento"
+                  class="absolute inset-0 w-full h-full object-cover"
+                />
+                <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                  <div class="text-center text-white">
+                    <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </div>
+                    <p class="text-lg font-semibold">Videos de Entrenamiento</p>
+                    <p class="text-sm opacity-90">Gratuitos para toda la comunidad</p>
                   </div>
-                  <p class="text-lg font-semibold">Videos de Entrenamiento</p>
-                  <p class="text-sm opacity-90">Gratuitos para toda la comunidad</p>
                 </div>
               </div>
               <div class="absolute -top-4 -right-4 bg-[#1e3a8a] text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">

@@ -16,9 +16,9 @@ export default component$(() => {
       {/* Hero Section */}
       <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0">
-          <img 
-            src="/images/fabian-gym-training.jpg" 
-            alt="Coach Fabian entrenando" 
+          <img
+            src="/images/2.jpeg"
+            alt="Entrenamiento con Coach Fabian"
             class="w-full h-full object-cover object-center"
           />
           <div class="absolute inset-0 bg-black/60"></div>
