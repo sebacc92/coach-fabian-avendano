@@ -12,7 +12,7 @@ export const Hero = component$(() => {
     : "https://app.harbiz.io/checkout-form/fabianavendao1?product=invitation&lang=es";
 
   return (
-    <section class="relative min-h-screen flex items-center justify-center px-4 pt-20">
+    <section class="relative min-h-screen flex items-center justify-start px-6 pt-20">
       {/* Background image and overlay */}
       <div class="absolute inset-0">
         {/* Usar una imagen de fondo, cambiar src cuando esté disponible */}
@@ -25,34 +25,36 @@ export const Hero = component$(() => {
         <div class="absolute inset-0 bg-gradient-to-br from-[#1e3a8a]/40 to-[#2563eb]/40"></div>
       </div>
       {/* Content */}
-      <div class="relative z-10 text-center text-white max-w-4xl mx-auto">
-        <h1 class="text-3xl md:text-6xl lg:text-7xl font-bold font-['Poppins'] mb-4 md:mb-6 leading-tight">
-          {_`hero_title`}
-        </h1>
-        <p class="text-base md:text-xl lg:text-2xl mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed px-4">
-          {_`hero_subtitle`}
-        </p>
-        
-        {/* Platform Information */}
-        <div class="mb-6 md:mb-8">
-          <p class="text-sm md:text-base text-white/80 mb-2">
-            {_`platformInfoFree`}
+      <div class="relative z-10 max-w-7xl mx-auto w-full">
+        <div class="text-left text-white">
+          <h1 class="text-3xl md:text-6xl lg:text-7xl font-bold font-['Poppins'] mb-4 md:mb-6 leading-tight">
+            {_`hero_title`}
+          </h1>
+          <p class="text-base md:text-xl lg:text-2xl mb-6 md:mb-8 leading-relaxed max-w-4xl">
+            {_`hero_subtitle`}
           </p>
-          <p class="text-xs md:text-sm text-white/70 max-w-2xl mx-auto">
-            {_`platformTrust`}
-          </p>
+          
+          {/* Platform Information */}
+          <div class="mb-6 md:mb-8">
+            <p class="text-sm md:text-base text-white/80 mb-2">
+              {_`platformInfoFree`}
+            </p>
+            <p class="text-xs md:text-sm text-white/70 max-w-2xl">
+              {_`platformTrust`}
+            </p>
+          </div>
+          
+          <Link
+            href={heroLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block"
+          >
+            <Button class="bg-white hover:bg-gray-100 text-[#2563eb] hover:text-[#1e3a8a] px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold rounded-lg transition-all transform hover:scale-105">
+              {_`hero_cta`}
+            </Button>
+          </Link>
         </div>
-        
-        <Link
-          href={heroLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-block"
-        >
-          <Button class="bg-white hover:bg-gray-100 text-[#2563eb] hover:text-[#1e3a8a] px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold rounded-lg transition-all transform hover:scale-105">
-            {_`hero_cta`}
-          </Button>
-        </Link>
       </div>
     </section>
   );
