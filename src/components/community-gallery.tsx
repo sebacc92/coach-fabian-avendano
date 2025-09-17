@@ -150,7 +150,7 @@ export const CommunityGallery = component$(() => {
                 </div>
               </div>
             </div>
-            <Link href="#about">
+            <Link href="#acerca">
               <button class="mt-4 border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#1e3a8a] transition-colors transition-all duration-700 ease-out opacity-0 translate-y-8 animate-element"
                 data-delay="1400ms">
                 Más sobre nosotros

@@ -74,8 +74,8 @@ export default component$(() => {
                                             href={item.href}
                                             class={`font-medium text-xl transition-colors duration-300 ${
                                                 scrolled.value
-                                                    ? 'text-gray-700 hover:text-blue-600'
-                                                    : 'text-white hover:text-gray-200'
+                                                    ? 'text-gray-700 hover:text-[#2563eb] hover:font-bold'
+                                                    : 'text-white hover:text-[#2563eb] hover:font-bold'
                                             }`}
                                             preventdefault:click
                                             onClick$={() => {
@@ -94,8 +94,8 @@ export default component$(() => {
                                             href={`/${currentLocale}${item.href}`}
                                             class={`font-medium text-xl transition-colors duration-300 ${
                                                 scrolled.value
-                                                    ? 'text-gray-700 hover:text-blue-600'
-                                                    : 'text-white hover:text-gray-200'
+                                                    ? 'text-gray-700 hover:text-[#2563eb] hover:font-bold'
+                                                    : 'text-white hover:text-[#2563eb] hover:font-bold'
                                             }`}
                                         >
                                             {item.label}
@@ -104,8 +104,8 @@ export default component$(() => {
                                 ) : (
                                     <a href={item.href} class={`font-medium text-xl transition-colors duration-300 ${
                                         scrolled.value
-                                            ? 'text-gray-700 hover:text-blue-600'
-                                            : 'text-white hover:text-gray-200'
+                                            ? 'text-gray-700 hover:text-[#2563eb] hover:font-bold'
+                                            : 'text-white hover:text-[#2563eb] hover:font-bold'
                                     }`}>
                                         {item.label}
                                     </a>
@@ -169,7 +169,7 @@ export default component$(() => {
                                         isHome ? (
                                             <a
                                                 href={item.href}
-                                                class={`text-2xl font-semibold transition-all duration-300 text-white hover:text-[#6A0DAD] flex items-center py-2 opacity-0 translate-x-[-20px] ${
+                                                class={`text-2xl font-semibold transition-all duration-300 text-white hover:text-[#2563eb] hover:font-bold flex items-center py-2 opacity-0 translate-x-[-20px] ${
                                                     `animate-menu-item-${index}`
                                                 }`}
                                                 preventdefault:click
@@ -190,7 +190,7 @@ export default component$(() => {
                                         ) : (
                                             <a
                                                 href={`/${currentLocale}${item.href}`}
-                                                class={`text-2xl font-semibold transition-all duration-300 text-white hover:text-[#6A0DAD] flex items-center py-2 opacity-0 translate-x-[-20px] ${
+                                                class={`text-2xl font-semibold transition-all duration-300 text-white hover:text-[#2563eb] hover:font-bold hover:scale-105 flex items-center py-2 opacity-0 translate-x-[-20px] ${
                                                     `animate-menu-item-${index}`
                                                 }`}
                                                 onClick$={() => { menuOpen.value = false; }}
@@ -201,7 +201,7 @@ export default component$(() => {
                                     ) : (
                                         <a
                                             href={item.href}
-                                            class={`text-2xl font-semibold transition-all duration-300 text-white hover:text-[#6A0DAD] flex items-center py-2 opacity-0 translate-x-[-20px] ${
+                                            class={`text-2xl font-semibold transition-all duration-300 text-white hover:text-[#2563eb] hover:font-bold hover:scale-105 flex items-center py-2 opacity-0 translate-x-[-20px] ${
                                                 `animate-menu-item-${index}`
                                             }`}
                                             onClick$={() => (menuOpen.value = false)}
