@@ -222,7 +222,7 @@ export default component$(() => {
                 "{testimonials[currentTestimonial.value]}"
               </p>
               <div class="flex justify-center space-x-2">
-                {program.testimonials.map((_, index) => (
+                {testimonials.map((_, index) => (
                   <button
                     key={index}
                     onClick$={() => currentTestimonial.value = index}
