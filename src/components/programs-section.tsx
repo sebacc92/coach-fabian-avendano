@@ -46,7 +46,7 @@ export const ProgramsSection = component$(() => {
     },
     {
       slug: "fuerza-base",
-      img: "/images/fabian-kettlebell.jpg",
+      img: "/images/fabian-kettlebell.webp",
       alt: _`program3ImgAlt`,
       price: _`program3Price`,
       priceColor: "bg-[#1e3a8a]",

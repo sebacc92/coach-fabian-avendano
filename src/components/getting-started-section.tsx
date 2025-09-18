@@ -7,25 +7,25 @@ export const GettingStartedSection = component$(() => {
       id: 1,
       title: _`step1Title`,
       description: _`step1Desc`,
-      image: "/images/getting-started-step1.png"
+      image: "/images/getting-started-step1.webp"
     },
     {
       id: 2,
       title: _`step2Title`,
       description: _`step2Desc`,
-      image: "/images/getting-started-step2.png"
+      image: "/images/getting-started-step2.webp"
     },
     {
       id: 3,
       title: _`step3Title`,
       description: _`step3Desc`,
-      image: "/images/getting-started-step3.png"
+      image: "/images/getting-started-step3.webp"
     },
     {
       id: 4,
       title: _`step4Title`,
       description: _`step4Desc`,
-      image: "/images/getting-started-step4.png"
+      image: "/images/getting-started-step4.webp"
     }
   ];
 

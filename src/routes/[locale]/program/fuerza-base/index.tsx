@@ -8,7 +8,7 @@ export default component$(() => {
   const currentTestimonial = useSignal(0);
 
   const program = {
-    img: "/images/fabian-kettlebell.jpg",
+    img: "/images/fabian-kettlebell.webp",
     alt: _`program3ImgAlt`,
     price: _`program3Price`,
     priceColor: "bg-[#FF6B35]",
@@ -261,7 +261,7 @@ export default component$(() => {
 
 export const head: DocumentHead = () => {
   const program = {
-    img: "/images/fabian-kettlebell.jpg",
+    img: "/images/fabian-kettlebell.webp",
     alt: _`program3ImgAlt`,
     price: _`program3Price`,
     priceColor: "bg-[#FF6B35]",

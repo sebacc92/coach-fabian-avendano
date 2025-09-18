@@ -54,25 +54,25 @@ export default component$(() => {
                 <Link href="/">
                     <div class="flex items-center">
                         <LuDumbbell class="h-10 w-10 text-[#6A0DAD] mr-3" />
-                        <span class={`font-bold text-xl hidden sm:inline transition-colors duration-300 ${
+                        <span class={`font-bold text-base md:text-lg lg:text-xl hidden lg:inline transition-colors duration-300 ${
                             scrolled.value ? 'text-gray-900' : 'text-white'
                         }`}>Coach Fabian Avendaño</span>
-                        <span class={`font-bold text-lg sm:hidden transition-colors duration-300 ${
+                        <span class={`font-bold text-lg lg:hidden transition-colors duration-300 ${
                             scrolled.value ? 'text-gray-900' : 'text-white'
                         }`}>F. Avendaño</span>
                     </div>
                 </Link>
                 
                 {/* Navigation Desktop - Centered */}
-                <nav class="hidden md:flex flex-1 justify-center">
-                    <ul class="flex space-x-8">
+                <nav class="hidden lg:flex flex-1 justify-center">
+                    <ul class="flex space-x-4 md:space-x-6 lg:space-x-8">
                         {menuItems.map((item) => (
                             <li key={item.href}>
                                 {item.anchor ? (
                                     isHome ? (
                                         <a
                                             href={item.href}
-                                            class={`font-medium text-xl transition-colors duration-300 ${
+                                            class={`font-medium text-base md:text-lg lg:text-xl transition-colors duration-300 ${
                                                 scrolled.value
                                                     ? 'text-gray-700 hover:text-[#2563eb] hover:font-bold'
                                                     : 'text-white hover:text-[#2563eb] hover:font-bold'
@@ -92,7 +92,7 @@ export default component$(() => {
                                     ) : (
                                         <a
                                             href={`/${currentLocale}${item.href}`}
-                                            class={`font-medium text-xl transition-colors duration-300 ${
+                                            class={`font-medium text-base md:text-lg lg:text-xl transition-colors duration-300 ${
                                                 scrolled.value
                                                     ? 'text-gray-700 hover:text-[#2563eb] hover:font-bold'
                                                     : 'text-white hover:text-[#2563eb] hover:font-bold'
@@ -102,7 +102,7 @@ export default component$(() => {
                                         </a>
                                     )
                                 ) : (
-                                    <a href={item.href} class={`font-medium text-xl transition-colors duration-300 ${
+                                    <a href={item.href} class={`font-medium text-base md:text-lg lg:text-xl transition-colors duration-300 ${
                                         scrolled.value
                                             ? 'text-gray-700 hover:text-[#2563eb] hover:font-bold'
                                             : 'text-white hover:text-[#2563eb] hover:font-bold'
@@ -115,18 +115,29 @@ export default component$(() => {
                     </ul>
                 </nav>
                 
-                {/* Desktop Right: Button + Language */}
+                {/* Desktop Right: Button + Language + Hamburger on md-lg */}
                 <div class="hidden md:flex items-center space-x-4">
                     <div class="flex flex-col items-center">
                         <Link href={`/${currentLocale}/contenido-gratuito`}>
-                            <button class="bg-[#1e3a8a] hover:bg-[#1e40af] text-white px-8 py-3 rounded-lg font-semibold transition-colors text-lg">
+                            <button class="bg-[#1e3a8a] hover:bg-[#1e40af] text-white px-4 sm:px-6 md:px-8 py-2 md:py-3 rounded-lg font-semibold transition-colors text-base md:text-lg whitespace-nowrap">
                                 Comienza a entrenar
                             </button>
                         </Link>
                     </div>
+                    <button
+                        class={`lg:hidden p-2 rounded focus:outline-none focus:ring-2 transition-colors duration-300 ${
+                            scrolled.value ? 'focus:ring-blue-500' : 'focus:ring-white'
+                        }`}
+                        aria-label="Open menu"
+                        onClick$={() => (menuOpen.value = true)}
+                    >
+                        <LuMenu class={`h-7 w-7 transition-colors duration-300 ${
+                            scrolled.value ? 'text-[#6A0DAD]' : 'text-white'
+                        }`} />
+                    </button>
                 </div>
-                
-                {/* Hamburger Mobile */}
+
+                {/* Hamburger Mobile - for <md */}
                 <button
                     class={`md:hidden p-2 rounded focus:outline-none focus:ring-2 transition-colors duration-300 ${
                         scrolled.value ? 'focus:ring-blue-500' : 'focus:ring-white'
@@ -142,7 +153,7 @@ export default component$(() => {
 
             {/* Mobile Menu Overlay */}
             {menuOpen.value && (
-                <div class="fixed inset-0 z-40 bg-black/80 flex flex-col md:hidden" onClick$={() => (menuOpen.value = false)}>
+                <div class="fixed inset-0 z-40 bg-black/80 flex flex-col lg:hidden" onClick$={() => (menuOpen.value = false)}>
                     <nav
                         class="flex-1 w-full p-8 flex flex-col justify-between relative"
                         style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(26,26,26,0.95) 100%)' }}
@@ -152,7 +163,7 @@ export default component$(() => {
                         <div class="flex justify-between items-center mb-12">
                             <div class="flex items-center">
                                 <LuDumbbell class="h-8 w-8 text-[#6A0DAD] mr-3" />
-                                <span class="font-bold text-xl text-white">F. Avendaño</span>
+                                <span class="font-bold text-base md:text-lg lg:text-xl text-white">F. Avendaño</span>
                             </div>
                             <button
                                 class="p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-[#6A0DAD] transition-colors"
@@ -219,7 +230,7 @@ export default component$(() => {
                         <div class="mt-auto pt-8">
                             <div class="flex flex-col items-center">
                                 <Link href={`/${currentLocale}/contenido-gratuito`}>
-                                    <button class="w-full bg-[#1e3a8a] hover:bg-[#1e40af] text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 text-lg shadow-lg hover:shadow-xl transform hover:scale-[1.02] opacity-0 translate-y-10 animate-menu-cta">
+                                    <button class="w-full bg-[#1e3a8a] hover:bg-[#1e40af] text-white px-4 sm:px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold transition-all duration-300 text-base md:text-lg shadow-lg hover:shadow-xl transform hover:scale-[1.02] opacity-0 translate-y-10 animate-menu-cta whitespace-nowrap">
                                         Comienza a entrenar
                                     </button>
                                 </Link>

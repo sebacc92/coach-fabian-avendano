@@ -32,7 +32,7 @@ export default component$(() => {
     },
     {
       id: 3,
-      img: "/images/fabian-kettlebell.jpg",
+      img: "/images/fabian-kettlebell.webp",
       alt: "Fuerza Base",
       title: "Fuerza Base: Presencia Física",
       subtitle: "Construyendo fuerza y estabilidad desde lo simple",
