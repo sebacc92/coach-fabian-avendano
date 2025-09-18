@@ -9,7 +9,7 @@ export default component$(() => {
   const currentTestimonial = useSignal(0);
 
   const program = {
-    img: "/images/fabian-gym-training.jpg",
+    img: "/images/fabian-gym-training.webp",
     alt: _`program1ImgAlt`,
     price: _`program1Price`,
     priceColor: "bg-[#6A0DAD]",
@@ -267,7 +267,7 @@ export default component$(() => {
 
 export const head: DocumentHead = () => {
   const program = {
-    img: "/images/fabian-gym-training.jpg",
+    img: "/images/fabian-gym-training.webp",
     alt: _`program1ImgAlt`,
     price: _`program1Price`,
     priceColor: "bg-[#6A0DAD]",

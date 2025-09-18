@@ -8,7 +8,7 @@ export const ProgramsSection = component$(() => {
   const programs = [
     {
       slug: "reto-1-transformacion",
-      img: "/images/fabian-gym-training.jpg",
+      img: "/images/fabian-gym-training.webp",
       alt: _`program1ImgAlt`,
       price: _`program1Price`,
       priceColor: "bg-[#1e3a8a]",
@@ -26,7 +26,7 @@ export const ProgramsSection = component$(() => {
     },
     {
       slug: "reto-2-progreso",
-      img: "/images/fabian-handstand-reto2.jpeg",
+      img: "/images/fabian-handstand-reto2.webp",
       alt: _`program2ImgAlt`,
       price: _`program2Price`,
       priceColor: "bg-[#1e3a8a]",
@@ -84,7 +84,7 @@ export const ProgramsSection = component$(() => {
     },
     {
       slug: "hiit-basico",
-      img: "/images/hiit-basico-3-dias.jpeg",
+      img: "/images/hiit-basico-3-dias.webp",
       alt: _`program5ImgAlt`,
       price: _`program5Price`,
       priceColor: "bg-[#1e3a8a]",
@@ -102,7 +102,7 @@ export const ProgramsSection = component$(() => {
     },
     {
       slug: "piernas-frecuencia",
-      img: "/images/hip-thrust.jpeg",
+      img: "/images/hip-thrust.webp",
       alt: _`program6ImgAlt`,
       price: _`program6Price`,
       priceColor: "bg-[#1e3a8a]",

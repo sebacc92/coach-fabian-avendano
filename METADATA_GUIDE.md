@@ -60,7 +60,7 @@ import { generateProgramMetadata, createProgramHead } from "~/utils/metadata";
 
 export const head: DocumentHead = () => {
   const program = {
-    img: "/images/hip-thrust.jpeg",
+    img: "/images/hip-thrust.webp",
     title: "Piernas 6 semanas (2 por semana)",
     desc: "Especialización completa en miembros inferiores. Programa de 6 semanas para el desarrollo completo de piernas y glúteos.",
     // ... otras propiedades

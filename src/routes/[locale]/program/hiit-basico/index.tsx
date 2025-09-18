@@ -7,7 +7,7 @@ export default component$(() => {
   const currentTestimonial = useSignal(0);
 
   const program = {
-    img: "/images/hiit-basico-3-dias.jpeg",
+    img: "/images/hiit-basico-3-dias.webp",
     alt: _`program5ImgAlt`,
     price: _`program5Price`,
     priceColor: "bg-[#00C896]",

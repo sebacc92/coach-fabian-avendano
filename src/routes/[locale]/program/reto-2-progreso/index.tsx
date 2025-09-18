@@ -15,7 +15,7 @@ export default component$(() => {
     : "https://app.harbiz.io/checkout-form/fabianavendao1?product=invitation&lang=es";
 
   const program = {
-    img: "/images/fabian-handstand-reto2.jpeg",
+    img: "/images/fabian-handstand-reto2.webp",
     alt: _`program2ImgAlt`,
     price: _`program2Price`,
     priceColor: "bg-[#8A2BE2]",
@@ -288,7 +288,7 @@ export const head: DocumentHead = () => {
     : "https://app.harbiz.io/checkout-form/fabianavendao1?product=invitation&lang=es";
 
   const program = {
-    img: "/images/fabian-handstand-reto2.jpeg",
+    img: "/images/fabian-handstand-reto2.webp",
     alt: _`program2ImgAlt`,
     price: _`program2Price`,
     priceColor: "bg-[#8A2BE2]",

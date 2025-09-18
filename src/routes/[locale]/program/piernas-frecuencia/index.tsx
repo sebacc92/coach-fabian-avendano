@@ -16,7 +16,7 @@ export default component$(() => {
   };
 
   const program = {
-    img: "/images/hip-thrust.jpeg",
+    img: "/images/hip-thrust.webp",
     alt: _`program6ImgAlt`,
     price: _`program6Price`,
     priceColor: "bg-[#E91E63]",
@@ -288,7 +288,7 @@ export const head: DocumentHead = () => {
   };
 
   const program = {
-    img: "/images/hip-thrust.jpeg",
+    img: "/images/hip-thrust.webp",
     alt: _`program6ImgAlt`,
     price: _`program6Price`,
     priceColor: "bg-[#E91E63]",

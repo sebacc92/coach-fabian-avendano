@@ -6,7 +6,7 @@ export default component$(() => {
   const programs = [
     {
       id: 1,
-      img: "/images/fabian-gym-training.jpg",
+      img: "/images/fabian-gym-training.webp",
       alt: "Reto 1 - Transformación",
       title: "Reto 1: TU TRANSFORMACIÓN EMPIEZA HOY",
       subtitle: "Comienza con 7 Días de Acceso Totalmente Gratis",
@@ -19,7 +19,7 @@ export default component$(() => {
     },
     {
       id: 2,
-      img: "/images/fabian-handstand-reto2.jpeg",
+      img: "/images/fabian-handstand-reto2.webp",
       alt: "Reto 2 - Progreso",
       title: "Reto 2: DEL PROGRESO A LA TRANSFORMACIÓN",
       subtitle: "Comienza con 7 Días de Acceso Totalmente Gratis",
@@ -58,7 +58,7 @@ export default component$(() => {
     },
     {
       id: 5,
-      img: "/images/hip-thrust.jpeg",
+      img: "/images/hip-thrust.webp",
       alt: "Piernas",
       title: "Piernas 6 semanas (2 por semana)",
       subtitle: "Especialización completa en miembros inferiores",
