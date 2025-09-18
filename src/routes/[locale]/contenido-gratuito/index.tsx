@@ -173,13 +173,113 @@ export default component$(() => {
   );
 });
 
-export const head: DocumentHead = () => {
+export const head: DocumentHead = ({ params }) => {
+  const locale = params.locale || 'es';
+  const baseUrl = "https://coach-fabian-avendano.netlify.app";
+  const currentUrl = `${baseUrl}/${locale}/contenido-gratuito`;
+  const imageUrl = `${baseUrl}/assets/images/2.jpeg`;
+
+  let title, description, keywords;
+
+  if (locale === 'en') {
+    title = "Free Content - Coach Fabian Avendaño";
+    description = "Join our community and access free workouts and motivation for your physical transformation.";
+    keywords = "free content, free workouts, fitness community, free training, motivation";
+  } else {
+    title = "Contenido Gratuito - Coach Fabian Avendaño";
+    description = "Únete a nuestra comunidad y accede a entrenamientos gratuitos y motivación para tu transformación física.";
+    keywords = "contenido gratuito, entrenamientos gratis, comunidad fitness, entrenamiento gratuito, motivación";
+  }
+
   return {
-    title: "Contenido Gratuito - Coach Fabian Avendaño",
+    title,
     meta: [
       {
         name: "description",
-        content: "Únete a nuestra comunidad y accede a entrenamientos gratuitos y motivación para tu transformación física.",
+        content: description,
+      },
+      {
+        name: "keywords",
+        content: keywords,
+      },
+      {
+        name: "author",
+        content: "Fabián Avendaño",
+      },
+      // Open Graph
+      {
+        property: "og:title",
+        content: title,
+      },
+      {
+        property: "og:description",
+        content: description,
+      },
+      {
+        property: "og:image",
+        content: imageUrl,
+      },
+      {
+        property: "og:image:width",
+        content: "1200",
+      },
+      {
+        property: "og:image:height",
+        content: "630",
+      },
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        property: "og:url",
+        content: currentUrl,
+      },
+      {
+        property: "og:site_name",
+        content: "Coach Fabián Avendaño",
+      },
+      {
+        property: "og:locale",
+        content: locale,
+      },
+      // Twitter
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+      {
+        name: "twitter:title",
+        content: title,
+      },
+      {
+        name: "twitter:description",
+        content: description,
+      },
+      {
+        name: "twitter:image",
+        content: imageUrl,
+      },
+    ],
+    links: [
+      {
+        rel: "canonical",
+        href: currentUrl,
+      },
+      {
+        rel: "alternate",
+        hreflang: "es",
+        href: `${baseUrl}/es/contenido-gratuito`,
+      },
+      {
+        rel: "alternate",
+        hreflang: "en",
+        href: `${baseUrl}/en/contenido-gratuito`,
+      },
+      {
+        rel: "alternate",
+        hreflang: "x-default",
+        href: `${baseUrl}/es/contenido-gratuito`,
       },
     ],
   };

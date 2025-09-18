@@ -93,30 +93,113 @@ export default component$(() => {
   );
 });
 
-export const head: DocumentHead = () => {
-  const title = "Coach Fabian Avendaño - Programas de Entrenamiento Personalizado | Transformación Física y Mental";
+export const head: DocumentHead = ({ params }) => {
+  const locale = params.locale || 'es';
+  const baseUrl = "https://coach-fabian-avendano.netlify.app";
+  const currentUrl = `${baseUrl}/${locale}`;
+  const imageUrl = `${baseUrl}/assets/images/fabian-kettlebell.jpg`;
+
+  let title, description, keywords;
+
+  if (locale === 'en') {
+    title = "Coach Fabian Avendaño - Personalized Training Programs | Physical and Mental Transformation";
+    description = "Discover personalized training programs with Coach Fabian Avendaño. Transformation challenges, HIIT, base strength and more. Transform your body and mind with proven methodology.";
+    keywords = "personal training, personal coach, physical transformation, fitness challenges, HIIT, base strength, home workout, online fitness";
+  } else {
+    title = "Coach Fabian Avendaño - Programas de Entrenamiento Personalizado | Transformación Física y Mental";
+    description = "Descubre programas de entrenamiento personalizado con Coach Fabian Avendaño. Retos de transformación, HIIT, fuerza base y más. Transforma tu cuerpo y mente con metodología probada.";
+    keywords = "entrenamiento personal, coach personal, transformación física, retos fitness, HIIT, fuerza base, entrenamiento en casa, fitness online";
+  }
+
   return {
     title,
     meta: [
       {
         name: "description",
-        content: "Descubre programas de entrenamiento personalizado con Coach Fabian Avendaño. Retos de transformación, HIIT, fuerza base y más. Transforma tu cuerpo y mente con metodología probada.",
+        content: description,
       },
       {
         name: "keywords",
-        content: "entrenamiento personal, coach personal, transformación física, retos fitness, HIIT, fuerza base, entrenamiento en casa, fitness online",
+        content: keywords,
       },
       {
+        name: "author",
+        content: "Fabián Avendaño",
+      },
+      // Open Graph
+      {
         property: "og:title",
-        content: "Coach Fabian Avendaño - Programas de Entrenamiento Personalizado",
+        content: title,
       },
       {
         property: "og:description",
-        content: "Programas de entrenamiento personalizado para transformar tu cuerpo y mente. Retos, HIIT, fuerza base y más.",
+        content: description,
+      },
+      {
+        property: "og:image",
+        content: imageUrl,
+      },
+      {
+        property: "og:image:width",
+        content: "1200",
+      },
+      {
+        property: "og:image:height",
+        content: "630",
       },
       {
         property: "og:type",
         content: "website",
+      },
+      {
+        property: "og:url",
+        content: currentUrl,
+      },
+      {
+        property: "og:site_name",
+        content: "Coach Fabián Avendaño",
+      },
+      {
+        property: "og:locale",
+        content: locale,
+      },
+      // Twitter
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+      {
+        name: "twitter:title",
+        content: title,
+      },
+      {
+        name: "twitter:description",
+        content: description,
+      },
+      {
+        name: "twitter:image",
+        content: imageUrl,
+      },
+    ],
+    links: [
+      {
+        rel: "canonical",
+        href: currentUrl,
+      },
+      {
+        rel: "alternate",
+        hreflang: "es",
+        href: `${baseUrl}/es`,
+      },
+      {
+        rel: "alternate",
+        hreflang: "en",
+        href: `${baseUrl}/en`,
+      },
+      {
+        rel: "alternate",
+        hreflang: "x-default",
+        href: `${baseUrl}/es`,
       },
     ],
   };

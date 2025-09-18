@@ -80,14 +80,113 @@ export default component$(() => {
   );
 });
 
-export const head: DocumentHead = () => {
-  const title = "Videos - Coach Fabian Avendaño";
+export const head: DocumentHead = ({ params }) => {
+  const locale = params.locale || 'es';
+  const baseUrl = "https://coach-fabian-avendano.netlify.app";
+  const currentUrl = `${baseUrl}/${locale}/videos`;
+  const imageUrl = `${baseUrl}/assets/images/2.jpeg`;
+
+  let title, description, keywords;
+
+  if (locale === 'en') {
+    title = "Videos - Coach Fabian Avendaño";
+    description = "Watch all the training videos from Coach Fabian Avendaño.";
+    keywords = "training videos, fitness videos, workout videos, free training videos, exercise videos";
+  } else {
+    title = "Videos - Coach Fabian Avendaño";
+    description = "Mira todos los videos de entrenamiento del Coach Fabian Avendaño.";
+    keywords = "videos entrenamiento, videos fitness, videos rutinas, videos ejercicio, videos gratuitos";
+  }
+
   return {
     title,
     meta: [
       {
         name: "description",
-        content: "Mira todos los videos de entrenamiento del Coach Fabian Avendaño.",
+        content: description,
+      },
+      {
+        name: "keywords",
+        content: keywords,
+      },
+      {
+        name: "author",
+        content: "Fabián Avendaño",
+      },
+      // Open Graph
+      {
+        property: "og:title",
+        content: title,
+      },
+      {
+        property: "og:description",
+        content: description,
+      },
+      {
+        property: "og:image",
+        content: imageUrl,
+      },
+      {
+        property: "og:image:width",
+        content: "1200",
+      },
+      {
+        property: "og:image:height",
+        content: "630",
+      },
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        property: "og:url",
+        content: currentUrl,
+      },
+      {
+        property: "og:site_name",
+        content: "Coach Fabián Avendaño",
+      },
+      {
+        property: "og:locale",
+        content: locale,
+      },
+      // Twitter
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+      {
+        name: "twitter:title",
+        content: title,
+      },
+      {
+        name: "twitter:description",
+        content: description,
+      },
+      {
+        name: "twitter:image",
+        content: imageUrl,
+      },
+    ],
+    links: [
+      {
+        rel: "canonical",
+        href: currentUrl,
+      },
+      {
+        rel: "alternate",
+        hreflang: "es",
+        href: `${baseUrl}/es/videos`,
+      },
+      {
+        rel: "alternate",
+        hreflang: "en",
+        href: `${baseUrl}/en/videos`,
+      },
+      {
+        rel: "alternate",
+        hreflang: "x-default",
+        href: `${baseUrl}/es/videos`,
       },
     ],
   };

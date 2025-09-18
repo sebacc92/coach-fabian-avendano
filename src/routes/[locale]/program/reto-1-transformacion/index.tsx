@@ -4,6 +4,7 @@ import { _ } from "compiled-i18n";
 import { Button } from "~/components/ui/button/button";
 import { CalendarReto1 } from "~/components/calendar-reto1";
 import { generateProgramMetadata, createProgramHead } from "~/utils/metadata";
+import { getLocale } from "compiled-i18n";
 
 export default component$(() => {
   const currentTestimonial = useSignal(0);
@@ -266,8 +267,9 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = () => {
+  const locale = getLocale();
   const program = {
-    img: "/images/fabian-gym-training.webp",
+    img: "/assets/images/fabian-gym-training.webp",
     alt: _`program1ImgAlt`,
     price: _`program1Price`,
     priceColor: "bg-[#6A0DAD]",
@@ -299,6 +301,6 @@ export const head: DocumentHead = () => {
     ]
   };
 
-  const metadata = generateProgramMetadata(program, "reto-1-transformacion");
+  const metadata = generateProgramMetadata(program, "reto-1-transformacion", locale);
   return createProgramHead(metadata);
-}; 
+};

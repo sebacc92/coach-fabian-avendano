@@ -279,15 +279,7 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = () => {
-  const currentLocale = getLocale();
-  
-  // Function to get equipment based on locale
-  const getEquipment = () => {
-    return currentLocale === 'en' 
-      ? ["Barbell", "Dumbbells", "Resistance Bands", "Step", "Bench"]
-      : ["Barra", "Mancuernas", "Bandas de Resistencia", "Step", "Banco"];
-  };
-
+  const locale = getLocale();
   const program = {
     alt: _`program6ImgAlt`,
     price: _`program6Price`,
@@ -308,16 +300,17 @@ export const head: DocumentHead = () => {
     link: "https://mpago.la/1B8SeYt",
     duration: "6 semanas",
     frequency: "3 días por semana",
-    equipment: getEquipment(),
+    equipment: locale === 'en' ? ["Barbell", "Dumbbells", "Resistance Bands", "Step", "Bench"] : ["Barra", "Mancuernas", "Bandas de Resistencia", "Step", "Banco"],
     benefits: [
       "Especialización completa en miembros inferiores",
       "Progresión sistemática",
       "3 días semanales",
       "Desarrollo de glúteos y piernas",
       "Técnicas avanzadas"
-    ]
+    ],
+    img: '/assets/images/hip-thrust.webp'
   };
 
-  const metadata = generateProgramMetadata(program, "piernas-frecuencia");
+  const metadata = generateProgramMetadata(program, "piernas-frecuencia", locale);
   return createProgramHead(metadata);
-}; 
+};

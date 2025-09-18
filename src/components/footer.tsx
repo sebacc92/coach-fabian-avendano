@@ -27,8 +27,8 @@ export default component$(() => {
                   key={item.href}
                   href={item.href}
                   class="block text-gray-300 hover:text-white transition-colors text-sm cursor-pointer"
-                  preventdefault:click
-                  onClick$={() => {
+                  onClick$={(e) => {
+                    e.preventDefault();
                     const el = document.getElementById(item.href.replace('#', ''));
                     if (el) {
                       el.scrollIntoView({ behavior: 'smooth' });

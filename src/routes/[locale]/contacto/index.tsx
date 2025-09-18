@@ -1,7 +1,121 @@
+
 import { component$, useSignal, $ } from '@builder.io/qwik';
+import type { DocumentHead } from '@builder.io/qwik-city';
 import { Label, Input } from '~/components/ui';
 import { _ } from 'compiled-i18n';
 import emailjs from '@emailjs/browser';
+
+export const head: DocumentHead = ({ params }) => {
+  const locale = params.locale || 'es';
+  const baseUrl = "https://coach-fabian-avendano.netlify.app";
+  const currentUrl = `${baseUrl}/${locale}/contacto`;
+  const imageUrl = `${baseUrl}/assets/images/fabian-beach-about.jpg`;
+
+  let title, description, keywords;
+
+  if (locale === 'en') {
+    title = "Contact - Coach Fabian Avendano";
+    description = "Have questions, inquiries, or want to train with me? Fill out the form and I'll get back to you as soon as possible.";
+    keywords = "contact, personal training contact, fitness coach contact, training inquiries";
+  } else {
+    title = "Contacto - Coach Fabian Avendano";
+    description = "Tenés dudas, consultas o querés entrenar conmigo? Completá el formulario y te responderé a la brevedad.";
+    keywords = "contacto, contacto entrenador personal, consultas fitness, dudas entrenamiento";
+  }
+
+  return {
+    title,
+    meta: [
+      {
+        name: "description",
+        content: description,
+      },
+      {
+        name: "keywords",
+        content: keywords,
+      },
+      {
+        name: "author",
+        content: "Fabián Avendaño",
+      },
+      // Open Graph
+      {
+        property: "og:title",
+        content: title,
+      },
+      {
+        property: "og:description",
+        content: description,
+      },
+      {
+        property: "og:image",
+        content: imageUrl,
+      },
+      {
+        property: "og:image:width",
+        content: "1200",
+      },
+      {
+        property: "og:image:height",
+        content: "630",
+      },
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        property: "og:url",
+        content: currentUrl,
+      },
+      {
+        property: "og:site_name",
+        content: "Coach Fabián Avendaño",
+      },
+      {
+        property: "og:locale",
+        content: locale,
+      },
+      // Twitter
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+      {
+        name: "twitter:title",
+        content: title,
+      },
+      {
+        name: "twitter:description",
+        content: description,
+      },
+      {
+        name: "twitter:image",
+        content: imageUrl,
+      },
+    ],
+    links: [
+      {
+        rel: "canonical",
+        href: currentUrl,
+      },
+      {
+        rel: "alternate",
+        hreflang: "es",
+        href: `${baseUrl}/es/contacto`,
+      },
+      {
+        rel: "alternate",
+        hreflang: "en",
+        href: `${baseUrl}/en/contacto`,
+      },
+      {
+        rel: "alternate",
+        hreflang: "x-default",
+        href: `${baseUrl}/es/contacto`,
+      },
+    ],
+  };
+};
 
 export default component$(() => {
   const isSubmitted = useSignal(false);
@@ -92,19 +206,4 @@ export default component$(() => {
             <button
               type="submit"
               class="w-full bg-[#1e3a8a] hover:bg-[#1e40af] text-white font-bold py-3 rounded-lg shadow-md transition-all duration-200 uppercase tracking-wide text-lg focus:outline-none focus:ring-2 focus:ring-[#1e3a8a] focus:ring-offset-2"
-              disabled={loading.value}
-            >
-              {loading.value ? 'Enviando...' : (_`contactSendButton` ?? 'Enviar')}
-            </button>
-            {isSubmitted.value && (
-              <p class="text-green-600 text-center font-semibold mt-4 animate-fade-in">{_`contactSuccessMessage` ?? '¡Mensaje enviado correctamente!'}</p>
-            )}
-            {error.value && (
-              <p class="text-red-600 text-center font-semibold mt-4">{error.value}</p>
-            )}
-          </form>
-        </div>
-      </div>
-    </section>
-  );
-}); 
+              disabled={loading

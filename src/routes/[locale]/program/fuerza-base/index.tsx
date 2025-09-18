@@ -1,6 +1,6 @@
 import { component$, useSignal, $ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { _ } from "compiled-i18n";
+import { _, getLocale } from "compiled-i18n";
 import { Button } from "~/components/ui/button/button";
 import { generateProgramMetadata, createProgramHead } from "~/utils/metadata";
 
@@ -261,6 +261,7 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = () => {
+  const locale = getLocale();
   const program = {
     alt: _`program3ImgAlt`,
     price: _`program3Price`,
@@ -272,9 +273,9 @@ export const head: DocumentHead = () => {
     buttonHover: "hover:bg-[#E55A2A]",
     level: "FUERZA BASE",
     levelColor: "bg-[#FF6B35]",
-    title: "Fuerza Base: Presencia Física (5 semanas)",
-    subtitle: "Construyendo fuerza y estabilidad desde lo simple",
-    desc: "Programa de fuerza de 5 semanas (2 días por semana) con enfoque full body. Día 1 centrado en empujes y Día 2 en tracciones. Se prioriza un ejercicio básico por sesión con más series para progresar en carga.",
+    title: locale === 'en' ? "Base Strength: Physical Presence (5 weeks)" : "Fuerza Base: Presencia Física (5 semanas)",
+    subtitle: locale === 'en' ? "Building strength and stability from the simple" : "Construyendo fuerza y estabilidad desde lo simple",
+    desc: locale === 'en' ? "5-week strength program (2 days per week) with full body focus. Day 1 focused on pushes and Day 2 on pulls. One basic exercise per session is prioritized with more sets to progress in load." : "Programa de fuerza de 5 semanas (2 días por semana) con enfoque full body. Día 1 centrado en empujes y Día 2 en tracciones. Se prioriza un ejercicio básico por sesión con más series para progresar en carga.",
     cta: _`program3Cta`,
     link: "https://mpago.la/17rjJve",
     duration: "5 semanas",
@@ -286,9 +287,10 @@ export const head: DocumentHead = () => {
       "Movimientos funcionales",
       "Desarrollo de estabilidad",
       "Rutinas de 60 minutos"
-    ]
+    ],
+    img: '/assets/images/fabian-kettlebell.webp'
   };
 
-  const metadata = generateProgramMetadata(program, "fuerza-base");
+  const metadata = generateProgramMetadata(program, "fuerza-base", locale);
   return createProgramHead(metadata);
-}; 
+};

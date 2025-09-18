@@ -1,7 +1,8 @@
 import { component$, useSignal, $ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { _ } from "compiled-i18n";
+import { _, getLocale } from "compiled-i18n";
 import { Button } from "~/components/ui/button/button";
+import { generateProgramMetadata, createProgramHead } from "~/utils/metadata";
 
 export default component$(() => {
   const currentTestimonial = useSignal(0);
@@ -269,13 +270,15 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = () => {
-  return {
-    title: "HIIT 4 semanas (2 días) - Fabián Avendaño",
-    meta: [
-      {
-        name: "description",
-        content: "Máxima intensidad en mínimo tiempo. Programa de entrenamiento intervalico de alta intensidad de 4 semanas.",
-      },
-    ],
+  const locale = getLocale();
+  const program = {
+    img: '/assets/images/1.jpeg',
+    title: _`program4Title`,
+    desc: _`program4Desc`,
+    price: _`program4Price`,
+    alt: _`program4ImgAlt`
   };
-}; 
+
+  const metadata = generateProgramMetadata(program, "hiit-compacto", locale);
+  return createProgramHead(metadata);
+};
