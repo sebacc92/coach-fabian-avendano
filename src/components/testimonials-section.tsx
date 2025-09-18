@@ -2,6 +2,9 @@ import { component$ } from "@builder.io/qwik";
 import { _ } from "compiled-i18n";
 import { LuStar } from "@qwikest/icons/lucide";
 
+import SebaAntesImg from '~/assets/images/seba-antes.jpg?jsx';
+import SebaDespuesImg from '~/assets/images/seba-despues.png?jsx';
+
 export const TestimonialsSection = component$(() => {
   return (
     <section id="testimonios" class="py-16 md:py-24 bg-white">
@@ -17,9 +20,8 @@ export const TestimonialsSection = component$(() => {
                 <div class="flex">
                   {/* Before Image */}
                   <div class="relative w-1/2">
-                    <img 
-                      src="/images/seba-antes.jpg" 
-                      alt="Sebastian Cardoso - Antes" 
+                    <SebaAntesImg
+                      alt="Sebastian Cardoso - Antes"
                       class="w-full h-96 object-cover rounded-l-lg shadow-md"
                     />
                     <div class="absolute top-4 left-4 bg-black/70 text-white px-3 py-1 rounded-md text-sm font-semibold">
@@ -28,9 +30,8 @@ export const TestimonialsSection = component$(() => {
                   </div>
                   {/* After Image */}
                   <div class="relative w-1/2">
-                    <img 
-                      src="/images/seba-despues.png" 
-                      alt="Sebastian Cardoso - Después" 
+                    <SebaDespuesImg
+                      alt="Sebastian Cardoso - Después"
                       class="w-full h-96 object-cover rounded-r-lg shadow-md"
                     />
                     <div class="absolute top-4 right-4 bg-black/70 text-white px-3 py-1 rounded-md text-sm font-semibold">

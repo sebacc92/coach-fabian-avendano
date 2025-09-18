@@ -2,11 +2,17 @@ import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { Button } from "~/components/ui/button/button";
 
+import DemoImg1 from '~/assets/images/fabian-gym-training.webp?jsx';
+import DemoImg2 from '~/assets/images/fabian-handstand-reto2.webp?jsx';
+import DemoImg3 from '~/assets/images/fabian-kettlebell.webp?jsx';
+import DemoImg4 from '~/assets/images/1.jpeg?jsx';
+import DemoImg5 from '~/assets/images/hip-thrust.webp?jsx';
+
 export default component$(() => {
   const programs = [
     {
       id: 1,
-      img: "/images/fabian-gym-training.webp",
+      img: DemoImg1,
       alt: "Reto 1 - Transformación",
       title: "Reto 1: TU TRANSFORMACIÓN EMPIEZA HOY",
       subtitle: "Comienza con 7 Días de Acceso Totalmente Gratis",
@@ -19,7 +25,7 @@ export default component$(() => {
     },
     {
       id: 2,
-      img: "/images/fabian-handstand-reto2.webp",
+      img: DemoImg2,
       alt: "Reto 2 - Progreso",
       title: "Reto 2: DEL PROGRESO A LA TRANSFORMACIÓN",
       subtitle: "Comienza con 7 Días de Acceso Totalmente Gratis",
@@ -32,7 +38,7 @@ export default component$(() => {
     },
     {
       id: 3,
-      img: "/images/fabian-kettlebell.webp",
+      img: DemoImg3,
       alt: "Fuerza Base",
       title: "Fuerza Base: Presencia Física",
       subtitle: "Construyendo fuerza y estabilidad desde lo simple",
@@ -45,7 +51,7 @@ export default component$(() => {
     },
     {
       id: 4,
-      img: "/images/1.jpeg",
+      img: DemoImg4,
       alt: "HIIT Compacto",
       title: "HIIT 4 semanas (2 días)",
       subtitle: "Máxima intensidad en mínimo tiempo",
@@ -58,7 +64,7 @@ export default component$(() => {
     },
     {
       id: 5,
-      img: "/images/hip-thrust.webp",
+      img: DemoImg5,
       alt: "Piernas",
       title: "Piernas 6 semanas (2 por semana)",
       subtitle: "Especialización completa en miembros inferiores",
@@ -123,7 +129,7 @@ export default component$(() => {
               return (
                 <div key={program.id} class="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300">
                   <div class="relative h-48">
-                    <img src={program.img} alt={program.alt} class="w-full h-full object-cover" />
+                    <program.img alt={program.alt} class="w-full h-full object-cover" />
                     <div class="absolute inset-0 bg-black/40"></div>
                     <div class="absolute top-4 left-4">
                       <span class={`${colors.bg} text-white px-3 py-1 rounded-full text-sm font-semibold`}>
@@ -162,7 +168,7 @@ export default component$(() => {
               const colors = getColorClasses(program.color);
               return (
                 <div key={program.id} class="relative h-80 rounded-2xl overflow-hidden group">
-                  <img src={program.img} alt={program.alt} class="w-full h-full object-cover" />
+                  <program.img alt={program.alt} class="w-full h-full object-cover" />
                   <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                   <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
                     <div class="flex items-center justify-between mb-2">
@@ -193,7 +199,7 @@ export default component$(() => {
               return (
                 <div key={program.id} class="bg-white rounded-xl shadow-lg overflow-hidden flex h-56">
                   <div class="w-48 flex-shrink-0">
-                    <img src={program.img} alt={program.alt} class="w-full h-full object-cover object-top" />
+                    <program.img alt={program.alt} class="w-full h-full object-cover object-top" />
                   </div>
                   <div class="flex-1 p-6 flex flex-col">
                     <div class="flex items-center justify-between mb-3">
@@ -230,7 +236,7 @@ export default component$(() => {
               return (
                 <div key={program.id} class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
                   <div class="w-full h-32 rounded-lg overflow-hidden mb-3">
-                    <img src={program.img} alt={program.alt} class="w-full h-full object-cover object-top" />
+                    <program.img alt={program.alt} class="w-full h-full object-cover object-top" />
                   </div>
                   <div class="flex items-center justify-between mb-2">
                     <span class={`${colors.text} text-xs font-medium`}>{program.level}</span>
@@ -256,7 +262,7 @@ export default component$(() => {
               return (
                 <div key={program.id} class="bg-white rounded-xl shadow-lg overflow-hidden">
                   <div class="relative">
-                    <img src={program.img} alt={program.alt} class="w-full h-48 object-cover object-top" />
+                    <program.img alt={program.alt} class="w-full h-48 object-cover object-top" />
                     <div class="absolute top-4 left-4">
                       <span class={`${colors.bg} text-white px-3 py-1 rounded-full text-sm font-semibold`}>
                         {program.level}
@@ -301,7 +307,7 @@ export default component$(() => {
               return (
                 <div key={program.id} class="bg-white rounded-xl shadow-lg overflow-hidden">
                   <div class="relative h-48">
-                    <img src={program.img} alt={program.alt} class="w-full h-full object-cover object-top" />
+                    <program.img alt={program.alt} class="w-full h-full object-cover object-top" />
                     <div class="absolute inset-0 bg-black/40"></div>
                     <div class="absolute top-4 left-4">
                       <span class="bg-white/90 text-gray-800 px-3 py-1 rounded-full text-sm font-semibold">
@@ -339,7 +345,7 @@ export default component$(() => {
               return (
                 <div key={program.id} class="group relative bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300">
                   <div class="relative h-56">
-                    <img src={program.img} alt={program.alt} class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-300" />
+                    <program.img alt={program.alt} class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-300" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div class="absolute top-4 left-4">
                       <span class="bg-white/90 text-gray-800 px-3 py-1 rounded-full text-sm font-semibold">
@@ -384,7 +390,7 @@ export default component$(() => {
               return (
                 <div key={program.id} class="bg-white rounded-xl shadow-lg overflow-hidden relative">
                   <div class="relative h-48">
-                    <img src={program.img} alt={program.alt} class="w-full h-full object-cover object-top" />
+                    <program.img alt={program.alt} class="w-full h-full object-cover object-top" />
                     <div class="absolute inset-0 bg-black/30"></div>
                     <div class="absolute top-0 right-0">
                       <div class={`${colors.bg} text-white px-4 py-2 rounded-bl-lg`}>
@@ -424,7 +430,7 @@ export default component$(() => {
               return (
                 <div key={program.id} class="bg-white rounded-xl shadow-lg overflow-hidden">
                   <div class="relative h-40">
-                    <img src={program.img} alt={program.alt} class="w-full h-full object-cover object-top" />
+                    <program.img alt={program.alt} class="w-full h-full object-cover object-top" />
                     <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"></div>
                     <div class="absolute top-4 left-4">
                       <span class={`${colors.bg} text-white px-3 py-1 rounded-full text-sm font-semibold`}>
@@ -462,7 +468,7 @@ export default component$(() => {
               return (
                 <div key={program.id} class="relative bg-white rounded-2xl shadow-xl overflow-hidden group">
                   <div class="relative h-52">
-                    <img src={program.img} alt={program.alt} class="w-full h-full object-cover object-top" />
+                    <program.img alt={program.alt} class="w-full h-full object-cover object-top" />
                     <div class="absolute inset-0 bg-black/40"></div>
                     <div class="absolute -top-2 -right-2">
                       <div class={`${colors.bg} text-white px-4 py-2 rounded-full shadow-lg`}>

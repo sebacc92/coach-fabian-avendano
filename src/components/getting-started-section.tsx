@@ -1,31 +1,36 @@
 import { component$ } from "@builder.io/qwik";
 import { _ } from "compiled-i18n";
 
+import Step1Img from '~/assets/images/getting-started-step1.webp?jsx';
+import Step2Img from '~/assets/images/getting-started-step2.webp?jsx';
+import Step3Img from '~/assets/images/getting-started-step3.webp?jsx';
+import Step4Img from '~/assets/images/getting-started-step4.webp?jsx';
+
 export const GettingStartedSection = component$(() => {
   const steps = [
     {
       id: 1,
       title: _`step1Title`,
       description: _`step1Desc`,
-      image: "/images/getting-started-step1.webp"
+      img: Step1Img
     },
     {
       id: 2,
       title: _`step2Title`,
       description: _`step2Desc`,
-      image: "/images/getting-started-step2.webp"
+      img: Step2Img
     },
     {
       id: 3,
       title: _`step3Title`,
       description: _`step3Desc`,
-      image: "/images/getting-started-step3.webp"
+      img: Step3Img
     },
     {
       id: 4,
       title: _`step4Title`,
       description: _`step4Desc`,
-      image: "/images/getting-started-step4.webp"
+      img: Step4Img
     }
   ];
 
@@ -73,8 +78,7 @@ export const GettingStartedSection = component$(() => {
 
               {/* Image with pure transparency - no background container */}
               <div class="mb-6 relative flex justify-center">
-                <img 
-                  src={step.image} 
+                <step.img
                   alt={`${step.title} - Paso ${step.id}`}
                   class="w-full max-w-xs h-auto object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-lg"
                   style="background: transparent; mix-blend-mode: multiply;"

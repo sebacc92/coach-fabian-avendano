@@ -4,11 +4,18 @@ import { _ } from "compiled-i18n";
 import { Button } from "~/components/ui/button/button";
 import { generateProgramMetadata, createProgramHead } from "~/utils/metadata";
 
+import FuerzaImg from '~/assets/images/fabian-kettlebell.webp?jsx';
+
 export default component$(() => {
   const currentTestimonial = useSignal(0);
 
+  const testimonials = [
+    "Gané fuerza real que se nota en todo lo que hago.",
+    "El programa de fuerza base cambió mi forma de entrenar."
+  ];
+
   const program = {
-    img: "/images/fabian-kettlebell.webp",
+    img: FuerzaImg,
     alt: _`program3ImgAlt`,
     price: _`program3Price`,
     priceColor: "bg-[#FF6B35]",
@@ -33,20 +40,16 @@ export default component$(() => {
       "Movimientos funcionales",
       "Desarrollo de estabilidad",
       "Rutinas de 60 minutos"
-    ],
-    testimonials: [
-      "Gané fuerza real que se nota en todo lo que hago.",
-      "El programa de fuerza base cambió mi forma de entrenar."
     ]
   };
 
   const nextTestimonial = $(() => {
-    currentTestimonial.value = (currentTestimonial.value + 1) % program.testimonials.length;
+    currentTestimonial.value = (currentTestimonial.value + 1) % testimonials.length;
   });
 
   const prevTestimonial = $(() => {
-    currentTestimonial.value = currentTestimonial.value === 0 
-      ? program.testimonials.length - 1 
+    currentTestimonial.value = currentTestimonial.value === 0
+      ? testimonials.length - 1
       : currentTestimonial.value - 1;
   });
 
@@ -55,9 +58,8 @@ export default component$(() => {
       {/* Hero Section */}
       <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0">
-          <img 
-            src={program.img} 
-            alt={program.alt} 
+          <program.img
+            alt={program.alt}
             class="w-full h-full object-cover object-top"
           />
           <div class="absolute inset-0 bg-black/50"></div>
@@ -110,9 +112,8 @@ export default component$(() => {
               </p>
             </div>
             <div class="relative">
-              <img 
-                src={program.img} 
-                alt={program.alt} 
+              <program.img
+                alt={program.alt}
                 class="rounded-2xl shadow-2xl"
               />
               <div class={`absolute -top-4 -right-4 ${program.priceColor} text-white px-6 py-3 rounded-full text-xl font-bold shadow-lg`}>
@@ -200,10 +201,10 @@ export default component$(() => {
                 </svg>
               </div>
               <p class="text-lg md:text-xl text-gray-700 mb-8 italic">
-                "{program.testimonials[currentTestimonial.value]}"
+                "{testimonials[currentTestimonial.value]}"
               </p>
               <div class="flex justify-center space-x-2">
-                {program.testimonials.map((_, index) => (
+                {testimonials.map((_, index) => (
                   <button
                     key={index}
                     onClick$={() => currentTestimonial.value = index}
@@ -261,7 +262,6 @@ export default component$(() => {
 
 export const head: DocumentHead = () => {
   const program = {
-    img: "/images/fabian-kettlebell.webp",
     alt: _`program3ImgAlt`,
     price: _`program3Price`,
     priceColor: "bg-[#FF6B35]",
@@ -286,10 +286,6 @@ export const head: DocumentHead = () => {
       "Movimientos funcionales",
       "Desarrollo de estabilidad",
       "Rutinas de 60 minutos"
-    ],
-    testimonials: [
-      "Gané fuerza real que se nota en todo lo que hago.",
-      "El programa de fuerza base cambió mi forma de entrenar."
     ]
   };
 

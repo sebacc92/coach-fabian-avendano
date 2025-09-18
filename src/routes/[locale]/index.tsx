@@ -9,6 +9,8 @@ import { TestimonialsSection } from "~/components/testimonials-section";
 import { FAQSection } from "~/components/faq-section";
 import { AboutSection } from "~/components/about-section";
 
+import VideosImg from '~/assets/images/2.jpeg?jsx';
+
 export default component$(() => {
   const loc = useLocation();
   const videosPath = `/${loc.params.locale}/contenido-gratuito#videos`;
@@ -47,8 +49,7 @@ export default component$(() => {
             </div>
             <div class="relative">
               <div class="aspect-video relative rounded-2xl shadow-2xl overflow-hidden">
-                <img
-                  src="/images/2.jpeg"
+                <VideosImg
                   alt="Videos de entrenamiento"
                   class="absolute inset-0 w-full h-full object-cover"
                 />

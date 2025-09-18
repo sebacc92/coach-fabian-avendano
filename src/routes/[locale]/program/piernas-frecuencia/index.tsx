@@ -4,19 +4,26 @@ import { _, getLocale } from "compiled-i18n";
 import { Button } from "~/components/ui/button/button";
 import { generateProgramMetadata, createProgramHead } from "~/utils/metadata";
 
+import PiernasImg from '~/assets/images/hip-thrust.webp?jsx';
+
 export default component$(() => {
   const currentTestimonial = useSignal(0);
   const currentLocale = getLocale();
   
   // Function to get equipment based on locale
   const getEquipment = () => {
-    return currentLocale === 'en' 
+    return currentLocale === 'en'
       ? ["Barbell", "Dumbbells", "Resistance Bands", "Step", "Bench"]
       : ["Barra", "Mancuernas", "Bandas de Resistencia", "Step", "Banco"];
   };
 
+  const testimonials = [
+    "El programa de piernas transformó completamente mis glúteos y piernas.",
+    "Nunca había visto resultados tan buenos en mis piernas. ¡Increíble programa!"
+  ];
+
   const program = {
-    img: "/images/hip-thrust.webp",
+    img: PiernasImg,
     alt: _`program6ImgAlt`,
     price: _`program6Price`,
     priceColor: "bg-[#E91E63]",
@@ -43,20 +50,16 @@ export default component$(() => {
       "3 días semanales",
       "Desarrollo de glúteos y piernas",
       "Técnicas avanzadas"
-    ],
-    testimonials: [
-      "El programa de piernas transformó completamente mis glúteos y piernas.",
-      "Nunca había visto resultados tan buenos en mis piernas. ¡Increíble programa!"
     ]
   };
 
   const nextTestimonial = $(() => {
-    currentTestimonial.value = (currentTestimonial.value + 1) % program.testimonials.length;
+    currentTestimonial.value = (currentTestimonial.value + 1) % testimonials.length;
   });
 
   const prevTestimonial = $(() => {
-    currentTestimonial.value = currentTestimonial.value === 0 
-      ? program.testimonials.length - 1 
+    currentTestimonial.value = currentTestimonial.value === 0
+      ? testimonials.length - 1
       : currentTestimonial.value - 1;
   });
 
@@ -65,9 +68,8 @@ export default component$(() => {
       {/* Hero Section */}
       <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0">
-          <img 
-            src={program.img} 
-            alt={program.alt} 
+          <program.img
+            alt={program.alt}
             class="w-full h-full object-cover object-top"
           />
           <div class="absolute inset-0 bg-black/50"></div>
@@ -128,9 +130,8 @@ export default component$(() => {
               )}
             </div>
             <div class="relative">
-              <img 
-                src={program.img} 
-                alt={program.alt} 
+              <program.img
+                alt={program.alt}
                 class="rounded-2xl shadow-2xl"
               />
               <div class={`absolute -top-4 -right-4 ${program.priceColor} text-white px-6 py-3 rounded-full text-xl font-bold shadow-lg`}>
@@ -218,7 +219,7 @@ export default component$(() => {
                 </svg>
               </div>
               <p class="text-lg md:text-xl text-gray-700 mb-8 italic">
-                "{program.testimonials[currentTestimonial.value]}"
+                "{testimonials[currentTestimonial.value]}"
               </p>
               <div class="flex justify-center space-x-2">
                 {program.testimonials.map((_, index) => (
@@ -288,7 +289,6 @@ export const head: DocumentHead = () => {
   };
 
   const program = {
-    img: "/images/hip-thrust.webp",
     alt: _`program6ImgAlt`,
     price: _`program6Price`,
     priceColor: "bg-[#E91E63]",
@@ -315,10 +315,6 @@ export const head: DocumentHead = () => {
       "3 días semanales",
       "Desarrollo de glúteos y piernas",
       "Técnicas avanzadas"
-    ],
-    testimonials: [
-      "El programa de piernas transformó completamente mis glúteos y piernas.",
-      "Nunca había visto resultados tan buenos en mis piernas. ¡Increíble programa!"
     ]
   };
 

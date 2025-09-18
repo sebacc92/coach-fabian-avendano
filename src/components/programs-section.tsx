@@ -2,13 +2,20 @@ import { component$, useVisibleTask$, useSignal } from "@builder.io/qwik";
 import { _ } from "compiled-i18n";
 import { Button } from "./ui/button/button";
 
+import Program1Img from '~/assets/images/fabian-gym-training.webp?jsx';
+import Program2Img from '~/assets/images/fabian-handstand-reto2.webp?jsx';
+import Program3Img from '~/assets/images/fabian-kettlebell.webp?jsx';
+import Program4Img from '~/assets/images/1.jpeg?jsx';
+import Program5Img from '~/assets/images/hiit-basico-3-dias.webp?jsx';
+import Program6Img from '~/assets/images/hip-thrust.webp?jsx';
+
 export const ProgramsSection = component$(() => {
   const sectionRef = useSignal<HTMLElement>();
 
   const programs = [
     {
       slug: "reto-1-transformacion",
-      img: "/images/fabian-gym-training.webp",
+      img: Program1Img,
       alt: _`program1ImgAlt`,
       price: _`program1Price`,
       priceColor: "bg-[#1e3a8a]",
@@ -26,7 +33,7 @@ export const ProgramsSection = component$(() => {
     },
     {
       slug: "reto-2-progreso",
-      img: "/images/fabian-handstand-reto2.webp",
+      img: Program2Img,
       alt: _`program2ImgAlt`,
       price: _`program2Price`,
       priceColor: "bg-[#1e3a8a]",
@@ -46,7 +53,7 @@ export const ProgramsSection = component$(() => {
     },
     {
       slug: "fuerza-base",
-      img: "/images/fabian-kettlebell.webp",
+      img: Program3Img,
       alt: _`program3ImgAlt`,
       price: _`program3Price`,
       priceColor: "bg-[#1e3a8a]",
@@ -64,7 +71,7 @@ export const ProgramsSection = component$(() => {
     },
     {
       slug: "hiit-compacto",
-      img: "/images/1.jpeg",
+      img: Program4Img,
       alt: _`program4ImgAlt`,
       price: _`program4Price`,
       priceColor: "bg-[#1e3a8a]",
@@ -84,7 +91,7 @@ export const ProgramsSection = component$(() => {
     },
     {
       slug: "hiit-basico",
-      img: "/images/hiit-basico-3-dias.webp",
+      img: Program5Img,
       alt: _`program5ImgAlt`,
       price: _`program5Price`,
       priceColor: "bg-[#1e3a8a]",
@@ -102,7 +109,7 @@ export const ProgramsSection = component$(() => {
     },
     {
       slug: "piernas-frecuencia",
-      img: "/images/hip-thrust.webp",
+      img: Program6Img,
       alt: _`program6ImgAlt`,
       price: _`program6Price`,
       priceColor: "bg-[#1e3a8a]",
@@ -170,8 +177,7 @@ export const ProgramsSection = component$(() => {
               data-delay={`${(i + 1) * 200}ms`}
             >
               <div class="relative h-64 md:h-80 overflow-hidden">
-                <img
-                  src={p.img}
+                <p.img
                   alt={p.alt}
                   class={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${i === 5 ? 'object-[0_30%]' : i === 3 ? 'object-center' : 'object-top'}`}
                 />

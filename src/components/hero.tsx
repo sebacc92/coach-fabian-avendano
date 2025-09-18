@@ -3,6 +3,8 @@ import { _, getLocale } from "compiled-i18n";
 import { Button } from "./ui/button/button";
 import { Link } from "@builder.io/qwik-city";
 
+import HeroBgImg from '~/assets/images/fabian-kettlebell.webp?jsx';
+
 export const Hero = component$(() => {
   const currentLocale = getLocale();
 
@@ -17,8 +19,9 @@ export const Hero = component$(() => {
       <div class="absolute inset-0 overflow-hidden">
         <div class="absolute inset-0 animate-hero-zoom">
           {/* Usar una imagen de fondo, cambiar src cuando esté disponible */}
-          <img
-            src="/images/fabian-kettlebell.webp"
+          <HeroBgImg
+            loading="eager"
+            decoding="sync"
             alt={_`Fabián Avendaño entrenando intensamente con kettlebells en el gimnasio`}
             class="object-cover object-top w-full h-full absolute inset-0"
             style="z-index:0;"

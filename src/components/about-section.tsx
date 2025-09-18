@@ -1,6 +1,8 @@
 import { component$ } from "@builder.io/qwik";
 import { _ } from "compiled-i18n";
 
+import AboutImg from '~/assets/images/10.jpeg?jsx';
+
 export const AboutSection = component$(() => {
   return (
     <section id="acerca" class="py-16 md:py-24 bg-[#F5F5F7]">
@@ -9,8 +11,7 @@ export const AboutSection = component$(() => {
           {/* Imagen */}
           <div class="order-2 lg:order-1">
             <div class="relative h-96 md:h-[500px] rounded-lg overflow-hidden group">
-              <img
-                src="/images/10.jpeg"
+              <AboutImg
                 alt={_`aboutImgAlt`}
                 class="object-cover w-full h-full rounded-lg shadow-2xl border border-[#e5e7eb] transition-transform duration-500 group-hover:scale-105"
               />
