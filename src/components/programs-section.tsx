@@ -138,20 +138,26 @@ export const ProgramsSection = component$(() => {
           if (entry.isIntersecting) {
             const section = entry.target as HTMLElement;
             const animateElements = section.querySelectorAll('.animate-element');
-            animateElements.forEach((el) => {
-              const delay = (el as HTMLElement).dataset.delay || '0ms';
-              (el as HTMLElement).style.transitionDelay = delay;
-              (el as HTMLElement).classList.remove(
-                'opacity-0',
-                'translate-y-10',
-                'scale-95'
-              );
-              (el as HTMLElement).classList.add(
-                'opacity-100',
-                'translate-y-0',
-                'scale-100'
-              );
+            
+            // ✅ Batch: Agrupar todas las ops en requestAnimationFrame
+            requestAnimationFrame(() => {
+              animateElements.forEach((el, index) => {
+                const elAsHTMLElement = el as HTMLElement;
+                // Remover style.transitionDelay; usar CSS keyframes para stagger
+                elAsHTMLElement.classList.remove(
+                  'opacity-0',
+                  'translate-y-10',
+                  'scale-95'
+                );
+                elAsHTMLElement.classList.add(
+                  'opacity-100',
+                  'translate-y-0',
+                  'scale-100',
+                  `stagger-${index}`  // Nueva clase para CSS stagger
+                );
+              });
             });
+            
             observer.unobserve(entry.target);
           }
         });
@@ -166,15 +172,15 @@ export const ProgramsSection = component$(() => {
   return (
     <section id="programa" class="py-12 md:py-16 lg:py-24" ref={sectionRef}>
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold font-['Poppins'] text-center mb-12 md:mb-16 text-[#1A1A1A] animate-element" data-delay="0ms">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold font-['Poppins'] text-center mb-12 md:mb-16 text-[#1A1A1A] animate-element stagger-0" style="--stagger-delay: 0s;">
           {_`programsTitle`}
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {programs.map((p, i) => (
             <div
               key={i}
-              class={`group border-2 ${p.borderColor} shadow-lg hover:shadow-2xl rounded-xl flex flex-col bg-white overflow-hidden transition-all duration-500 ease-out opacity-0 translate-y-10 scale-95 animate-element`}
-              data-delay={`${(i + 1) * 200}ms`}
+              class={`group border-2 ${p.borderColor} shadow-lg hover:shadow-2xl rounded-xl flex flex-col bg-white overflow-hidden transition-all duration-500 ease-out opacity-0 translate-y-10 scale-95 animate-element stagger-${i + 1}`}
+              style={{ '--stagger-delay': `${(i + 1) * 0.2}s` }}
             >
               <div class="relative h-64 md:h-80 overflow-hidden">
                 <p.img
