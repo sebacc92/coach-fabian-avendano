@@ -322,6 +322,6 @@ export const head: DocumentHead = () => {
     ]
   };
 
-  const metadata = generateProgramMetadata(program, "reto-2-progreso");
+  const metadata = generateProgramMetadata(program, "reto-2-progreso", currentLocale);
   return createProgramHead(metadata);
 }; 

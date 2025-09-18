@@ -183,7 +183,6 @@ export default component$(() => {
         <div class="w-full max-w-lg bg-white rounded-2xl shadow-2xl p-8 md:p-12 border border-gray-100">
           <form
             ref={formRef}
-            preventdefault:submit
             onSubmit$={handleSubmit}
             class="space-y-7"
           >
@@ -206,4 +205,23 @@ export default component$(() => {
             <button
               type="submit"
               class="w-full bg-[#1e3a8a] hover:bg-[#1e40af] text-white font-bold py-3 rounded-lg shadow-md transition-all duration-200 uppercase tracking-wide text-lg focus:outline-none focus:ring-2 focus:ring-[#1e3a8a] focus:ring-offset-2"
-              disabled={loading
+              disabled={loading.value}
+            >
+              {loading.value ? 'Enviando...' : (_`contactSendButton` ?? 'Enviar Mensaje')}
+            </button>
+          </form>
+          {isSubmitted.value && (
+            <div class="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
+              <p class="text-green-800 font-medium">{_`contactSuccessMessage` ?? '¡Mensaje enviado exitosamente! Te responderé pronto.'}</p>
+            </div>
+          )}
+          {error.value && (
+            <div class="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+              <p class="text-red-800 font-medium">{error.value}</p>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+});
