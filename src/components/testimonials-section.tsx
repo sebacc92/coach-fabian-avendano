@@ -45,7 +45,7 @@ export const TestimonialsSection = component$(() => {
             {/* Testimonial Content */}
             <div class="max-w-2xl mx-auto">
               <h3 class="font-bold text-2xl mb-2 text-[#1e3a8a]">Sebastian Cardoso</h3>
-              <p class="font-semibold mb-4 text-[#2563eb] text-lg">{_`testimonial2Subtitle`}</p>
+              <p class="font-semibold mb-4 text-[#1d4ed8] text-lg">{_`testimonial2Subtitle`}</p>
               <div class="flex justify-center mb-4">
                 {[...Array(5)].map((_, i) => (
                   <LuStar key={i} class="h-5 w-5 fill-yellow-400 text-yellow-400" />
