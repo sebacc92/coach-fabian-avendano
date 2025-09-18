@@ -161,7 +161,7 @@ export const Calendar = component$(() => {
             <button
               key={weekData.week}
               onClick$={() => selectWeek(weekData.week)}
-              class={`px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg ${
+              class={`px-6 py-3 rounded-full font-semibold transition-safe duration-300 transform hover:scale-105 hover:shadow-lg ${
                 selectedWeek.value === weekData.week
                   ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg animate-pulse-glow"
                   : "bg-white text-gray-700 hover:bg-purple-50 border border-gray-200 hover:border-purple-300"
@@ -181,12 +181,12 @@ export const Calendar = component$(() => {
               <div
                 key={day.day}
                 onClick$={() => selectDay(index)}
-                class={`relative group cursor-pointer transition-all duration-500 transform hover:scale-105 hover:rotate-1 ${
+                class={`relative group cursor-pointer transition-safe duration-500 transform hover:scale-105 hover:rotate-1 ${
                   selectedDay.value === index ? "scale-105 animate-pulse-glow" : ""
                 }`}
                 style={`animation-delay: ${index * 0.05}s;`}
               >
-                <div class={`${day.color} text-white p-4 md:p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 relative overflow-hidden group-hover:animate-shimmer`}>
+                <div class={`${day.color} text-white p-4 md:p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-safe duration-300 relative overflow-hidden group-hover:animate-shimmer`}>
                   {/* Animated background */}
                   <div class="absolute inset-0 bg-white/10 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                   

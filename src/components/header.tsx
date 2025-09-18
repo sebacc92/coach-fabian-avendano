@@ -44,7 +44,7 @@ export default component$(() => {
     });
 
     return (
-        <header class={`fixed left-0 right-0 z-50 px-6 py-2 transition-all duration-300 ease-in-out ${
+        <header class={`fixed left-0 right-0 z-50 px-6 py-2 transition-safe duration-300 ease-in-out ${
             scrolled.value
                 ? 'bg-white text-gray-900 drop-shadow-none border-b border-gray-200'
                 : 'bg-transparent text-white drop-shadow-lg'
@@ -182,7 +182,7 @@ export default component$(() => {
                                         isHome ? (
                                             <a
                                                 href={item.href}
-                                                class={`text-2xl font-semibold transition-all duration-300 text-white hover:text-[#2563eb] hover:font-bold flex items-center py-2 opacity-0 translate-x-[-20px] ${
+                                                class={`text-2xl font-semibold transition-safe duration-300 text-white hover:text-[#2563eb] hover:font-bold flex items-center py-2 opacity-0 translate-x-[-20px] ${
                                                     `animate-menu-item-${index}`
                                                 }`}
                                                 preventdefault:click
@@ -203,7 +203,7 @@ export default component$(() => {
                                         ) : (
                                             <a
                                                 href={`/${currentLocale}${item.href}`}
-                                                class={`text-2xl font-semibold transition-all duration-300 text-white hover:text-[#2563eb] hover:font-bold hover:scale-105 flex items-center py-2 opacity-0 translate-x-[-20px] ${
+                                                class={`text-2xl font-semibold transition-safe duration-300 text-white hover:text-[#2563eb] hover:font-bold hover:scale-105 flex items-center py-2 opacity-0 translate-x-[-20px] ${
                                                     `animate-menu-item-${index}`
                                                 }`}
                                                 onClick$={() => { menuOpen.value = false; }}
@@ -214,7 +214,7 @@ export default component$(() => {
                                     ) : (
                                         <a
                                             href={item.href}
-                                            class={`text-2xl font-semibold transition-all duration-300 text-white hover:text-[#2563eb] hover:font-bold hover:scale-105 flex items-center py-2 opacity-0 translate-x-[-20px] ${
+                                            class={`text-2xl font-semibold transition-safe duration-300 text-white hover:text-[#2563eb] hover:font-bold hover:scale-105 flex items-center py-2 opacity-0 translate-x-[-20px] ${
                                                 `animate-menu-item-${index}`
                                             }`}
                                             onClick$={() => (menuOpen.value = false)}
@@ -230,7 +230,7 @@ export default component$(() => {
                         <div class="mt-auto pt-8">
                             <div class="flex flex-col items-center">
                                 <Link href={`/${currentLocale}/contenido-gratuito`}>
-                                    <button class="w-full bg-[#1e3a8a] hover:bg-[#1e40af] text-white px-4 sm:px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold transition-all duration-300 text-base md:text-lg shadow-lg hover:shadow-xl transform hover:scale-[1.02] opacity-0 translate-y-10 animate-menu-cta whitespace-nowrap">
+                                    <button class="w-full bg-[#1e3a8a] hover:bg-[#1e40af] text-white px-4 sm:px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold transition-safe duration-300 text-base md:text-lg shadow-lg hover:shadow-xl transform hover:scale-[1.02] opacity-0 translate-y-10 animate-menu-cta whitespace-nowrap">
                                         Comienza a entrenar
                                     </button>
                                 </Link>

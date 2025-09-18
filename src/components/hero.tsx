@@ -45,7 +45,7 @@ export const Hero = component$(() => {
             rel="noopener noreferrer"
             class="inline-block"
           >
-            <Button class="bg-white hover:bg-gray-100 text-[#2563eb] hover:text-[#1e3a8a] px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold rounded-lg transition-all transform hover:scale-105">
+            <Button class="bg-white hover:bg-gray-100 text-[#2563eb] hover:text-[#1e3a8a] px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold rounded-lg transition-safe transform hover:scale-105">
               {_`hero_cta`}
             </Button>
           </Link>

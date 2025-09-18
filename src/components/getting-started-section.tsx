@@ -53,7 +53,7 @@ export const GettingStartedSection = component$(() => {
             <div key={step.id} class="text-center group relative">
               {/* Step Number with improved styling and symmetric lines */}
               <div class="relative mb-6">
-                <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-blue-500 via-purple-600 to-blue-700 rounded-full flex items-center justify-center mx-auto text-white text-xl md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-all duration-300 border-4 border-white relative z-10">
+                <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-blue-500 via-purple-600 to-blue-700 rounded-full flex items-center justify-center mx-auto text-white text-xl md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-safe duration-300 border-4 border-white relative z-10">
                   {step.id}
                 </div>
                 {/* Connecting Lines - Symmetric and properly positioned */}

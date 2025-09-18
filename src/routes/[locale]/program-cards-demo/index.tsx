@@ -127,7 +127,7 @@ export default component$(() => {
             {programs.map((program) => {
               const colors = getColorClasses(program.color);
               return (
-                <div key={program.id} class="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300">
+                <div key={program.id} class="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-safe duration-300">
                   <div class="relative h-48">
                     <program.img alt={program.alt} class="w-full h-full object-cover" />
                     <div class="absolute inset-0 bg-black/40"></div>
@@ -343,7 +343,7 @@ export default component$(() => {
             {programs.map((program) => {
               const colors = getColorClasses(program.color);
               return (
-                <div key={program.id} class="group relative bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300">
+                <div key={program.id} class="group relative bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-safe duration-300">
                   <div class="relative h-56">
                     <program.img alt={program.alt} class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-300" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>

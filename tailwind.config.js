@@ -4,6 +4,9 @@ export default {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
+      transitionProperty: {
+        'safe': 'color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform'
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

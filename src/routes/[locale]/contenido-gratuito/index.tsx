@@ -45,7 +45,7 @@ export default component$(() => {
           </div>
           
           <a href="#videos">
-            <Button class="bg-[#1e3a8a] hover:bg-[#1e40af] text-white px-8 py-4 text-lg font-bold rounded-lg transition-all transform hover:scale-105">
+            <Button class="bg-[#1e3a8a] hover:bg-[#1e40af] text-white px-8 py-4 text-lg font-bold rounded-lg transition-safe transform hover:scale-105">
               Ver Videos Gratuitos
             </Button>
           </a>
@@ -163,7 +163,7 @@ export default component$(() => {
             Únete a nuestra comunidad y comienza tu transformación hoy mismo. Contenido 100% gratuito y actualizado semanalmente.
           </p>
           <a href="#videos">
-            <Button class="bg-[#1e3a8a] hover:bg-[#1e40af] text-white px-8 py-4 text-lg font-bold rounded-lg transition-all transform hover:scale-105">
+            <Button class="bg-[#1e3a8a] hover:bg-[#1e40af] text-white px-8 py-4 text-lg font-bold rounded-lg transition-safe transform hover:scale-105">
               Ver Videos Gratuitos
             </Button>
           </a>

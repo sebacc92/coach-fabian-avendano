@@ -179,7 +179,7 @@ export const ProgramsSection = component$(() => {
           {programs.map((p, i) => (
             <div
               key={i}
-              class={`group border-2 ${p.borderColor} shadow-lg hover:shadow-2xl rounded-xl flex flex-col bg-white overflow-hidden transition-all duration-500 ease-out opacity-0 translate-y-10 scale-95 animate-element stagger-${i + 1}`}
+              class={`group border-2 ${p.borderColor} shadow-lg hover:shadow-2xl rounded-xl flex flex-col bg-white overflow-hidden transition-safe duration-500 ease-out opacity-0 translate-y-10 scale-95 animate-element stagger-${i + 1}`}
               style={{ '--stagger-delay': `${(i + 1) * 0.2}s` }}
             >
               <div class="relative h-64 md:h-80 overflow-hidden">
@@ -206,7 +206,7 @@ export const ProgramsSection = component$(() => {
                   </div>
                 )}
                 <a href={`/es/program/${p.slug}`} class="inline-block w-full mt-auto group-hover:translate-y-[-2px] transition-transform duration-300">
-                  <Button class={`${p.buttonColor} ${p.buttonHover} text-white px-4 py-3 text-sm md:text-base font-semibold rounded-lg transition-all transform hover:scale-105 w-full min-h-[48px] flex items-center justify-center shadow-md hover:shadow-lg`}>
+                  <Button class={`${p.buttonColor} ${p.buttonHover} text-white px-4 py-3 text-sm md:text-base font-semibold rounded-lg transition-safe transform hover:scale-105 w-full min-h-[48px] flex items-center justify-center shadow-md hover:shadow-lg`}>
                     {p.cta}
                   </Button>
                 </a>
