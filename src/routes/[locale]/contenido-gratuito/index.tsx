@@ -34,7 +34,7 @@ export default component$(() => {
           
           <div class="mb-8">
             <p class="text-lg text-white/80 mb-4">
-              💪 <strong>Contenido actualizado semanalmente</strong>
+              <strong>Contenido actualizado semanalmente</strong>
             </p>
           </div>
           
