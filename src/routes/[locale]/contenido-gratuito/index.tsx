@@ -8,7 +8,8 @@ export default component$(() => {
     { src: "/videos/2.mp4", title: "Remo invertido con banda" },
     { src: "/videos/3.mp4", title: "Buenos días con barra" },
     { src: "/videos/4.mp4", title: "Hip Thrust" },
-    { src: "/videos/30.mp4", title: "Caminata de granjero" }
+    { src: "/videos/30.mp4", title: "Caminata de granjero" },
+    { src: "/videos/16.mp4", title: "Remo Pendlay" }
   ];
 
   return (
@@ -73,7 +74,10 @@ export default component$(() => {
                     {video.title}
                   </h3>
                   <p class="text-gray-600 text-sm">
-                    Video de entrenamiento gratuito para tu rutina diaria
+                    {video.title === "Remo Pendlay"
+                      ? "Ejercicio fundamental para desarrollar la espalda y mejorar la fuerza de tracción"
+                      : "Video de entrenamiento gratuito para tu rutina diaria"
+                    }
                   </p>
                 </div>
               </div>
