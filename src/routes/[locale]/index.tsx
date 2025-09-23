@@ -25,9 +25,6 @@ export default component$(() => {
         <div class="mx-auto max-w-7xl px-4">
           <div class="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <div class="inline-block bg-[#1e3a8a] text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                🎁 CONTENIDO GRATUITO
-              </div>
               <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 ¡Entrena conmigo!
               </h2>
@@ -64,9 +61,6 @@ export default component$(() => {
                     <p class="text-sm opacity-90">Gratuitos para toda la comunidad</p>
                   </div>
                 </div>
-              </div>
-              <div class="absolute -top-4 -right-4 bg-[#1e3a8a] text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
-                ¡GRATIS!
               </div>
             </div>
           </div>
