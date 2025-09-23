@@ -156,11 +156,6 @@ export default component$(() => {
           <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
             Únete a nuestra comunidad y comienza tu transformación hoy mismo. Contenido 100% gratuito y actualizado semanalmente.
           </p>
-          <a href="#videos">
-            <Button class="bg-[#1e3a8a] hover:bg-[#1e40af] text-white px-8 py-4 text-lg font-bold rounded-lg transition-safe transform hover:scale-105">
-              Ver Videos Gratuitos
-            </Button>
-          </a>
         </div>
       </section>
     </>
