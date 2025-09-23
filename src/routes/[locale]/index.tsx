@@ -96,7 +96,7 @@ export default component$(() => {
 export const head: DocumentHead = ({ params }) => {
   const locale = params.locale || 'es';
   const baseUrl = "https://coach-fabian-avendano.netlify.app";
-  const currentUrl = `${baseUrl}/${locale}`;
+  const currentUrl = `${baseUrl}/${locale}/`;
   const imageUrl = `${baseUrl}/assets/images/fabian-kettlebell.jpg`;
 
   let title, description, keywords;

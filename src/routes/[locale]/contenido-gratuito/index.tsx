@@ -25,9 +25,6 @@ export default component$(() => {
         </div>
         
         <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-          <div class="inline-block bg-[#1e3a8a] px-6 py-3 rounded-full text-lg font-semibold mb-6">
-            🎁 CONTENIDO GRATUITO
-          </div>
           <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             ¡Sumate a la Comunidad!
           </h1>
@@ -38,9 +35,6 @@ export default component$(() => {
           <div class="mb-8">
             <p class="text-lg text-white/80 mb-4">
               💪 <strong>Contenido actualizado semanalmente</strong>
-            </p>
-            <p class="text-base text-white/70 max-w-2xl mx-auto">
-              Únete a nuestra comunidad y accede a entrenamientos gratuitos y la motivación que necesitas para alcanzar tus objetivos.
             </p>
           </div>
           
