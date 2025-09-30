@@ -4,7 +4,7 @@ import { _, getLocale } from "compiled-i18n";
 import { Button } from "~/components/ui/button/button";
 import { generateProgramMetadata, createProgramHead } from "~/utils/metadata";
 
-import FuerzaImg from '~/assets/images/fabian-gym-training.webp?jsx';
+import FuerzaImg from '/images/programa-fuerza-6-semanas.webp?jsx';
 
 export default component$(() => {
   const currentTestimonial = useSignal(0);
@@ -265,7 +265,7 @@ export const head: DocumentHead = () => {
   const locale = getLocale();
   const program = {
     alt: "Programa de fuerza 6 semanas - Coach Fabian Avendaño",
-    price: "$15.000",
+    price: "$70.000",
     priceColor: "bg-[#1e3a8a]",
     borderColor: "border-[#1e3a8a]",
     titleColor: "text-[#1e3a8a]",
@@ -290,7 +290,7 @@ export const head: DocumentHead = () => {
       "Hipertrofia funcional",
       "Rutinas de 60-75 minutos"
     ],
-    img: '/assets/images/fabian-gym-training.webp'
+    img: '/assets/images/programa-fuerza-6-semanas.webp'
   };
 
   const metadata = generateProgramMetadata(program, "fuerza-6-semanas", locale);

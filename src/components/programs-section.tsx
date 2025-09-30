@@ -8,7 +8,7 @@ import Program3Img from '~/assets/images/fabian-kettlebell.webp?jsx';
 import Program4Img from '~/assets/images/1.jpeg?jsx';
 import Program5Img from '~/assets/images/hiit-basico-3-dias.webp?jsx';
 import Program6Img from '~/assets/images/hip-thrust.webp?jsx';
-import Program7Img from '~/assets/images/fabian-gym-training.webp?jsx';
+import Program7Img from '~/assets/images/programa-fuerza-6-semanas.webp?jsx';
 
 export const ProgramsSection = component$(() => {
   const sectionRef = useSignal<HTMLElement>();
@@ -132,7 +132,7 @@ export const ProgramsSection = component$(() => {
       slug: "fuerza-6-semanas",
       img: Program7Img,
       alt: "Programa de fuerza 6 semanas - Coach Fabian Avendaño",
-      price: "$15.000",
+      price: "$70.000",
       priceColor: "bg-[#1e3a8a]",
       borderColor: "border-[#1e3a8a]",
       titleColor: "text-[#1e3a8a]",

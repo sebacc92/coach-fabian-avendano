@@ -25,7 +25,7 @@ export default component$(() => {
     featuresLabel: _`program4FeaturesLabel`,
     features: _`program4Features`,
     cta: _`program4Cta`,
-    link: "https://mpago.la/1LjB1z5",
+    link: "https://mpago.la/1qFdvS4",
     duration: "4 semanas",
     frequency: "2 días por semana",
     equipment: ["Dumbbells", "Resistance Bands", "Timer", "Mat"],

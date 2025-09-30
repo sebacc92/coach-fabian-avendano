@@ -23,7 +23,7 @@ export default component$(() => {
     subtitle: _`program5Subtitle`,
     desc: _`program5Desc`,
     cta: _`program5Cta`,
-    link: "https://mpago.la/1FoSTny",
+    link: "https://mpago.la/1vJpyiR",
     duration: "4 semanas",
     frequency: "3 días por semana",
     equipment: ["Dumbbells", "Resistance Bands", "Timer", "Mat", "Jump Rope"],
