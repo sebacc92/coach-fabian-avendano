@@ -19,7 +19,6 @@ export default component$(() => {
       <Hero />
       <MethodologySection />
       <ProgramsSection />
-      <GettingStartedSection />
       {/* Videos Cover Section */}
       <section class="relative py-16 md:py-24 bg-gradient-to-br from-blue-50 to-blue-100">
         <div class="mx-auto max-w-7xl px-4">
@@ -29,7 +28,7 @@ export default component$(() => {
                 ¡Entrena conmigo!
               </h2>
               <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                Únete a nuestra comunidad y accede a videos de entrenamiento gratuitos, 
+                Únete a nuestra comunidad y accede a videos de entrenamiento gratuitos,
                 y la motivación que necesitas para tu transformación.
               </p>
               <div class="flex flex-col sm:flex-row gap-4">
@@ -67,6 +66,7 @@ export default component$(() => {
         </div>
       </section>
       <TestimonialsSection />
+      <GettingStartedSection />
       <FAQSection />
       <AboutSection />
 
