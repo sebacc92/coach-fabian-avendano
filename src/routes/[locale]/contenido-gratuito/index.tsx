@@ -79,6 +79,16 @@ export default component$(() => {
                       ? "Ejercicio fundamental para desarrollar la espalda y mejorar la fuerza de tracción"
                       : video.title === "Halo con disco"
                       ? "Ejercicio de movilidad y estabilidad para hombros y core con disco de peso"
+                      : video.title === "Caminata de oso"
+                      ? "Ejercicio de locomoción que desarrolla fuerza, estabilidad y coordinación en todo el cuerpo"
+                      : video.title === "Remo invertido con banda"
+                      ? "Ejercicio de tracción horizontal para desarrollar la espalda y mejorar la fuerza de agarre"
+                      : video.title === "Buenos días con barra"
+                      ? "Ejercicio fundamental para fortalecer la cadena posterior, especialmente isquiotibiales y glúteos"
+                      : video.title === "Hip Thrust"
+                      ? "Ejercicio específico para desarrollar glúteos y mejorar la extensión de cadera"
+                      : video.title === "Caminata de granjero"
+                      ? "Ejercicio de carga que mejora la fuerza de agarre, estabilidad del core y resistencia funcional"
                       : "Video de entrenamiento gratuito para tu rutina diaria"
                     }
                   </p>
