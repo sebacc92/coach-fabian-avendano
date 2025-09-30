@@ -8,6 +8,7 @@ import Program3Img from '~/assets/images/fabian-kettlebell.webp?jsx';
 import Program4Img from '~/assets/images/1.jpeg?jsx';
 import Program5Img from '~/assets/images/hiit-basico-3-dias.webp?jsx';
 import Program6Img from '~/assets/images/hip-thrust.webp?jsx';
+import Program7Img from '~/assets/images/fabian-gym-training.webp?jsx';
 
 export const ProgramsSection = component$(() => {
   const sectionRef = useSignal<HTMLElement>();
@@ -126,6 +127,24 @@ export const ProgramsSection = component$(() => {
       featuresLabel: _`program6FeaturesLabel`,
       features: _`program6Features`,
       cta: _`verDetalles`,
+    },
+    {
+      slug: "fuerza-6-semanas",
+      img: Program7Img,
+      alt: "Programa de fuerza 6 semanas - Coach Fabian Avendaño",
+      price: "$15.000",
+      priceColor: "bg-[#1e3a8a]",
+      borderColor: "border-[#1e3a8a]",
+      titleColor: "text-[#1e3a8a]",
+      subtitleColor: "text-[#1e3a8a]",
+      buttonColor: "bg-[#1e3a8a]",
+      buttonHover: "hover:bg-[#1e40af]",
+      level: "FUERZA 6 SEMANAS",
+      levelColor: "bg-[#1e3a8a]",
+      title: "Programa de fuerza de 6 semanas (4 días por semana)",
+      subtitle: "Desarrolla tu fuerza máxima con entrenamiento especializado",
+      desc: "Programa de fuerza de 6 semanas (4 días por semana) estructurado por movimientos: Día 1 centrado en empujes, Día 2 en tracciones, Día 3 movimientos accesorios y Día 4 piernas. Cada sesión prioriza un ejercicio básico como eje, acompañado de complementarios para trabajar la fuerza y la hipertrofia de manera equilibrada.",
+      cta: "Comenzar Programa",
     },
   ];
 

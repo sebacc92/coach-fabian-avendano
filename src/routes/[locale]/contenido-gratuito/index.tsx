@@ -9,7 +9,8 @@ export default component$(() => {
     { src: "/videos/3.mp4", title: "Buenos días con barra" },
     { src: "/videos/4.mp4", title: "Hip Thrust" },
     { src: "/videos/30.mp4", title: "Caminata de granjero" },
-    { src: "/videos/16.mp4", title: "Remo Pendlay" }
+    { src: "/videos/16.mp4", title: "Remo Pendlay" },
+    { src: "/videos/14.mp4", title: "Halo con disco" }
   ];
 
   return (
@@ -76,6 +77,8 @@ export default component$(() => {
                   <p class="text-gray-600 text-sm">
                     {video.title === "Remo Pendlay"
                       ? "Ejercicio fundamental para desarrollar la espalda y mejorar la fuerza de tracción"
+                      : video.title === "Halo con disco"
+                      ? "Ejercicio de movilidad y estabilidad para hombros y core con disco de peso"
                       : "Video de entrenamiento gratuito para tu rutina diaria"
                     }
                   </p>
