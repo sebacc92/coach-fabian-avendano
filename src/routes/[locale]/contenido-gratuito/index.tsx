@@ -10,7 +10,9 @@ export default component$(() => {
     { src: "/videos/4.mp4", title: "Hip Thrust" },
     { src: "/videos/30.mp4", title: "Caminata de granjero" },
     { src: "/videos/16.mp4", title: "Remo Pendlay" },
-    { src: "/videos/14.mp4", title: "Halo con disco" }
+    { src: "/videos/14.mp4", title: "Halo con disco" },
+    { src: "/videos/Monster walk.mp4", title: "Monster walk" },
+    { src: "/videos/Face-pull-polea.mp4", title: "Face-pull-polea" }
   ];
 
   return (
@@ -89,6 +91,10 @@ export default component$(() => {
                       ? "Ejercicio específico para desarrollar glúteos y mejorar la extensión de cadera"
                       : video.title === "Caminata de granjero"
                       ? "Ejercicio de carga que mejora la fuerza de agarre, estabilidad del core y resistencia funcional"
+                      : video.title === "Monster walk"
+                      ? "Ejercicio de movilidad y activación para glúteos y caderas con banda elástica"
+                      : video.title === "Face-pull-polea"
+                      ? "Ejercicio de tracción vertical para fortalecer la espalda alta y mejorar la postura"
                       : "Video de entrenamiento gratuito para tu rutina diaria"
                     }
                   </p>
