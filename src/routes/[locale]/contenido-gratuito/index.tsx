@@ -13,7 +13,7 @@ export default component$(() => {
     { src: "/videos/14.mp4", title: "Halo con disco" },
     { src: "/videos/Monster walk.mp4", title: "Monster walk" },
     { src: "/videos/Face-pull-polea.mp4", title: "Face-pull-polea" },
-    { src: "/videos/Sentadilla con barra al box.mp4", title: "Sentadilla con barra al box" }
+    { src: "/videos/Sentadilla-con-barra-al-box.mp4", title: "Sentadilla con barra al box" }
   ];
 
   return (
