@@ -12,7 +12,8 @@ export default component$(() => {
     { src: "/videos/16.mp4", title: "Remo Pendlay" },
     { src: "/videos/14.mp4", title: "Halo con disco" },
     { src: "/videos/Monster walk.mp4", title: "Monster walk" },
-    { src: "/videos/Face-pull-polea.mp4", title: "Face-pull-polea" }
+    { src: "/videos/Face-pull-polea.mp4", title: "Face-pull-polea" },
+    { src: "/videos/Sentadilla con barra al box.mp4", title: "Sentadilla con barra al box" }
   ];
 
   return (
@@ -95,6 +96,8 @@ export default component$(() => {
                       ? "Ejercicio de movilidad y activación para glúteos y caderas con banda elástica"
                       : video.title === "Face-pull-polea"
                       ? "Ejercicio de tracción vertical para fortalecer la espalda alta y mejorar la postura"
+                      : video.title === "Sentadilla con barra al box"
+                      ? "Ejercicio fundamental para desarrollar fuerza en piernas y mejorar la técnica de sentadilla"
                       : "Video de entrenamiento gratuito para tu rutina diaria"
                     }
                   </p>
