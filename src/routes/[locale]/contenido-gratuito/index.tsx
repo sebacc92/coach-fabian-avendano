@@ -13,7 +13,8 @@ export default component$(() => {
     { src: "/videos/14.mp4", title: "Halo con disco" },
     { src: "/videos/Monster walk.mp4", title: "Monster walk" },
     { src: "/videos/Face-pull-polea.mp4", title: "Face-pull-polea" },
-    { src: "/videos/Sentadilla-con-barra-al-box.mp4", title: "Sentadilla con barra al box" }
+    { src: "/videos/Sentadilla-con-barra-al-box.mp4", title: "Sentadilla con barra al box" },
+    { src: "/videos/Peso-muerto-trap.mp4", title: "Peso muerto trap" }
   ];
 
   return (
@@ -98,6 +99,8 @@ export default component$(() => {
                       ? "Ejercicio de tracción vertical para fortalecer la espalda alta y mejorar la postura"
                       : video.title === "Sentadilla con barra al box"
                       ? "Ejercicio fundamental para desarrollar fuerza en piernas y mejorar la técnica de sentadilla"
+                      : video.title === "Peso muerto trap"
+                      ? "Ejercicio de fuerza que desarrolla la espalda baja, caderas y fortalece la cadena posterior"
                       : "Video de entrenamiento gratuito para tu rutina diaria"
                     }
                   </p>
