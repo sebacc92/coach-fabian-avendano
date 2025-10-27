@@ -95,12 +95,12 @@ export default component$(() => {
         </div>
         <div class="mt-4 text-center">
           <a
-            href="https://sebastiancardoso.com"
+            href="http://cleverisma.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
             class="text-xs text-gray-400 hover:text-blue-300 transition-colors underline"
           >
-            Desarrollado por sebastiancardoso
+            Desarrollado por Cleverisma
           </a>
         </div>
       </div>
