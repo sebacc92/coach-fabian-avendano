@@ -14,7 +14,8 @@ export default component$(() => {
     { src: "/videos/Monster walk.mp4", title: "Monster walk" },
     { src: "/videos/Face-pull-polea.mp4", title: "Face-pull-polea" },
     { src: "/videos/Sentadilla-con-barra-al-box.mp4", title: "Sentadilla con barra al box" },
-    { src: "/videos/Peso-muerto-trap.mp4", title: "Peso muerto trap" }
+    { src: "/videos/Peso-muerto-trap.mp4", title: "Peso muerto trap" },
+    { src: "/videos/Sentadilla-bulgara.mp4", title: "Sentadilla bulgara" }
   ];
 
   return (
@@ -29,7 +30,7 @@ export default component$(() => {
           />
           <div class="absolute inset-0 bg-black/60"></div>
         </div>
-        
+
         <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
           <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             ¡Sumate a la Comunidad!
@@ -37,13 +38,13 @@ export default component$(() => {
           <p class="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto">
             Entrena conmigo de forma gratuita. Videos de entrenamiento, tips y motivación para tu transformación.
           </p>
-          
+
           <div class="mb-8">
             <p class="text-lg text-white/80 mb-4">
               <strong>Contenido actualizado semanalmente</strong>
             </p>
           </div>
-          
+
           <a href="#videos">
             <Button class="bg-[#1e3a8a] hover:bg-[#1e40af] text-white px-8 py-4 text-lg font-bold rounded-lg transition-safe transform hover:scale-105">
               Ver Videos Gratuitos
@@ -51,7 +52,7 @@ export default component$(() => {
           </a>
         </div>
       </section>
-      
+
       {/* Videos Section */}
       <section id="videos" class="py-16 md:py-24 bg-white">
         <div class="mx-auto max-w-7xl px-4">
@@ -60,11 +61,11 @@ export default component$(() => {
               Videos de Entrenamiento
             </h2>
             <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-              Selecciona un video y comienza tu entrenamiento ahora mismo. 
+              Selecciona un video y comienza tu entrenamiento ahora mismo.
               Cada ejercicio está diseñado para maximizar tus resultados.
             </p>
           </div>
-          
+
           <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
             {videoFiles.map((video) => (
               <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-gray-100" key={video.src}>
@@ -82,26 +83,28 @@ export default component$(() => {
                     {video.title === "Remo Pendlay"
                       ? "Ejercicio fundamental para desarrollar la espalda y mejorar la fuerza de tracción"
                       : video.title === "Halo con disco"
-                      ? "Ejercicio de movilidad y estabilidad para hombros y core con disco de peso"
-                      : video.title === "Caminata de oso"
-                      ? "Ejercicio de locomoción que desarrolla fuerza, estabilidad y coordinación en todo el cuerpo"
-                      : video.title === "Remo invertido con banda"
-                      ? "Ejercicio de tracción horizontal para desarrollar la espalda y mejorar la fuerza de agarre"
-                      : video.title === "Buenos días con barra"
-                      ? "Ejercicio fundamental para fortalecer la cadena posterior, especialmente isquiotibiales y glúteos"
-                      : video.title === "Hip Thrust"
-                      ? "Ejercicio específico para desarrollar glúteos y mejorar la extensión de cadera"
-                      : video.title === "Caminata de granjero"
-                      ? "Ejercicio de carga que mejora la fuerza de agarre, estabilidad del core y resistencia funcional"
-                      : video.title === "Monster walk"
-                      ? "Ejercicio de movilidad y activación para glúteos y caderas con banda elástica"
-                      : video.title === "Face-pull-polea"
-                      ? "Ejercicio de tracción vertical para fortalecer la espalda alta y mejorar la postura"
-                      : video.title === "Sentadilla con barra al box"
-                      ? "Ejercicio fundamental para desarrollar fuerza en piernas y mejorar la técnica de sentadilla"
-                      : video.title === "Peso muerto trap"
-                      ? "Ejercicio de fuerza que desarrolla la espalda baja, caderas y fortalece la cadena posterior"
-                      : "Video de entrenamiento gratuito para tu rutina diaria"
+                        ? "Ejercicio de movilidad y estabilidad para hombros y core con disco de peso"
+                        : video.title === "Caminata de oso"
+                          ? "Ejercicio de locomoción que desarrolla fuerza, estabilidad y coordinación en todo el cuerpo"
+                          : video.title === "Remo invertido con banda"
+                            ? "Ejercicio de tracción horizontal para desarrollar la espalda y mejorar la fuerza de agarre"
+                            : video.title === "Buenos días con barra"
+                              ? "Ejercicio fundamental para fortalecer la cadena posterior, especialmente isquiotibiales y glúteos"
+                              : video.title === "Hip Thrust"
+                                ? "Ejercicio específico para desarrollar glúteos y mejorar la extensión de cadera"
+                                : video.title === "Caminata de granjero"
+                                  ? "Ejercicio de carga que mejora la fuerza de agarre, estabilidad del core y resistencia funcional"
+                                  : video.title === "Monster walk"
+                                    ? "Ejercicio de movilidad y activación para glúteos y caderas con banda elástica"
+                                    : video.title === "Face-pull-polea"
+                                      ? "Ejercicio de tracción vertical para fortalecer la espalda alta y mejorar la postura"
+                                      : video.title === "Sentadilla con barra al box"
+                                        ? "Ejercicio fundamental para desarrollar fuerza en piernas y mejorar la técnica de sentadilla"
+                                        : video.title === "Peso muerto trap"
+                                          ? "Ejercicio de fuerza que desarrolla la espalda baja, caderas y fortalece la cadena posterior"
+                                          : video.title === "Sentadilla"
+                                            ? "Ejercicio fundamental para desarrollar fuerza en piernas y glúteos, mejorando la estabilidad y potencia del tren inferior"
+                                            : "Video de entrenamiento gratuito para tu rutina diaria"
                     }
                   </p>
                 </div>
@@ -122,7 +125,7 @@ export default component$(() => {
               No estás solo en tu transformación. Forma parte de una comunidad que te apoya y motiva cada día.
             </p>
           </div>
-          
+
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="text-center p-6 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow">
               <div class="w-16 h-16 bg-[#1e3a8a] rounded-full flex items-center justify-center mx-auto mb-4">
@@ -131,7 +134,7 @@ export default component$(() => {
               <h3 class="text-xl font-bold text-gray-800 mb-3">Videos Semanales</h3>
               <p class="text-gray-600">Nuevo contenido cada semana con entrenamientos variados y efectivos.</p>
             </div>
-            
+
             <div class="text-center p-6 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow">
               <div class="w-16 h-16 bg-[#1e3a8a] rounded-full flex items-center justify-center mx-auto mb-4">
                 <span class="text-white text-2xl">💡</span>
@@ -139,7 +142,7 @@ export default component$(() => {
               <h3 class="text-xl font-bold text-gray-800 mb-3">Tips y Consejos</h3>
               <p class="text-gray-600">Aprende las mejores técnicas y consejos de entrenamiento.</p>
             </div>
-            
+
             <div class="text-center p-6 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow">
               <div class="w-16 h-16 bg-[#1e3a8a] rounded-full flex items-center justify-center mx-auto mb-4">
                 <span class="text-white text-2xl">🤝</span>
@@ -147,7 +150,7 @@ export default component$(() => {
               <h3 class="text-xl font-bold text-gray-800 mb-3">Comunidad Activa</h3>
               <p class="text-gray-600">Conecta con personas que comparten tus mismos objetivos y motivaciones.</p>
             </div>
-            
+
             <div class="text-center p-6 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow">
               <div class="w-16 h-16 bg-[#1e3a8a] rounded-full flex items-center justify-center mx-auto mb-4">
                 <span class="text-white text-2xl">🏠</span>
@@ -155,7 +158,7 @@ export default component$(() => {
               <h3 class="text-xl font-bold text-gray-800 mb-3">Desde Casa</h3>
               <p class="text-gray-600">Entrena en la comodidad de tu hogar, sin necesidad de equipos costosos.</p>
             </div>
-            
+
             <div class="text-center p-6 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow">
               <div class="w-16 h-16 bg-[#1e3a8a] rounded-full flex items-center justify-center mx-auto mb-4">
                 <span class="text-white text-2xl">⚡</span>
@@ -163,7 +166,7 @@ export default component$(() => {
               <h3 class="text-xl font-bold text-gray-800 mb-3">Rutinas Efectivas</h3>
               <p class="text-gray-600">Entrenamientos diseñados para maximizar resultados en poco tiempo.</p>
             </div>
-            
+
             <div class="text-center p-6 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow">
               <div class="w-16 h-16 bg-[#1e3a8a] rounded-full flex items-center justify-center mx-auto mb-4">
                 <span class="text-white text-2xl">🎯</span>
