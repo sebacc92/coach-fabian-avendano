@@ -1,5 +1,4 @@
 import { component$, useSignal, $ } from "@builder.io/qwik";
-import { _ } from "compiled-i18n";
 import { LuDumbbell, LuHeart, LuFlower2, LuUsers, LuZap, LuCheck } from "@qwikest/icons/lucide";
 
 export const Calendar = component$(() => {
@@ -59,58 +58,58 @@ export const Calendar = component$(() => {
 
   const getDayTitle = (day: number) => {
     const dayTitles: { [key: number]: string } = {
-      1: _`day1Title`,
-      2: _`day2Title`,
-      3: _`day3Title`,
-      4: _`day4Title`,
-      5: _`day5Title`,
-      6: _`day6Title`,
-      7: _`day7Title`,
-      8: _`day8Title`,
-      9: _`day9Title`,
-      10: _`day10Title`,
-      11: _`day11Title`,
-      12: _`day12Title`,
-      13: _`day13Title`,
-      14: _`day14Title`,
-      15: _`day15Title`,
-      16: _`day16Title`,
-      17: _`day17Title`,
-      18: _`day18Title`,
-      19: _`day19Title`,
-      20: _`day20Title`,
-      21: _`day21Title`,
-      22: _`day22Title`,
-      23: _`day23Title`,
-      24: _`day24Title`,
-      25: _`day25Title`,
-      26: _`day26Title`,
-      27: _`day27Title`,
-      28: _`day28Title`
+      1: "Fuerza y Fundamentos",
+      2: "Cardio y Resistencia",
+      3: "Fuerza y Estabilidad",
+      4: "Calma Activa y Movilidad",
+      5: "Fuerza y Potencia",
+      6: "Movimiento Libre",
+      7: "Revisión y Descanso",
+      8: "Fuerza Progresiva",
+      9: "Cardio Intenso",
+      10: "Fuerza y Control",
+      11: "Recuperación Activa",
+      12: "Fuerza Dinámica",
+      13: "Actividad Libre",
+      14: "Evaluación Semanal",
+      15: "Fuerza Avanzada",
+      16: "Cardio HIIT",
+      17: "Fuerza Total",
+      18: "Yoga y Estiramiento",
+      19: "Fuerza Máxima",
+      20: "Deporte o Hobby",
+      21: "Preparación Final",
+      22: "Desafío de Fuerza",
+      23: "Desafío Cardio",
+      24: "Fuerza Resistencia",
+      25: "Movilidad Profunda",
+      26: "Potencia Final",
+      27: "Día Libre Activo",
+      28: "GRAN FINAL DEL RETO"
     };
-    return dayTitles[day] || `Day ${day}`;
+    return dayTitles[day] || `Día ${day}`;
   };
 
   const getTypeDescription = (type: string) => {
     switch (type) {
-      case "strength": return _`strengthTraining`;
-      case "cardio": return _`cardioTraining`;
-      case "calm": return _`calmActivity`;
-      case "free": return _`freeTraining`;
-      case "review": return _`reviewActivity`;
-      case "final": return _`finalActivity`;
+      case "strength": return "Entrenamiento de Fuerza";
+      case "cardio": return "Entrenamiento Cardiovascular";
+      case "calm": return "Calma Activa";
+      case "free": return "Entrenamiento Libre";
+      case "review": return "Revisión Semanal";
+      case "final": return "Cierre del Reto";
       default: return "";
     }
   };
 
   const getTypeDescriptionText = (type: string) => {
     switch (type) {
-      case "strength": return _`strengthDescription`;
-      case "cardio": return _`cardioDescription`;
-      case "calm": return _`calmDescription`;
-      case "free": return _`freeDescription`;
-      case "review": return _`reviewDescription`;
-      case "final": return _`finalDescription`;
+      case "strength": return "Enfocado en construir masa muscular y fuerza funcional.";
+      case "cardio": return "Diseñado para mejorar tu resistencia y salud cardiovascular.";
+      case "calm": return "Sesiones de baja intensidad para recuperación y movilidad.";
+      case "free": return "Elige una actividad que disfrutes: caminar, nadar, bici, etc.";
+      case "review": return "Momento para evaluar progresos y planificar la siguiente semana.";
+      case "final": return "¡El gran día! Celebramos tu constancia y resultados.";
       default: return "";
     }
   };
@@ -148,10 +147,10 @@ export const Calendar = component$(() => {
       <div class="container mx-auto px-4 max-w-7xl relative z-10">
         <div class="text-center mb-12 animate-fade-in">
           <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-            {_`calendarTitle`}
+            Tu Camino Día a Día
           </h2>
           <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-            {_`calendarSubtitle`}
+            Un plan estructurado para garantizar tu éxito. Cada día tiene un propósito específico.
           </p>
         </div>
 
@@ -161,14 +160,13 @@ export const Calendar = component$(() => {
             <button
               key={weekData.week}
               onClick$={() => selectWeek(weekData.week)}
-              class={`px-6 py-3 rounded-full font-semibold transition-safe duration-300 transform hover:scale-105 hover:shadow-lg ${
-                selectedWeek.value === weekData.week
+              class={`px-6 py-3 rounded-full font-semibold transition-safe duration-300 transform hover:scale-105 hover:shadow-lg ${selectedWeek.value === weekData.week
                   ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg animate-pulse-glow"
                   : "bg-white text-gray-700 hover:bg-purple-50 border border-gray-200 hover:border-purple-300"
-              }`}
+                }`}
               style={`animation-delay: ${index * 0.1}s;`}
             >
-              {_`weekLabel`} {weekData.week}
+              Semana {weekData.week}
             </button>
           ))}
         </div>
@@ -181,18 +179,17 @@ export const Calendar = component$(() => {
               <div
                 key={day.day}
                 onClick$={() => selectDay(index)}
-                class={`relative group cursor-pointer transition-safe duration-500 transform hover:scale-105 hover:rotate-1 ${
-                  selectedDay.value === index ? "scale-105 animate-pulse-glow" : ""
-                }`}
+                class={`relative group cursor-pointer transition-safe duration-500 transform hover:scale-105 hover:rotate-1 ${selectedDay.value === index ? "scale-105 animate-pulse-glow" : ""
+                  }`}
                 style={`animation-delay: ${index * 0.05}s;`}
               >
                 <div class={`${day.color} text-white p-4 md:p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-safe duration-300 relative overflow-hidden group-hover:animate-shimmer`}>
                   {/* Animated background */}
                   <div class="absolute inset-0 bg-white/10 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                  
+
                   {/* Day number */}
                   <div class="relative z-10 text-center">
-                    <div class="text-2xl md:text-3xl font-bold mb-2">{_`dayLabel`} {day.day}</div>
+                    <div class="text-2xl md:text-3xl font-bold mb-2">Día {day.day}</div>
                     <Icon class="w-6 h-8 md:w-8 h-8 mx-auto mb-3 transition-transform group-hover:scale-110" />
                     <h3 class="text-xs md:text-sm font-semibold leading-tight">{getDayTitle(day.day)}</h3>
                   </div>
@@ -225,7 +222,7 @@ export const Calendar = component$(() => {
                 </div>
                 <div>
                   <h3 class="text-xl md:text-2xl font-bold text-gray-800">
-                    {_`dayLabel`} {weeks[selectedWeek.value - 1].days[selectedDay.value].day}
+                    Día {weeks[selectedWeek.value - 1].days[selectedDay.value].day}
                   </h3>
                   <p class="text-gray-600">
                     {getTypeDescription(weeks[selectedWeek.value - 1].days[selectedDay.value].type)}
@@ -244,15 +241,15 @@ export const Calendar = component$(() => {
 
         {/* Legend */}
         <div class="mt-12 bg-white rounded-2xl shadow-lg p-6 border border-gray-100 animate-fade-in">
-          <h4 class="text-lg font-semibold text-gray-800 mb-6 text-center">{_`trainingTypesTitle`}</h4>
+          <h4 class="text-lg font-semibold text-gray-800 mb-6 text-center">Tipos de Entrenamiento</h4>
           <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {[
-              { type: "strength", label: _`strengthType`, color: "bg-purple-600", icon: LuDumbbell },
-              { type: "cardio", label: _`cardioType`, color: "bg-red-500", icon: LuHeart },
-              { type: "calm", label: _`calmType`, color: "bg-green-500", icon: LuFlower2 },
-              { type: "free", label: _`freeType`, color: "bg-orange-500", icon: LuUsers },
-              { type: "review", label: _`reviewType`, color: "bg-gray-600", icon: LuCheck },
-              { type: "final", label: _`finalType`, color: "bg-yellow-500", icon: LuZap }
+              { type: "strength", label: "Fuerza", color: "bg-purple-600", icon: LuDumbbell },
+              { type: "cardio", label: "Cardio", color: "bg-red-500", icon: LuHeart },
+              { type: "calm", label: "Calma", color: "bg-green-500", icon: LuFlower2 },
+              { type: "free", label: "Libre", color: "bg-orange-500", icon: LuUsers },
+              { type: "review", label: "Revisión", color: "bg-gray-600", icon: LuCheck },
+              { type: "final", label: "Final", color: "bg-yellow-500", icon: LuZap }
             ].map((item, index) => {
               const Icon = item.icon;
               return (

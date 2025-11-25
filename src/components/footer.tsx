@@ -1,13 +1,12 @@
 import { component$ } from '@builder.io/qwik';
-import { _ } from 'compiled-i18n';
 import { LuInstagram, LuYoutube } from '@qwikest/icons/lucide';
 
 export default component$(() => {
   const navItems = [
-    { label: _`programa`, href: '#programa' },
-    { label: _`testimonios`, href: '#testimonios' },
-    { label: _`acercaDe`, href: '#acerca' },
-    { label: _`contacto`, href: '#contacto' },
+    { label: "Programa", href: '#programa' },
+    { label: "Testimonios", href: '#testimonios' },
+    { label: "Acerca de", href: '#acerca' },
+    { label: "Contacto", href: '#contacto' },
   ];
   return (
     <footer id="contacto" class="bg-[#1A1A1A] text-white py-12">
@@ -16,11 +15,11 @@ export default component$(() => {
           {/* Logo y descripción */}
           <div>
             <div class="text-2xl font-bold font-['Poppins'] text-white mb-4">Fabián Avendaño</div>
-            <p class="text-gray-300 text-sm">{_`footerDesc`}</p>
+            <p class="text-gray-300 text-sm">Transformando vidas a través del entrenamiento inteligente y la mentalidad correcta.</p>
           </div>
           {/* Navegación */}
           <div>
-            <h3 class="font-bold mb-4 text-white">{_`navigation`}</h3>
+            <h3 class="font-bold mb-4 text-white">Navegación</h3>
             <div class="space-y-2">
               {navItems.map((item) => (
                 <a
@@ -44,7 +43,7 @@ export default component$(() => {
           </div>
           {/* Social Media */}
           <div>
-            <h3 class="font-bold mb-4 text-white">{_`followMe`}</h3>
+            <h3 class="font-bold mb-4 text-white">Sígueme</h3>
             <div class="flex space-x-4 mb-2">
               <a
                 href="https://www.instagram.com/fabian.avendano1/"
@@ -91,7 +90,7 @@ export default component$(() => {
           </div>
         </div>
         <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-          <p class="text-gray-400 text-sm">{_`copyright`}</p>
+          <p class="text-gray-400 text-sm">© 2025 Fabián Avendaño. Todos los derechos reservados.</p>
         </div>
         <div class="mt-4 text-center">
           <a

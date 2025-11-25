@@ -1,17 +1,11 @@
 import { component$ } from "@builder.io/qwik";
-import { _, getLocale } from "compiled-i18n";
 import { Button } from "./ui/button/button";
 import { Link } from "@builder.io/qwik-city";
 
 import HeroBgImg from '~/assets/images/fabian-kettlebell.webp?jsx';
 
 export const Hero = component$(() => {
-  const currentLocale = getLocale();
-
-  // Define the link based on locale
-  const heroLink = currentLocale === 'en'
-    ? "https://my.playbookapp.io/fabian-avendano/programs/challange-1-your-transformation-starts-today/33404"
-    : "https://app.harbiz.io/checkout-form/fabianavendao1?product=invitation&lang=es";
+  const heroLink = "/program/reto-1-transformacion";
 
   return (
     <section class="relative min-h-screen flex items-center justify-start px-6 pt-20">
@@ -22,7 +16,7 @@ export const Hero = component$(() => {
           <HeroBgImg
             loading="eager"
             decoding="sync"
-            alt={_`Fabián Avendaño entrenando intensamente con kettlebells en el gimnasio`}
+            alt="Fabián Avendaño entrenando intensamente con kettlebells en el gimnasio"
             class="object-cover object-top w-full h-full absolute inset-0"
             style="z-index:0;"
           />
@@ -33,28 +27,26 @@ export const Hero = component$(() => {
       <div class="relative z-10 max-w-7xl mx-auto w-full">
         <div class="text-left text-white">
           <h1 class="text-3xl md:text-6xl lg:text-7xl font-bold font-['Orbitron'] mb-4 md:mb-6 leading-tight max-w-5xl">
-            {_`hero_title`}
+            Descubrí Tu Mejor Versión
           </h1>
           <p class="text-base md:text-xl lg:text-2xl mb-6 md:mb-8 leading-relaxed max-w-4xl">
-            {_`hero_subtitle`}
+            Entrenamiento personal y online adaptado a tus objetivos: pérdida de peso, ganancia muscular y salud general.
           </p>
 
           <Link
             href={heroLink}
-            target="_blank"
-            rel="noopener noreferrer"
             class="inline-block"
           >
             <Button class="bg-white hover:bg-gray-100 text-[#1d4ed8] hover:text-[#2563eb] px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold rounded-lg transition-safe transform hover:scale-105">
-              {_`hero_cta`}
+              ¡QUIERO MIS 7 DÍAS GRATIS!
             </Button>
           </Link>
           <div class="mt-6 md:mb-8">
             <p class="text-sm md:text-base text-white/80 mb-2">
-              {_`platformInfoFree`}
+              Acceso directo a nuestra plataforma de entrenamiento
             </p>
             <p class="text-xs md:text-sm text-white/70 max-w-2xl">
-              {_`platformTrust`}
+              Serás dirigido directamente a nuestra plataforma de entrenamiento
             </p>
           </div>
         </div>

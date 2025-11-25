@@ -1,5 +1,4 @@
 import { component$ } from "@builder.io/qwik";
-import { _ } from "compiled-i18n";
 import { LuStar } from "@qwikest/icons/lucide";
 
 import SebaAntesImg from '~/assets/images/seba-antes.jpg?jsx';
@@ -10,7 +9,7 @@ export const TestimonialsSection = component$(() => {
     <section id="testimonios" class="py-16 md:py-24 bg-white">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold font-['Poppins'] text-center mb-16 text-[#1A1A1A]">
-          {_`testimonialsTitle`}
+          Historias de Transformación
         </h2>
         <div class="max-w-4xl mx-auto">
           <div class="bg-white shadow-lg rounded-xl p-8 text-center border border-gray-200 hover:shadow-2xl transition-shadow">
@@ -41,17 +40,17 @@ export const TestimonialsSection = component$(() => {
                 </div>
               </div>
             </div>
-            
+
             {/* Testimonial Content */}
             <div class="max-w-2xl mx-auto">
               <h3 class="font-bold text-2xl mb-2 text-[#1e3a8a]">Sebastian Cardoso</h3>
-              <p class="font-semibold mb-4 text-[#1d4ed8] text-lg">{_`testimonial2Subtitle`}</p>
+              <p class="font-semibold mb-4 text-[#1d4ed8] text-lg">De la inactividad a la fuerza real</p>
               <div class="flex justify-center mb-4">
                 {[...Array(5)].map((_, i) => (
                   <LuStar key={i} class="h-5 w-5 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <p class="text-[#4B4B4B] text-base italic leading-relaxed">"{_`testimonial2`}"</p>
+              <p class="text-[#4B4B4B] text-base italic leading-relaxed">"Empecé sin poder hacer una flexión y hoy me siento más fuerte que nunca. El programa no solo cambió mi cuerpo, cambió mi mentalidad."</p>
             </div>
           </div>
         </div>

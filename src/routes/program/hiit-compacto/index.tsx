@@ -1,6 +1,5 @@
 import { component$, useSignal, $ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { _, getLocale } from "compiled-i18n";
 import { Button } from "~/components/ui/button/button";
 import { generateProgramMetadata, createProgramHead } from "~/utils/metadata";
 
@@ -9,8 +8,8 @@ export default component$(() => {
 
   const program = {
     img: "/images/1.jpeg",
-    alt: _`program4ImgAlt`,
-    price: _`program4Price`,
+    alt: "Programa HIIT Compacto - Coach Fabian Avendaño",
+    price: "$50.000",
     priceColor: "bg-[#9C27B0]",
     borderColor: "border-[#9C27B0]",
     titleColor: "text-[#9C27B0]",
@@ -19,12 +18,12 @@ export default component$(() => {
     buttonHover: "hover:bg-[#7B1FA2]",
     level: "HIIT 2D",
     levelColor: "bg-[#9C27B0]",
-    title: _`program4Title`,
-    subtitle: _`program4Subtitle`,
-    desc: _`program4Desc`,
-    featuresLabel: _`program4FeaturesLabel`,
-    features: _`program4Features`,
-    cta: _`program4Cta`,
+    title: "HIIT Compacto: 2 Días (4 semanas)",
+    subtitle: "Máxima eficiencia para agendas ocupadas",
+    desc: "Programa de HIIT de 4 semanas (2 días por semana). La solución perfecta para mantenerte en forma con el mínimo tiempo de inversión, sin sacrificar resultados.",
+    featuresLabel: "Incluye:",
+    features: "Rutinas de alta intensidad, guía de ejercicios y planificación semanal.",
+    cta: "Comenzar Programa",
     link: "https://mpago.la/1qFdvS4",
     duration: "4 semanas",
     frequency: "2 días por semana",
@@ -47,8 +46,8 @@ export default component$(() => {
   });
 
   const prevTestimonial = $(() => {
-    currentTestimonial.value = currentTestimonial.value === 0 
-      ? program.testimonials.length - 1 
+    currentTestimonial.value = currentTestimonial.value === 0
+      ? program.testimonials.length - 1
       : currentTestimonial.value - 1;
   });
 
@@ -57,14 +56,16 @@ export default component$(() => {
       {/* Hero Section */}
       <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0">
-          <img 
-            src={program.img} 
-            alt={program.alt} 
+          <img
+            src={program.img}
+            alt={program.alt}
             class="w-full h-full object-cover object-center"
+            width="1200"
+            height="800"
           />
           <div class="absolute inset-0 bg-black/50"></div>
         </div>
-        
+
         <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
           <div class={`inline-block ${program.levelColor} px-4 py-2 rounded-full text-sm font-semibold mb-6`}>
             {program.level}
@@ -75,17 +76,17 @@ export default component$(() => {
           <p class="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto">
             {program.subtitle}
           </p>
-          
+
           {/* Platform Information */}
           <div class="mb-6 md:mb-8">
             <p class="text-sm md:text-base text-white/80 mb-2">
-              {_`platformInfo`}
+              Prueba gratuita sin compromiso. Cancela cuando quieras.
             </p>
             <p class="text-xs md:text-sm text-white/70 max-w-2xl mx-auto">
-              {_`platformTrust`}
+              Únete a la comunidad de transformadores.
             </p>
           </div>
-          
+
           <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <div class={`${program.priceColor} text-white px-8 py-4 rounded-full text-2xl font-bold`}>
               {program.price}
@@ -120,10 +121,12 @@ export default component$(() => {
               )}
             </div>
             <div class="relative">
-              <img 
-                src={program.img} 
-                alt={program.alt} 
+              <img
+                src={program.img}
+                alt={program.alt}
                 class="rounded-2xl shadow-2xl"
+                width="600"
+                height="400"
               />
               <div class={`absolute -top-4 -right-4 ${program.priceColor} text-white px-6 py-3 rounded-full text-xl font-bold shadow-lg`}>
                 {program.price}
@@ -137,7 +140,7 @@ export default component$(() => {
       <section class="py-16 md:py-24 bg-white">
         <div class="container mx-auto px-4 max-w-6xl">
           <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-16">
-            {_`programBenefitsTitle`}
+            Beneficios del Programa
           </h2>
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {program.benefits.map((benefit, index) => (
@@ -156,7 +159,7 @@ export default component$(() => {
       <section class="py-16 md:py-24 bg-gray-50">
         <div class="container mx-auto px-4 max-w-6xl">
           <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-16">
-            {_`programDetailsTitle`}
+            Detalles del Entrenamiento
           </h2>
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
@@ -165,7 +168,7 @@ export default component$(() => {
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
               </div>
-              <h3 class="text-xl font-bold text-gray-800 mb-2">{_`programDuration`}</h3>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Duración</h3>
               <p class="text-gray-600">{program.duration}</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
@@ -174,7 +177,7 @@ export default component$(() => {
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                 </svg>
               </div>
-              <h3 class="text-xl font-bold text-gray-800 mb-2">{_`programFrequency`}</h3>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Frecuencia</h3>
               <p class="text-gray-600">{program.frequency}</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
@@ -183,7 +186,7 @@ export default component$(() => {
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
                 </svg>
               </div>
-              <h3 class="text-xl font-bold text-gray-800 mb-2">{_`programEquipment`}</h3>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Equipamiento</h3>
               <div class="flex flex-wrap justify-center gap-2">
                 {program.equipment.map((item, index) => (
                   <span key={index} class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
@@ -200,13 +203,13 @@ export default component$(() => {
       <section class="py-16 md:py-24 bg-white">
         <div class="container mx-auto px-4 max-w-4xl">
           <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-16">
-            {_`programTestimonialsTitle`}
+            Lo Que Dicen Nuestros Alumnos
           </h2>
           <div class="relative">
             <div class="bg-gray-50 p-8 md:p-12 rounded-2xl text-center">
               <div class="mb-6">
                 <svg class="w-12 h-12 text-gray-400 mx-auto" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                 </svg>
               </div>
               <p class="text-lg md:text-xl text-gray-700 mb-8 italic">
@@ -217,9 +220,8 @@ export default component$(() => {
                   <button
                     key={index}
                     onClick$={() => currentTestimonial.value = index}
-                    class={`w-3 h-3 rounded-full transition-colors ${
-                      index === currentTestimonial.value ? program.buttonColor : 'bg-gray-300'
-                    }`}
+                    class={`w-3 h-3 rounded-full transition-colors ${index === currentTestimonial.value ? program.buttonColor : 'bg-gray-300'
+                      }`}
                   />
                 ))}
               </div>
@@ -248,10 +250,10 @@ export default component$(() => {
       <section class="py-16 md:py-24 bg-gray-800">
         <div class="container mx-auto px-4 text-center">
           <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
-            {_`programCtaTitleHiit`}
+            ¡Resultados en tiempo récord!
           </h2>
           <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            {_`programCtaDescHiit`}
+            Aprovecha cada minuto con el programa HIIT Compacto. Entrena 2 días a la semana y logra tus objetivos.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <div class={`${program.priceColor} text-white px-8 py-4 rounded-full text-2xl font-bold`}>
@@ -270,15 +272,14 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = () => {
-  const locale = getLocale();
   const program = {
     img: '/assets/images/1.jpeg',
-    title: _`program4Title`,
-    desc: _`program4Desc`,
-    price: _`program4Price`,
-    alt: _`program4ImgAlt`
+    title: "HIIT Compacto: 2 Días (4 semanas)",
+    desc: "Programa de HIIT de 4 semanas (2 días por semana). La solución perfecta para mantenerte en forma con el mínimo tiempo de inversión, sin sacrificar resultados.",
+    price: "$50.000",
+    alt: "Programa HIIT Compacto - Coach Fabian Avendaño"
   };
 
-  const metadata = generateProgramMetadata(program, "hiit-compacto", locale);
+  const metadata = generateProgramMetadata(program, "hiit-compacto");
   return createProgramHead(metadata);
 };

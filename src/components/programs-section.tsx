@@ -1,5 +1,4 @@
 import { component$, useVisibleTask$, useSignal } from "@builder.io/qwik";
-import { _ } from "compiled-i18n";
 import { Button } from "./ui/button/button";
 
 import Program1Img from '~/assets/images/fabian-gym-training.webp?jsx';
@@ -17,8 +16,8 @@ export const ProgramsSection = component$(() => {
     {
       slug: "reto-1-transformacion",
       img: Program1Img,
-      alt: _`program1ImgAlt`,
-      price: _`program1Price`,
+      alt: "Fabián Avendaño en el gimnasio - Reto 28 Días",
+      price: "30.000 ARS",
       priceColor: "bg-[#1e3a8a]",
       borderColor: "border-[#1e3a8a]",
       titleColor: "text-[#1e3a8a]",
@@ -27,16 +26,16 @@ export const ProgramsSection = component$(() => {
       buttonHover: "hover:bg-[#1e40af]",
       level: "NIVEL INICIAL",
       levelColor: "bg-[#1e3a8a]",
-      title: _`program1Title`,
-      subtitle: _`program1Subtitle`,
-      desc: _`program1Desc`,
-      cta: _`verDetalles`,
+      title: "Reto 1: TU TRANSFORMACIÓN EMPIEZA HOY",
+      subtitle: "Comienza con 7 Días de Acceso Totalmente Gratis",
+      desc: "Un plan probado que combina fuerza, cardio y calma activa. Entrena desde cero o potencia tus resultados con rutinas de 45 minutos que puedes hacer en casa o en el gym.",
+      cta: "Ver detalles",
     },
     {
       slug: "reto-2-progreso",
       img: Program2Img,
-      alt: _`program2ImgAlt`,
-      price: _`program2Price`,
+      alt: "Fabián Avendaño haciendo handstand - Reto 2",
+      price: "50.000 ARS",
       priceColor: "bg-[#1e3a8a]",
       borderColor: "border-[#1e3a8a]",
       titleColor: "text-[#1e3a8a]",
@@ -45,18 +44,18 @@ export const ProgramsSection = component$(() => {
       buttonHover: "hover:bg-[#1e40af]",
       level: "NIVEL BASICO/INTERMEDIO",
       levelColor: "bg-[#1e3a8a]",
-      title: _`program2Title`,
-      subtitle: _`program2Subtitle`,
-      desc: _`program2Desc`,
-      featuresLabel: _`program2FeaturesLabel`,
-      features: _`program2Features`,
-      cta: _`verDetalles`,
+      title: "Reto 2: DEL PROGRESO A LA TRANSFORMACIÓN",
+      subtitle: "Comienza con 7 Días de Acceso Totalmente Gratis",
+      desc: "Este programa es la continuación natural del Reto 1. Si ya diste el primer paso, ahora es momento de llevar tu progreso a una verdadera transformación. Descubrí técnicas avanzadas, mayor intensidad y un plan pensado para quienes buscan el siguiente nivel.",
+      featuresLabel: "Incluye:",
+      features: "Fuerza · Resistencia · Calma · Movimiento Libre",
+      cta: "Ver detalles",
     },
     {
       slug: "fuerza-base",
       img: Program3Img,
-      alt: _`program3ImgAlt`,
-      price: _`program3Price`,
+      alt: "Fabián Avendaño - Programa Fuerza Base",
+      price: "60.000 ARS",
       priceColor: "bg-[#1e3a8a]",
       borderColor: "border-[#1e3a8a]",
       titleColor: "text-[#1e3a8a]",
@@ -68,13 +67,13 @@ export const ProgramsSection = component$(() => {
       title: "Fuerza Base: Presencia Física (5 semanas)",
       subtitle: "Construyendo fuerza y estabilidad desde lo simple",
       desc: "Programa de fuerza de 5 semanas (2 días por semana) con enfoque full body. Día 1 centrado en empujes y Día 2 en tracciones. Se prioriza un ejercicio básico por sesión con más series para progresar en carga.",
-      cta: _`verDetalles`,
+      cta: "Ver detalles",
     },
     {
       slug: "hiit-compacto",
       img: Program4Img,
-      alt: _`program4ImgAlt`,
-      price: _`program4Price`,
+      alt: "Fabián Avendaño - Programa HIIT Compacto",
+      price: "30.000 ARS",
       priceColor: "bg-[#1e3a8a]",
       borderColor: "border-[#1e3a8a]",
       titleColor: "text-[#1e3a8a]",
@@ -83,18 +82,18 @@ export const ProgramsSection = component$(() => {
       buttonHover: "hover:bg-[#1e40af]",
       level: "HIIT 2D",
       levelColor: "bg-[#1e3a8a]",
-      title: _`program4Title`,
-      subtitle: _`program4Subtitle`,
-      desc: _`program4Desc`,
-      featuresLabel: _`program4FeaturesLabel`,
-      features: _`program4Features`,
-      cta: _`verDetalles`,
+      title: "HIIT 4 semanas (2 días)",
+      subtitle: "Máxima intensidad en mínimo tiempo",
+      desc: "Programa de entrenamiento intervalico de alta intensidad de 4 semanas, 2 días por semana. Perfecto para personas con poco tiempo que buscan resultados efectivos.",
+      featuresLabel: "Incluye:",
+      features: "2 Días · Full Body · 45 min · Entrada en Calor",
+      cta: "Ver detalles",
     },
     {
       slug: "hiit-basico",
       img: Program5Img,
-      alt: _`program5ImgAlt`,
-      price: _`program5Price`,
+      alt: "Fabián Avendaño en la playa - HIIT Básico",
+      price: "40.000 ARS",
       priceColor: "bg-[#1e3a8a]",
       borderColor: "border-[#1e3a8a]",
       titleColor: "text-[#1e3a8a]",
@@ -103,16 +102,16 @@ export const ProgramsSection = component$(() => {
       buttonHover: "hover:bg-[#1e40af]",
       level: "HIIT 3D",
       levelColor: "bg-[#1e3a8a]",
-      title: _`program5Title`,
-      subtitle: _`program5Subtitle`,
-      desc: _`program5Desc`,
-      cta: _`verDetalles`,
+      title: "HIIT 4 semanas (3 días)",
+      subtitle: "Intensidad completa para resultados máximos",
+      desc: "Programa de entrenamiento intervalico de alta intensidad de 4 semanas, 3 días por semana. Para quienes buscan transformación acelerada.",
+      cta: "Ver detalles",
     },
     {
       slug: "piernas-frecuencia",
       img: Program6Img,
-      alt: _`program6ImgAlt`,
-      price: _`program6Price`,
+      alt: "Fabián Avendaño - Programa Piernas Frecuencia Glútea",
+      price: "50.000 ARS",
       priceColor: "bg-[#1e3a8a]",
       borderColor: "border-[#1e3a8a]",
       titleColor: "text-[#1e3a8a]",
@@ -121,12 +120,12 @@ export const ProgramsSection = component$(() => {
       buttonHover: "hover:bg-[#1e40af]",
       level: "PIERNAS",
       levelColor: "bg-[#1e3a8a]",
-      title: _`program6Title`,
-      subtitle: _`program6Subtitle`,
-      desc: _`program6Desc`,
-      featuresLabel: _`program6FeaturesLabel`,
-      features: _`program6Features`,
-      cta: _`verDetalles`,
+      title: "Piernas 6 semanas (2 por semana)",
+      subtitle: "Especialización completa en miembros inferiores",
+      desc: "Programa especializado de 6 semanas para el desarrollo completo de piernas y glúteos. 3 días semanales con progresión sistemática.",
+      featuresLabel: "Incluye:",
+      features: "Hip Thrust · Sentadillas · Peso Muerto · Step Training",
+      cta: "Ver detalles",
     },
     {
       slug: "fuerza-6-semanas",
@@ -157,7 +156,7 @@ export const ProgramsSection = component$(() => {
           if (entry.isIntersecting) {
             const section = entry.target as HTMLElement;
             const animateElements = section.querySelectorAll('.animate-element');
-            
+
             // ✅ Batch: Agrupar todas las ops en requestAnimationFrame
             requestAnimationFrame(() => {
               animateElements.forEach((el, index) => {
@@ -176,7 +175,7 @@ export const ProgramsSection = component$(() => {
                 );
               });
             });
-            
+
             observer.unobserve(entry.target);
           }
         });
@@ -192,7 +191,7 @@ export const ProgramsSection = component$(() => {
     <section id="programa" class="py-12 md:py-16 lg:py-24" ref={sectionRef}>
       <div class="container mx-auto px-4">
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold font-['Poppins'] text-center mb-12 md:mb-16 text-[#1A1A1A] animate-element stagger-0" style="--stagger-delay: 0s;">
-          {_`programsTitle`}
+          Nuestros Programas de Transformación
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {programs.map((p, i) => (
@@ -224,7 +223,7 @@ export const ProgramsSection = component$(() => {
                     <p class="text-sm text-[#4B4B4B] line-clamp-2">{p.features}</p>
                   </div>
                 )}
-                <a href={`/es/program/${p.slug}`} class="inline-block w-full mt-auto group-hover:translate-y-[-2px] transition-transform duration-300">
+                <a href={`/program/${p.slug}`} class="inline-block w-full mt-auto group-hover:translate-y-[-2px] transition-transform duration-300">
                   <Button class={`${p.buttonColor} ${p.buttonHover} text-white px-4 py-3 text-sm md:text-base font-semibold rounded-lg transition-safe transform hover:scale-105 w-full min-h-[48px] flex items-center justify-center shadow-md hover:shadow-lg`}>
                     {p.cta}
                   </Button>

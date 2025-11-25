@@ -5,22 +5,20 @@ export interface ProgramMetadata {
   description: string;
   image: string;
   url: string;
-  locale: string;
   price?: string;
   duration?: string;
   level?: string;
 }
 
-export const generateProgramMetadata = (program: any, slug: string, locale: string): ProgramMetadata => {
+export const generateProgramMetadata = (program: any, slug: string): ProgramMetadata => {
   const baseUrl = "https://coach-fabian-avendano.netlify.app";
-  const currentUrl = `${baseUrl}/${locale}/program/${slug}/`;
-  
+  const currentUrl = `${baseUrl}/program/${slug}/`;
+
   return {
-    title: `${program.title} - ${locale === 'en' ? 'Fabian Avendano' : 'Fabián Avendaño'}`,
+    title: `${program.title} - Fabián Avendaño`,
     description: program.desc,
     image: `${baseUrl}${program.img}`,
     url: currentUrl,
-    locale,
     price: program.price,
     duration: program.duration,
     level: program.level,
@@ -37,11 +35,11 @@ export const createProgramHead = (metadata: ProgramMetadata) => {
       },
       {
         name: "keywords",
-        content: metadata.locale === 'en' ? "training, fitness, program, Fabian Avendano, personal coach" : "entrenamiento, fitness, programa, Fabián Avendaño, coach personal",
+        content: "entrenamiento, fitness, programa, Fabián Avendaño, coach personal",
       },
       {
         name: "author",
-        content: metadata.locale === 'en' ? "Fabian Avendano" : "Fabián Avendaño",
+        content: "Fabián Avendaño",
       },
       // Open Graph tags for Facebook, WhatsApp, etc.
       {
@@ -78,7 +76,7 @@ export const createProgramHead = (metadata: ProgramMetadata) => {
       },
       {
         property: "og:locale",
-        content: metadata.locale,
+        content: "es_ES",
       },
       // Twitter Card tags
       {

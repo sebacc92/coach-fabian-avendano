@@ -1,43 +1,42 @@
 import { component$ } from "@builder.io/qwik";
-import { _ } from "compiled-i18n";
 import { LuDumbbell, LuHeart, LuFlower2, LuActivity, LuUsers } from "@qwikest/icons/lucide";
 
 export const MethodologySection = component$(() => {
   const days = [
     {
       icon: LuDumbbell,
-      title: _`monday`,
-      desc: _`mondayDesc`,
+      title: "Lunes: Fuerza",
+      desc: "Construimos poder real con movimientos que importan.",
       color: "bg-[#1e3a8a]",
     },
     {
       icon: LuHeart,
-      title: _`tuesday`,
-      desc: _`tuesdayDesc`,
+      title: "Martes: Cardio",
+      desc: "Liberamos energía y superamos tus límites mentales.",
       color: "bg-[#1e3a8a]",
     },
     {
       icon: LuDumbbell,
-      title: _`wednesday`,
-      desc: _`wednesdayDesc`,
+      title: "Miércoles: Fuerza",
+      desc: "Fortalecemos el cuerpo con movimientos funcionales.",
       color: "bg-[#1e3a8a]",
     },
     {
       icon: LuFlower2,
-      title: _`thursday`,
-      desc: _`thursdayDesc`,
+      title: "Jueves: Calma Activa",
+      desc: "Donde hay pausa, hay poder. Conectamos con el cuerpo.",
       color: "bg-[#1e3a8a]",
     },
     {
       icon: LuActivity,
-      title: _`friday`,
-      desc: _`fridayDesc`,
+      title: "Viernes: Fuerza",
+      desc: "Cada repetición te acerca a la persona que quieres ser.",
       color: "bg-[#1e3a8a]",
     },
     {
       icon: LuUsers,
-      title: _`saturday`,
-      desc: _`saturdayDesc`,
+      title: "Sábado: Libre con Sentido",
+      desc: "El entorno también entrena. Disfruta el movimiento.",
       color: "bg-[#1e3a8a]",
     },
   ];
@@ -45,7 +44,7 @@ export const MethodologySection = component$(() => {
     <section class="py-12 md:py-16 lg:py-24 bg-[#F5F5F7]">
       <div class="container mx-auto px-4">
         <h2 class="text-2xl md:text-4xl lg:text-5xl font-bold font-['Poppins'] text-center mb-12 md:mb-16 text-[#1A1A1A]">
-          {_`methodologyTitle`}
+          Una Metodología con Propósito
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           {days.map((day, idx) => {

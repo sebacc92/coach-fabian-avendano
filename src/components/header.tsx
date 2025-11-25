@@ -1,20 +1,18 @@
 import { component$, useSignal, useVisibleTask$ } from '@builder.io/qwik';
 import { LuDumbbell, LuMenu, LuX } from "@qwikest/icons/lucide";
-import { _, getLocale } from "compiled-i18n";
 import { Link, useLocation } from '@builder.io/qwik-city';
 
 export default component$(() => {
-    const currentLocale = getLocale();
     const menuOpen = useSignal(false);
     const languageDropdownOpen = useSignal(false);
     const scrolled = useSignal(false);
     const loc = useLocation();
-    const isHome = loc.url.pathname === `/${currentLocale}` || loc.url.pathname === `/${currentLocale}/`;
+    const isHome = loc.url.pathname === `/` || loc.url.pathname === `/index`;
     const menuItems = [
-        { label: _`Programas`, href: '#programa', anchor: true },
-        { label: _`Testimonios`, href: '#testimonios', anchor: true },
-        { label: _`Acerca de`, href: '#acerca', anchor: true },
-        { label: _`Contacto`, href: `/${currentLocale}/contacto` },
+        { label: "Programas", href: '#programa', anchor: true },
+        { label: "Testimonios", href: '#testimonios', anchor: true },
+        { label: "Acerca de", href: '#acerca', anchor: true },
+        { label: "Contacto", href: `/contacto` },
     ];
 
     useVisibleTask$(({ cleanup }) => {
@@ -44,25 +42,22 @@ export default component$(() => {
     });
 
     return (
-        <header class={`fixed left-0 right-0 z-50 px-6 py-2 transition-safe duration-300 ease-in-out ${
-            scrolled.value
+        <header class={`fixed left-0 right-0 z-50 px-6 py-2 transition-safe duration-300 ease-in-out ${scrolled.value
                 ? 'bg-white text-gray-900 drop-shadow-none border-b border-gray-200'
                 : 'bg-transparent text-white drop-shadow-lg'
-        }`}>
+            }`}>
             <div class="flex items-center justify-between min-h-16 max-w-7xl mx-auto">
                 {/* Logo */}
                 <Link href="/">
                     <div class="flex items-center">
                         <LuDumbbell class="h-10 w-10 text-[#6A0DAD] mr-3" />
-                        <span class={`font-bold text-base md:text-lg lg:text-xl hidden lg:inline transition-colors duration-300 ${
-                            scrolled.value ? 'text-gray-900' : 'text-white'
-                        }`}>Coach Fabian Avendaño</span>
-                        <span class={`font-bold text-lg lg:hidden transition-colors duration-300 ${
-                            scrolled.value ? 'text-gray-900' : 'text-white'
-                        }`}>F. Avendaño</span>
+                        <span class={`font-bold text-base md:text-lg lg:text-xl hidden lg:inline transition-colors duration-300 ${scrolled.value ? 'text-gray-900' : 'text-white'
+                            }`}>Coach Fabian Avendaño</span>
+                        <span class={`font-bold text-lg lg:hidden transition-colors duration-300 ${scrolled.value ? 'text-gray-900' : 'text-white'
+                            }`}>F. Avendaño</span>
                     </div>
                 </Link>
-                
+
                 {/* Navigation Desktop - Centered */}
                 <nav class="hidden lg:flex flex-1 justify-center">
                     <ul class="flex space-x-4 md:space-x-6 lg:space-x-8">
@@ -72,11 +67,10 @@ export default component$(() => {
                                     isHome ? (
                                         <a
                                             href={item.href}
-                                            class={`font-medium text-base md:text-lg lg:text-xl transition-colors duration-300 ${
-                                                scrolled.value
+                                            class={`font-medium text-base md:text-lg lg:text-xl transition-colors duration-300 ${scrolled.value
                                                     ? 'text-gray-700 hover:text-[#2563eb] hover:font-bold'
                                                     : 'text-white hover:text-[#2563eb] hover:font-bold'
-                                            }`}
+                                                }`}
                                             preventdefault:click
                                             onClick$={() => {
                                                 const el = document.getElementById(item.href.replace('#', ''));
@@ -91,22 +85,20 @@ export default component$(() => {
                                         </a>
                                     ) : (
                                         <a
-                                            href={`/${currentLocale}${item.href}`}
-                                            class={`font-medium text-base md:text-lg lg:text-xl transition-colors duration-300 ${
-                                                scrolled.value
+                                            href={`/${item.href}`}
+                                            class={`font-medium text-base md:text-lg lg:text-xl transition-colors duration-300 ${scrolled.value
                                                     ? 'text-gray-700 hover:text-[#2563eb] hover:font-bold'
                                                     : 'text-white hover:text-[#2563eb] hover:font-bold'
-                                            }`}
+                                                }`}
                                         >
                                             {item.label}
                                         </a>
                                     )
                                 ) : (
-                                    <a href={item.href} class={`font-medium text-base md:text-lg lg:text-xl transition-colors duration-300 ${
-                                        scrolled.value
+                                    <a href={item.href} class={`font-medium text-base md:text-lg lg:text-xl transition-colors duration-300 ${scrolled.value
                                             ? 'text-gray-700 hover:text-[#2563eb] hover:font-bold'
                                             : 'text-white hover:text-[#2563eb] hover:font-bold'
-                                    }`}>
+                                        }`}>
                                         {item.label}
                                     </a>
                                 )}
@@ -114,40 +106,36 @@ export default component$(() => {
                         ))}
                     </ul>
                 </nav>
-                
+
                 {/* Desktop Right: Button + Language + Hamburger on md-lg */}
                 <div class="hidden md:flex items-center space-x-4">
                     <div class="flex flex-col items-center">
-                        <Link href={`/${currentLocale}/contenido-gratuito`}>
+                        <Link href={`/contenido-gratuito`}>
                             <button class="bg-[#1e3a8a] hover:bg-[#1e40af] text-white px-4 sm:px-6 md:px-8 py-2 md:py-3 rounded-lg font-semibold transition-colors text-base md:text-lg whitespace-nowrap">
                                 Comienza a entrenar
                             </button>
                         </Link>
                     </div>
                     <button
-                        class={`lg:hidden p-2 rounded focus:outline-none focus:ring-2 transition-colors duration-300 ${
-                            scrolled.value ? 'focus:ring-blue-500' : 'focus:ring-white'
-                        }`}
+                        class={`lg:hidden p-2 rounded focus:outline-none focus:ring-2 transition-colors duration-300 ${scrolled.value ? 'focus:ring-blue-500' : 'focus:ring-white'
+                            }`}
                         aria-label="Open menu"
                         onClick$={() => (menuOpen.value = true)}
                     >
-                        <LuMenu class={`h-7 w-7 transition-colors duration-300 ${
-                            scrolled.value ? 'text-[#6A0DAD]' : 'text-white'
-                        }`} />
+                        <LuMenu class={`h-7 w-7 transition-colors duration-300 ${scrolled.value ? 'text-[#6A0DAD]' : 'text-white'
+                            }`} />
                     </button>
                 </div>
 
                 {/* Hamburger Mobile - for <md */}
                 <button
-                    class={`md:hidden p-2 rounded focus:outline-none focus:ring-2 transition-colors duration-300 ${
-                        scrolled.value ? 'focus:ring-blue-500' : 'focus:ring-white'
-                    }`}
+                    class={`md:hidden p-2 rounded focus:outline-none focus:ring-2 transition-colors duration-300 ${scrolled.value ? 'focus:ring-blue-500' : 'focus:ring-white'
+                        }`}
                     aria-label="Open menu"
                     onClick$={() => (menuOpen.value = true)}
                 >
-                    <LuMenu class={`h-7 w-7 transition-colors duration-300 ${
-                        scrolled.value ? 'text-[#6A0DAD]' : 'text-white'
-                    }`} />
+                    <LuMenu class={`h-7 w-7 transition-colors duration-300 ${scrolled.value ? 'text-[#6A0DAD]' : 'text-white'
+                        }`} />
                 </button>
             </div>
 
@@ -182,9 +170,8 @@ export default component$(() => {
                                         isHome ? (
                                             <a
                                                 href={item.href}
-                                                class={`text-2xl font-semibold transition-safe duration-300 text-white hover:text-[#2563eb] hover:font-bold flex items-center py-2 opacity-0 translate-x-[-20px] ${
-                                                    `animate-menu-item-${index}`
-                                                }`}
+                                                class={`text-2xl font-semibold transition-safe duration-300 text-white hover:text-[#2563eb] hover:font-bold flex items-center py-2 opacity-0 translate-x-[-20px] ${`animate-menu-item-${index}`
+                                                    }`}
                                                 preventdefault:click
                                                 onClick$={() => {
                                                     menuOpen.value = false;
@@ -202,10 +189,9 @@ export default component$(() => {
                                             </a>
                                         ) : (
                                             <a
-                                                href={`/${currentLocale}${item.href}`}
-                                                class={`text-2xl font-semibold transition-safe duration-300 text-white hover:text-[#2563eb] hover:font-bold hover:scale-105 flex items-center py-2 opacity-0 translate-x-[-20px] ${
-                                                    `animate-menu-item-${index}`
-                                                }`}
+                                                href={`/${item.href}`}
+                                                class={`text-2xl font-semibold transition-safe duration-300 text-white hover:text-[#2563eb] hover:font-bold hover:scale-105 flex items-center py-2 opacity-0 translate-x-[-20px] ${`animate-menu-item-${index}`
+                                                    }`}
                                                 onClick$={() => { menuOpen.value = false; }}
                                             >
                                                 {item.label}
@@ -214,9 +200,8 @@ export default component$(() => {
                                     ) : (
                                         <a
                                             href={item.href}
-                                            class={`text-2xl font-semibold transition-safe duration-300 text-white hover:text-[#2563eb] hover:font-bold hover:scale-105 flex items-center py-2 opacity-0 translate-x-[-20px] ${
-                                                `animate-menu-item-${index}`
-                                            }`}
+                                            class={`text-2xl font-semibold transition-safe duration-300 text-white hover:text-[#2563eb] hover:font-bold hover:scale-105 flex items-center py-2 opacity-0 translate-x-[-20px] ${`animate-menu-item-${index}`
+                                                }`}
                                             onClick$={() => (menuOpen.value = false)}
                                         >
                                             {item.label}
@@ -229,7 +214,7 @@ export default component$(() => {
                         {/* CTA Button at Bottom */}
                         <div class="mt-auto pt-8">
                             <div class="flex flex-col items-center">
-                                <Link href={`/${currentLocale}/contenido-gratuito`}>
+                                <Link href={`/contenido-gratuito`}>
                                     <button class="w-full bg-[#1e3a8a] hover:bg-[#1e40af] text-white px-4 sm:px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold transition-safe duration-300 text-base md:text-lg shadow-lg hover:shadow-xl transform hover:scale-[1.02] opacity-0 translate-y-10 animate-menu-cta whitespace-nowrap">
                                         Comienza a entrenar
                                     </button>

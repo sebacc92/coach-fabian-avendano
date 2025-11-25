@@ -1,5 +1,4 @@
 import { component$, useSignal, $ } from "@builder.io/qwik";
-import { _ } from "compiled-i18n";
 import { LuDumbbell, LuHeart, LuFlower2, LuUsers, LuZap, LuCheck } from "@qwikest/icons/lucide";
 
 export const CalendarReto1 = component$(() => {
@@ -59,36 +58,36 @@ export const CalendarReto1 = component$(() => {
 
   const getReto1DayTitle = (day: number) => {
     const dayTitles: { [key: number]: string } = {
-      1: _`reto1Day1Title`,
-      2: _`reto1Day2Title`,
-      3: _`reto1Day3Title`,
-      4: _`reto1Day4Title`,
-      5: _`reto1Day5Title`,
-      6: _`reto1Day6Title`,
-      7: _`reto1Day7Title`,
-      8: _`reto1Day8Title`,
-      9: _`reto1Day9Title`,
-      10: _`reto1Day10Title`,
-      11: _`reto1Day11Title`,
-      12: _`reto1Day12Title`,
-      13: _`reto1Day13Title`,
-      14: _`reto1Day14Title`,
-      15: _`reto1Day15Title`,
-      16: _`reto1Day16Title`,
-      17: _`reto1Day17Title`,
-      18: _`reto1Day18Title`,
-      19: _`reto1Day19Title`,
-      20: _`reto1Day20Title`,
-      21: _`reto1Day21Title`,
-      22: _`reto1Day22Title`,
-      23: _`reto1Day23Title`,
-      24: _`reto1Day24Title`,
-      25: _`reto1Day25Title`,
-      26: _`reto1Day26Title`,
-      27: _`reto1Day27Title`,
-      28: _`reto1Day28Title`
+      1: "Reencuentro: Volver al Eje",
+      2: "Fuerza y Fundamentos",
+      3: "Cardio y Resistencia",
+      4: "Calma Activa y Movilidad",
+      5: "Fuerza y Potencia",
+      6: "Movimiento Libre",
+      7: "Revisión y Descanso",
+      8: "Fuerza Progresiva",
+      9: "Cardio Intenso",
+      10: "Fuerza y Control",
+      11: "Recuperación Activa",
+      12: "Cardio Flow",
+      13: "Actividad Libre",
+      14: "Evaluación Semanal",
+      15: "Calma Profunda",
+      16: "Fuerza Avanzada",
+      17: "Cardio HIIT",
+      18: "Yoga y Estiramiento",
+      19: "Fuerza Máxima",
+      20: "Deporte o Hobby",
+      21: "Preparación Final",
+      22: "Desafío Cardio",
+      23: "Desafío de Fuerza",
+      24: "Cardio Resistencia",
+      25: "Movilidad Profunda",
+      26: "Potencia Final",
+      27: "Día Libre Activo",
+      28: "GRAN FINAL DEL RETO"
     };
-    return dayTitles[day] || `Day ${day}`;
+    return dayTitles[day] || `Día ${day}`;
   };
 
   const getTypeDescription = (type: string) => {
@@ -159,10 +158,10 @@ export const CalendarReto1 = component$(() => {
       <div class="container mx-auto px-4 max-w-7xl relative z-10">
         <div class="text-center mb-12 animate-fade-in">
           <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            {_`reto1CalendarTitle`}
+            Tu Camino Día a Día
           </h2>
           <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-            {_`reto1CalendarSubtitle`}
+            Un plan estructurado para garantizar tu éxito. Cada día tiene un propósito específico.
           </p>
         </div>
 
@@ -172,14 +171,13 @@ export const CalendarReto1 = component$(() => {
             <button
               key={weekData.week}
               onClick$={() => selectWeek(weekData.week)}
-              class={`px-6 py-3 rounded-full font-semibold transition-safe duration-300 transform hover:scale-105 hover:shadow-lg ${
-                selectedWeek.value === weekData.week
+              class={`px-6 py-3 rounded-full font-semibold transition-safe duration-300 transform hover:scale-105 hover:shadow-lg ${selectedWeek.value === weekData.week
                   ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg animate-pulse-glow"
                   : "bg-white text-gray-700 hover:bg-blue-50 border border-gray-200 hover:border-blue-300"
-              }`}
+                }`}
               style={`animation-delay: ${index * 0.1}s;`}
             >
-              {_`weekLabel`} {weekData.week}
+              Semana {weekData.week}
             </button>
           ))}
         </div>
@@ -192,18 +190,17 @@ export const CalendarReto1 = component$(() => {
               <div
                 key={day.day}
                 onClick$={() => selectDay(index)}
-                class={`relative group cursor-pointer transition-safe duration-500 transform hover:scale-105 hover:rotate-1 ${
-                  selectedDay.value === index ? "scale-105 animate-pulse-glow" : ""
-                }`}
+                class={`relative group cursor-pointer transition-safe duration-500 transform hover:scale-105 hover:rotate-1 ${selectedDay.value === index ? "scale-105 animate-pulse-glow" : ""
+                  }`}
                 style={`animation-delay: ${index * 0.05}s;`}
               >
                 <div class={`${day.color} text-white p-4 md:p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-safe duration-300 relative overflow-hidden group-hover:animate-shimmer`}>
                   {/* Animated background */}
                   <div class="absolute inset-0 bg-white/10 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                  
+
                   {/* Day number */}
                   <div class="relative z-10 text-center">
-                    <div class="text-2xl md:text-3xl font-bold mb-2">{_`dayLabel`} {day.day}</div>
+                    <div class="text-2xl md:text-3xl font-bold mb-2">Día {day.day}</div>
                     <Icon class="w-6 h-8 md:w-8 h-8 mx-auto mb-3 transition-transform group-hover:scale-110" />
                     <h3 class="text-xs md:text-sm font-semibold leading-tight">{getReto1DayTitle(day.day)}</h3>
                   </div>
@@ -236,7 +233,7 @@ export const CalendarReto1 = component$(() => {
                 </div>
                 <div>
                   <h3 class="text-xl md:text-2xl font-bold text-gray-800">
-                    {_`dayLabel`} {weeks[selectedWeek.value - 1].days[selectedDay.value].day}
+                    Día {weeks[selectedWeek.value - 1].days[selectedDay.value].day}
                   </h3>
                   <p class="text-gray-600">
                     {getTypeDescription(weeks[selectedWeek.value - 1].days[selectedDay.value].type)}
@@ -255,7 +252,7 @@ export const CalendarReto1 = component$(() => {
 
         {/* Legend */}
         <div class="mt-12 bg-white rounded-2xl shadow-lg p-6 border border-gray-100 animate-fade-in">
-          <h4 class="text-lg font-semibold text-gray-800 mb-6 text-center">{_`trainingTypesTitle`}</h4>
+          <h4 class="text-lg font-semibold text-gray-800 mb-6 text-center">Tipos de Entrenamiento</h4>
           <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4">
             {[
               { type: "intro", label: "Introducción", color: "bg-blue-600", icon: LuUsers },

@@ -1,55 +1,52 @@
 import { component$, useSignal, $ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { _, getLocale } from "compiled-i18n";
 import { Button } from "~/components/ui/button/button";
+import { CalendarReto1 } from "~/components/calendar-reto1";
 import { generateProgramMetadata, createProgramHead } from "~/utils/metadata";
-
-import FuerzaImg from '~/assets/images/fabian-kettlebell.webp?jsx';
 
 export default component$(() => {
   const currentTestimonial = useSignal(0);
 
-  const testimonials = [
-    "Gané fuerza real que se nota en todo lo que hago.",
-    "El programa de fuerza base cambió mi forma de entrenar."
-  ];
-
   const program = {
-    img: FuerzaImg,
-    alt: _`program3ImgAlt`,
-    price: _`program3Price`,
-    priceColor: "bg-[#FF6B35]",
-    borderColor: "border-[#FF6B35]",
-    titleColor: "text-[#FF6B35]",
-    subtitleColor: "text-[#D55A2A]",
-    buttonColor: "bg-[#FF6B35]",
-    buttonHover: "hover:bg-[#E55A2A]",
-    level: "FUERZA BASE",
-    levelColor: "bg-[#FF6B35]",
-    title: "Fuerza Base: Presencia Física (5 semanas)",
-    subtitle: "Construyendo fuerza y estabilidad desde lo simple",
-    desc: "Programa de fuerza de 5 semanas (2 días por semana) con enfoque full body. Día 1 centrado en empujes y Día 2 en tracciones. Se prioriza un ejercicio básico por sesión con más series para progresar en carga.",
-    cta: _`program3Cta`,
-    link: "https://mpago.la/17rjJve",
-    duration: "5 semanas",
-    frequency: "2 días por semana",
-    equipment: ["Barbell", "Dumbbells", "Squat Rack", "Bench"],
+    img: "/images/fabian-gym-training.webp",
+    alt: "Fabián Avendaño en el gimnasio - Reto 28 Días",
+    price: "30.000 ARS",
+    priceColor: "bg-[#6A0DAD]",
+    borderColor: "border-[#6A0DAD]",
+    titleColor: "text-[#6A0DAD]",
+    subtitleColor: "text-[#8A2BE2]",
+    buttonColor: "bg-[#6A0DAD]",
+    buttonHover: "hover:bg-[#5A0B9D]",
+    level: "NIVEL INICIAL",
+    levelColor: "bg-[#6A0DAD]",
+    title: "Reto 1: TU TRANSFORMACIÓN EMPIEZA HOY",
+    subtitle: "Comienza con 7 Días de Acceso Totalmente Gratis",
+    desc: "Un plan probado que combina fuerza, cardio y calma activa. Entrena desde cero o potencia tus resultados con rutinas de 45 minutos que puedes hacer en casa o en el gym.",
+    cta: "¡ÚNETE AL RETO!",
+    link: "/contacto",
+    duration: "28 días",
+    frequency: "6 días por semana",
+    equipment: ["Kettlebells", "Dumbbells", "Resistance Bands", "Mat"],
     benefits: [
-      "Enfoque en fuerza base",
-      "Progresión sistemática",
-      "Movimientos funcionales",
-      "Desarrollo de estabilidad",
-      "Rutinas de 60 minutos"
+      "Acceso gratuito por 7 días",
+      "Rutinas de 45 minutos",
+      "Entrenamiento desde casa o gym",
+      "Combinación de fuerza, cardio y calma activa",
+      "Plan probado y efectivo"
+    ],
+    testimonials: [
+      "Nunca pensé que podría lograr tanto en tan poco tiempo. El programa es increíble y Fabián siempre está ahí para motivarte.",
+      "La metodología funciona de verdad. Gané masa muscular y me siento más fuerte que nunca. Totalmente recomendado."
     ]
   };
 
   const nextTestimonial = $(() => {
-    currentTestimonial.value = (currentTestimonial.value + 1) % testimonials.length;
+    currentTestimonial.value = (currentTestimonial.value + 1) % program.testimonials.length;
   });
 
   const prevTestimonial = $(() => {
     currentTestimonial.value = currentTestimonial.value === 0
-      ? testimonials.length - 1
+      ? program.testimonials.length - 1
       : currentTestimonial.value - 1;
   });
 
@@ -58,13 +55,16 @@ export default component$(() => {
       {/* Hero Section */}
       <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0">
-          <program.img
+          <img
+            src={program.img}
             alt={program.alt}
             class="w-full h-full object-cover object-top"
+            width="1200"
+            height="800"
           />
           <div class="absolute inset-0 bg-black/50"></div>
         </div>
-        
+
         <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
           <div class={`inline-block ${program.levelColor} px-4 py-2 rounded-full text-sm font-semibold mb-6`}>
             {program.level}
@@ -75,26 +75,28 @@ export default component$(() => {
           <p class="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto">
             {program.subtitle}
           </p>
-          
+
           {/* Platform Information */}
           <div class="mb-6 md:mb-8">
             <p class="text-sm md:text-base text-white/80 mb-2">
-              {_`platformInfo`}
+              Prueba gratuita sin compromiso. Cancela cuando quieras.
             </p>
             <p class="text-xs md:text-sm text-white/70 max-w-2xl mx-auto">
-              {_`platformTrust`}
+              Únete a cientos de personas que ya han transformado sus vidas.
             </p>
           </div>
-          
+
           <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <div class={`${program.priceColor} text-white px-8 py-4 rounded-full text-2xl font-bold`}>
               {program.price}
             </div>
-            <a href={program.link} target="_blank" rel="noopener noreferrer">
-              <Button class={`${program.buttonColor} ${program.buttonHover} text-white px-8 py-4 text-lg font-bold rounded-lg transition-safe transform hover:scale-105`}>
-                {program.cta}
-              </Button>
-            </a>
+            <div class="flex flex-col items-center">
+              <a href={program.link}>
+                <Button class={`${program.buttonColor} ${program.buttonHover} text-white px-8 py-4 text-lg font-bold rounded-lg transition-all transform hover:scale-105`}>
+                  {program.cta}
+                </Button>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -112,9 +114,12 @@ export default component$(() => {
               </p>
             </div>
             <div class="relative">
-              <program.img
+              <img
+                src={program.img}
                 alt={program.alt}
                 class="rounded-2xl shadow-2xl"
+                width="600"
+                height="400"
               />
               <div class={`absolute -top-4 -right-4 ${program.priceColor} text-white px-6 py-3 rounded-full text-xl font-bold shadow-lg`}>
                 {program.price}
@@ -128,7 +133,7 @@ export default component$(() => {
       <section class="py-16 md:py-24 bg-white">
         <div class="container mx-auto px-4 max-w-6xl">
           <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-16">
-            {_`programBenefitsTitle`}
+            Beneficios del Programa
           </h2>
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {program.benefits.map((benefit, index) => (
@@ -147,7 +152,7 @@ export default component$(() => {
       <section class="py-16 md:py-24 bg-gray-50">
         <div class="container mx-auto px-4 max-w-6xl">
           <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-16">
-            {_`programDetailsTitle`}
+            Detalles del Entrenamiento
           </h2>
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
@@ -156,7 +161,7 @@ export default component$(() => {
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
               </div>
-              <h3 class="text-xl font-bold text-gray-800 mb-2">{_`programDuration`}</h3>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Duración</h3>
               <p class="text-gray-600">{program.duration}</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
@@ -165,7 +170,7 @@ export default component$(() => {
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                 </svg>
               </div>
-              <h3 class="text-xl font-bold text-gray-800 mb-2">{_`programFrequency`}</h3>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Frecuencia</h3>
               <p class="text-gray-600">{program.frequency}</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
@@ -174,7 +179,7 @@ export default component$(() => {
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
                 </svg>
               </div>
-              <h3 class="text-xl font-bold text-gray-800 mb-2">{_`programEquipment`}</h3>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Equipamiento</h3>
               <div class="flex flex-wrap justify-center gap-2">
                 {program.equipment.map((item, index) => (
                   <span key={index} class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
@@ -191,26 +196,25 @@ export default component$(() => {
       <section class="py-16 md:py-24 bg-white">
         <div class="container mx-auto px-4 max-w-4xl">
           <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-16">
-            {_`programTestimonialsTitle`}
+            Lo Que Dicen Nuestros Alumnos
           </h2>
           <div class="relative">
             <div class="bg-gray-50 p-8 md:p-12 rounded-2xl text-center">
               <div class="mb-6">
                 <svg class="w-12 h-12 text-gray-400 mx-auto" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                 </svg>
               </div>
               <p class="text-lg md:text-xl text-gray-700 mb-8 italic">
-                "{testimonials[currentTestimonial.value]}"
+                "{program.testimonials[currentTestimonial.value]}"
               </p>
               <div class="flex justify-center space-x-2">
-                {testimonials.map((_, index) => (
+                {program.testimonials.map((_, index) => (
                   <button
                     key={index}
                     onClick$={() => currentTestimonial.value = index}
-                    class={`w-3 h-3 rounded-full transition-colors ${
-                      index === currentTestimonial.value ? program.buttonColor : 'bg-gray-300'
-                    }`}
+                    class={`w-3 h-3 rounded-full transition-colors ${index === currentTestimonial.value ? program.buttonColor : 'bg-gray-300'
+                      }`}
                   />
                 ))}
               </div>
@@ -239,58 +243,64 @@ export default component$(() => {
       <section class="py-16 md:py-24 bg-gray-800">
         <div class="container mx-auto px-4 text-center">
           <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
-            {_`programCtaTitleFuerza`}
+            ¿Listo para Transformar tu Cuerpo?
           </h2>
           <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            {_`programCtaDescFuerza`}
+            Únete hoy y comienza tu viaje hacia una versión más fuerte y saludable de ti mismo.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <div class={`${program.priceColor} text-white px-8 py-4 rounded-full text-2xl font-bold`}>
               {program.price}
             </div>
-            <a href={program.link} target="_blank" rel="noopener noreferrer">
-              <Button class={`${program.buttonColor} ${program.buttonHover} text-white px-8 py-4 text-lg font-bold rounded-lg transition-safe transform hover:scale-105`}>
+            <a href={program.link}>
+              <Button class={`${program.buttonColor} ${program.buttonHover} text-white px-8 py-4 text-lg font-bold rounded-lg transition-all transform hover:scale-105`}>
                 {program.cta}
               </Button>
             </a>
           </div>
         </div>
       </section>
+
+      {/* Calendar Section */}
+      <CalendarReto1 />
     </>
   );
 });
 
 export const head: DocumentHead = () => {
-  const locale = getLocale();
   const program = {
-    alt: _`program3ImgAlt`,
-    price: _`program3Price`,
-    priceColor: "bg-[#FF6B35]",
-    borderColor: "border-[#FF6B35]",
-    titleColor: "text-[#FF6B35]",
-    subtitleColor: "text-[#D55A2A]",
-    buttonColor: "bg-[#FF6B35]",
-    buttonHover: "hover:bg-[#E55A2A]",
-    level: "FUERZA BASE",
-    levelColor: "bg-[#FF6B35]",
-    title: locale === 'en' ? "Base Strength: Physical Presence (5 weeks)" : "Fuerza Base: Presencia Física (5 semanas)",
-    subtitle: locale === 'en' ? "Building strength and stability from the simple" : "Construyendo fuerza y estabilidad desde lo simple",
-    desc: locale === 'en' ? "5-week strength program (2 days per week) with full body focus. Day 1 focused on pushes and Day 2 on pulls. One basic exercise per session is prioritized with more sets to progress in load." : "Programa de fuerza de 5 semanas (2 días por semana) con enfoque full body. Día 1 centrado en empujes y Día 2 en tracciones. Se prioriza un ejercicio básico por sesión con más series para progresar en carga.",
-    cta: _`program3Cta`,
-    link: "https://mpago.la/17rjJve",
-    duration: "5 semanas",
-    frequency: "2 días por semana",
-    equipment: ["Barbell", "Dumbbells", "Squat Rack", "Bench"],
+    img: "/assets/images/fabian-gym-training.webp",
+    alt: "Fabián Avendaño en el gimnasio - Reto 28 Días",
+    price: "30.000 ARS",
+    priceColor: "bg-[#6A0DAD]",
+    borderColor: "border-[#6A0DAD]",
+    titleColor: "text-[#6A0DAD]",
+    subtitleColor: "text-[#8A2BE2]",
+    buttonColor: "bg-[#6A0DAD]",
+    buttonHover: "hover:bg-[#5A0B9D]",
+    level: "NIVEL INICIAL",
+    levelColor: "bg-[#6A0DAD]",
+    title: "Reto 1: TU TRANSFORMACIÓN EMPIEZA HOY",
+    subtitle: "Comienza con 7 Días de Acceso Totalmente Gratis",
+    desc: "Un plan probado que combina fuerza, cardio y calma activa. Entrena desde cero o potencia tus resultados con rutinas de 45 minutos que puedes hacer en casa o en el gym.",
+    cta: "¡ÚNETE AL RETO!",
+    link: "/contacto",
+    duration: "28 días",
+    frequency: "5/6 días por semana",
+    equipment: ["Kettlebells", "Dumbbells", "Resistance Bands", "Mat"],
     benefits: [
-      "Enfoque en fuerza base",
-      "Progresión sistemática",
-      "Movimientos funcionales",
-      "Desarrollo de estabilidad",
-      "Rutinas de 60 minutos"
+      "Acceso gratuito por 7 días",
+      "Rutinas de 45 minutos",
+      "Entrenamiento desde casa o gym",
+      "Combinación de fuerza, cardio y calma activa",
+      "Plan probado y efectivo"
     ],
-    img: '/assets/images/fabian-kettlebell.webp'
+    testimonials: [
+      "Nunca pensé que podría lograr tanto en tan poco tiempo. El programa es increíble y Fabián siempre está ahí para motivarte.",
+      "La metodología funciona de verdad. Gané masa muscular y me siento más fuerte que nunca. Totalmente recomendado."
+    ]
   };
 
-  const metadata = generateProgramMetadata(program, "fuerza-base", locale);
+  const metadata = generateProgramMetadata(program, "reto-1-transformacion");
   return createProgramHead(metadata);
 };

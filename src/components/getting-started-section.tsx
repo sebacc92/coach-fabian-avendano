@@ -1,5 +1,4 @@
 import { component$ } from "@builder.io/qwik";
-import { _ } from "compiled-i18n";
 
 import Step1Img from '~/assets/images/getting-started-step1.webp?jsx';
 import Step2Img from '~/assets/images/getting-started-step2.webp?jsx';
@@ -10,26 +9,26 @@ export const GettingStartedSection = component$(() => {
   const steps = [
     {
       id: 1,
-      title: _`step1Title`,
-      description: _`step1Desc`,
+      title: "¡Comienza tu prueba gratuita de 7 días!",
+      description: "Accede completamente gratis por 7 días a cualquiera de nuestros programas de transformación",
       img: Step1Img
     },
     {
       id: 2,
-      title: _`step2Title`,
-      description: _`step2Desc`,
+      title: "Accede a la plataforma",
+      description: "Recibe acceso directo a nuestra plataforma de entrenamiento",
       img: Step2Img
     },
     {
       id: 3,
-      title: _`step3Title`,
-      description: _`step3Desc`,
+      title: "Comienza a entrenar",
+      description: "Sigue las rutinas, registra tu progreso y únete a la comunidad",
       img: Step3Img
     },
     {
       id: 4,
-      title: _`step4Title`,
-      description: _`step4Desc`,
+      title: "Registra tu evolución",
+      description: "Lleva un seguimiento detallado de tu progreso con métricas, fotos y logros",
       img: Step4Img
     }
   ];
@@ -40,10 +39,10 @@ export const GettingStartedSection = component$(() => {
         {/* Header */}
         <div class="text-center mb-16">
           <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
-            {_`gettingStartedTitle`}
+            COMENZAR ES FÁCIL
           </h2>
           <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-            {_`gettingStartedSubtitle`}
+            Solo 4 pasos para transformar tu vida
           </p>
         </div>
 
