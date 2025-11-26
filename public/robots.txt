@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://coach-fabian-avendano.netlify.app/sitemap.xml
