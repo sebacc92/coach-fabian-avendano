@@ -1,8 +1,12 @@
-import { component$, useSignal, useVisibleTask$ } from '@builder.io/qwik';
+import { component$, useSignal, useVisibleTask$, $ } from '@builder.io/qwik';
 import { LuDumbbell, LuMenu, LuX } from "@qwikest/icons/lucide";
 import { Link, useLocation } from '@builder.io/qwik-city';
 
-export default component$(() => {
+interface HeaderProps {
+    user?: any;
+}
+
+export default component$<HeaderProps>(({ user }) => {
     const menuOpen = useSignal(false);
     const languageDropdownOpen = useSignal(false);
     const scrolled = useSignal(false);
@@ -41,10 +45,15 @@ export default component$(() => {
         cleanup(() => document.removeEventListener('click', handleClickOutside));
     });
 
+    const logout = $(() => {
+        document.cookie = 'jwt=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        window.location.href = '/login';
+    });
+
     return (
         <header class={`fixed left-0 right-0 z-50 px-6 py-2 transition-safe duration-300 ease-in-out ${scrolled.value
-                ? 'bg-white text-gray-900 drop-shadow-none border-b border-gray-200'
-                : 'bg-transparent text-white drop-shadow-lg'
+            ? 'bg-white text-gray-900 drop-shadow-none border-b border-gray-200'
+            : 'bg-transparent text-white drop-shadow-lg'
             }`}>
             <div class="flex items-center justify-between min-h-16 max-w-7xl mx-auto">
                 {/* Logo */}
@@ -68,8 +77,8 @@ export default component$(() => {
                                         <a
                                             href={item.href}
                                             class={`font-medium text-base md:text-lg lg:text-xl transition-colors duration-300 ${scrolled.value
-                                                    ? 'text-gray-700 hover:text-[#2563eb] hover:font-bold'
-                                                    : 'text-white hover:text-[#2563eb] hover:font-bold'
+                                                ? 'text-gray-700 hover:text-[#2563eb] hover:font-bold'
+                                                : 'text-white hover:text-[#2563eb] hover:font-bold'
                                                 }`}
                                             preventdefault:click
                                             onClick$={() => {
@@ -87,8 +96,8 @@ export default component$(() => {
                                         <a
                                             href={`/${item.href}`}
                                             class={`font-medium text-base md:text-lg lg:text-xl transition-colors duration-300 ${scrolled.value
-                                                    ? 'text-gray-700 hover:text-[#2563eb] hover:font-bold'
-                                                    : 'text-white hover:text-[#2563eb] hover:font-bold'
+                                                ? 'text-gray-700 hover:text-[#2563eb] hover:font-bold'
+                                                : 'text-white hover:text-[#2563eb] hover:font-bold'
                                                 }`}
                                         >
                                             {item.label}
@@ -96,8 +105,8 @@ export default component$(() => {
                                     )
                                 ) : (
                                     <a href={item.href} class={`font-medium text-base md:text-lg lg:text-xl transition-colors duration-300 ${scrolled.value
-                                            ? 'text-gray-700 hover:text-[#2563eb] hover:font-bold'
-                                            : 'text-white hover:text-[#2563eb] hover:font-bold'
+                                        ? 'text-gray-700 hover:text-[#2563eb] hover:font-bold'
+                                        : 'text-white hover:text-[#2563eb] hover:font-bold'
                                         }`}>
                                         {item.label}
                                     </a>
@@ -110,11 +119,32 @@ export default component$(() => {
                 {/* Desktop Right: Button + Language + Hamburger on md-lg */}
                 <div class="hidden md:flex items-center space-x-4">
                     <div class="flex flex-col items-center">
-                        <Link href={`/contenido-gratuito`}>
-                            <button class="bg-[#1e3a8a] hover:bg-[#1e40af] text-white px-4 sm:px-6 md:px-8 py-2 md:py-3 rounded-lg font-semibold transition-colors text-base md:text-lg whitespace-nowrap">
-                                Comienza a entrenar
-                            </button>
-                        </Link>
+                        {user ? (
+                            <div class="flex items-center gap-4">
+                                <span class={`font-medium ${scrolled.value ? 'text-gray-900' : 'text-white'}`}>
+                                    Hola, {user.username}
+                                </span>
+                                <button
+                                    onClick$={logout}
+                                    class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-semibold transition-colors text-sm"
+                                >
+                                    Salir
+                                </button>
+                            </div>
+                        ) : (
+                            <div class="flex items-center gap-2">
+                                <Link href="/login">
+                                    <button class={`px-4 py-2 rounded-lg font-semibold transition-colors text-sm ${scrolled.value ? 'text-gray-900 hover:bg-gray-100' : 'text-white hover:bg-white/10'}`}>
+                                        Ingresar
+                                    </button>
+                                </Link>
+                                <Link href="/register">
+                                    <button class="bg-[#1e3a8a] hover:bg-[#1e40af] text-white px-4 py-2 rounded-lg font-semibold transition-colors text-sm whitespace-nowrap">
+                                        Registrarse
+                                    </button>
+                                </Link>
+                            </div>
+                        )}
                     </div>
                     <button
                         class={`lg:hidden p-2 rounded focus:outline-none focus:ring-2 transition-colors duration-300 ${scrolled.value ? 'focus:ring-blue-500' : 'focus:ring-white'

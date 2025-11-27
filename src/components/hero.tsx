@@ -41,14 +41,6 @@ export const Hero = component$(() => {
               ¡QUIERO MIS 7 DÍAS GRATIS!
             </Button>
           </Link>
-          <div class="mt-6 md:mb-8">
-            <p class="text-sm md:text-base text-white/80 mb-2">
-              Acceso directo a nuestra plataforma de entrenamiento
-            </p>
-            <p class="text-xs md:text-sm text-white/70 max-w-2xl">
-              Serás dirigido directamente a nuestra plataforma de entrenamiento
-            </p>
-          </div>
         </div>
       </div>
 
