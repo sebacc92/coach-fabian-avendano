@@ -76,16 +76,6 @@ export default component$(() => {
             {program.subtitle}
           </p>
 
-          {/* Platform Information */}
-          <div class="mb-6 md:mb-8">
-            <p class="text-sm md:text-base text-white/80 mb-2">
-              Prueba gratuita sin compromiso. Cancela cuando quieras.
-            </p>
-            <p class="text-xs md:text-sm text-white/70 max-w-2xl mx-auto">
-              Únete a cientos de personas que ya han transformado sus vidas.
-            </p>
-          </div>
-
           <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <div class={`${program.priceColor} text-white px-8 py-4 rounded-full text-2xl font-bold`}>
               {program.price}

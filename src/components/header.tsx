@@ -6,7 +6,7 @@ interface HeaderProps {
     user?: any;
 }
 
-export default component$<HeaderProps>(({ user }) => {
+export default component$<HeaderProps>(() => {
     const menuOpen = useSignal(false);
     const languageDropdownOpen = useSignal(false);
     const scrolled = useSignal(false);
@@ -45,11 +45,6 @@ export default component$<HeaderProps>(({ user }) => {
         cleanup(() => document.removeEventListener('click', handleClickOutside));
     });
 
-    const logout = $(() => {
-        document.cookie = 'jwt=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-        window.location.href = '/login';
-    });
-
     return (
         <header class={`fixed left-0 right-0 z-50 px-6 py-2 transition-safe duration-300 ease-in-out ${scrolled.value
             ? 'bg-white text-gray-900 drop-shadow-none border-b border-gray-200'
@@ -67,8 +62,8 @@ export default component$<HeaderProps>(({ user }) => {
                     </div>
                 </Link>
 
-                {/* Navigation Desktop - Centered */}
-                <nav class="hidden lg:flex flex-1 justify-center">
+                {/* Navigation Desktop - Right Aligned */}
+                <nav class="hidden lg:flex flex-1 justify-end">
                     <ul class="flex space-x-4 md:space-x-6 lg:space-x-8">
                         {menuItems.map((item) => (
                             <li key={item.href}>
@@ -118,34 +113,6 @@ export default component$<HeaderProps>(({ user }) => {
 
                 {/* Desktop Right: Button + Language + Hamburger on md-lg */}
                 <div class="hidden md:flex items-center space-x-4">
-                    <div class="flex flex-col items-center">
-                        {user ? (
-                            <div class="flex items-center gap-4">
-                                <span class={`font-medium ${scrolled.value ? 'text-gray-900' : 'text-white'}`}>
-                                    Hola, {user.username}
-                                </span>
-                                <button
-                                    onClick$={logout}
-                                    class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-semibold transition-colors text-sm"
-                                >
-                                    Salir
-                                </button>
-                            </div>
-                        ) : (
-                            <div class="flex items-center gap-2">
-                                <Link href="/login">
-                                    <button class={`px-4 py-2 rounded-lg font-semibold transition-colors text-sm ${scrolled.value ? 'text-gray-900 hover:bg-gray-100' : 'text-white hover:bg-white/10'}`}>
-                                        Ingresar
-                                    </button>
-                                </Link>
-                                <Link href="/register">
-                                    <button class="bg-[#1e3a8a] hover:bg-[#1e40af] text-white px-4 py-2 rounded-lg font-semibold transition-colors text-sm whitespace-nowrap">
-                                        Registrarse
-                                    </button>
-                                </Link>
-                            </div>
-                        )}
-                    </div>
                     <button
                         class={`lg:hidden p-2 rounded focus:outline-none focus:ring-2 transition-colors duration-300 ${scrolled.value ? 'focus:ring-blue-500' : 'focus:ring-white'
                             }`}
