@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { Link } from "@builder.io/qwik-city";
+import { Link, routeLoader$ } from "@builder.io/qwik-city";
 import { Hero } from "~/components/hero";
 import { MethodologySection } from "~/components/methodology";
 import { ProgramsSection } from "~/components/programs-section";
@@ -8,16 +8,51 @@ import { GettingStartedSection } from "~/components/getting-started-section";
 import { TestimonialsSection } from "~/components/testimonials-section";
 import { FAQSection } from "~/components/faq-section";
 import { AboutSection } from "~/components/about-section";
+import type { StrapiCollectionResponse, StrapiProgram } from "~/types/strapi";
+import { transformStrapiProgram } from "~/types/strapi";
 
 import VideosImg from '~/assets/images/2.jpeg?jsx';
 
+/**
+ * Load programs from Strapi API
+ */
+export const usePrograms = routeLoader$(async () => {
+  const strapiUrl = import.meta.env.PUBLIC_STRAPI_URL || "http://localhost:1337";
+
+  try {
+    const response = await fetch(
+      `${strapiUrl}/api/programs?populate=*&sort=id:asc`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    if (!response.ok) {
+      console.error("Failed to fetch programs:", response.statusText);
+      return [];
+    }
+
+    const data: StrapiCollectionResponse<StrapiProgram> = await response.json();
+
+    // Transform Strapi programs to simplified Program interface
+    return data.data.map(transformStrapiProgram);
+  } catch (error) {
+    console.error("Error fetching programs:", error);
+    return [];
+  }
+});
+
 export default component$(() => {
+  const programs = usePrograms();
   const videosPath = `/contenido-gratuito#videos`;
+
   return (
     <>
       <Hero />
       <MethodologySection />
-      <ProgramsSection />
+      <ProgramsSection programs={programs.value} />
       {/* Videos Cover Section */}
       <section class="relative py-16 md:py-24 bg-gradient-to-br from-blue-50 to-blue-100">
         <div class="mx-auto max-w-7xl px-4">
