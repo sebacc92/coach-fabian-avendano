@@ -196,53 +196,6 @@ export default component$(() => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-4 max-w-4xl">
-          <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-16">
-            Lo Que Dicen Nuestros Alumnos
-          </h2>
-          <div class="relative">
-            <div class="bg-gray-50 p-8 md:p-12 rounded-2xl text-center">
-              <div class="mb-6">
-                <svg class="w-12 h-12 text-gray-400 mx-auto" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                </svg>
-              </div>
-              <p class="text-lg md:text-xl text-gray-700 mb-8 italic">
-                "{testimonials[currentTestimonial.value]}"
-              </p>
-              <div class="flex justify-center space-x-2">
-                {testimonials.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick$={() => currentTestimonial.value = index}
-                    class={`w-3 h-3 rounded-full transition-colors ${index === currentTestimonial.value ? program.buttonColor : 'bg-gray-300'
-                      }`}
-                  />
-                ))}
-              </div>
-            </div>
-            <button
-              onClick$={prevTestimonial}
-              class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-shadow"
-            >
-              <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-              </svg>
-            </button>
-            <button
-              onClick$={nextTestimonial}
-              class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-shadow"
-            >
-              <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section class="py-16 md:py-24 bg-gray-800">
         <div class="container mx-auto px-4 text-center">
